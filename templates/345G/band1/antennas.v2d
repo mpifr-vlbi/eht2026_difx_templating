@@ -1,0 +1,46 @@
+ANTENNA Aa {
+  # LO offsets 2024 should be zero, with the truncation bug of the tuning frequency string finally fixed
+  datastreams = Aa_ds12,Aa_ds34
+}
+
+ANTENNA Ax {
+  datastreams = Ax_ds12,Ax_ds34
+}
+
+ANTENNA Gl {
+  datastreams = Glt_ds12,Glt_ds34
+}
+
+ANTENNA Kt {
+  datastreams = Kt_ds12,Kt_ds34
+}
+
+ANTENNA Lm {
+  datastreams = Lmt_ds12,Lmt_ds34
+  deltaClock = 0 # LMT extra offsets
+}
+
+ANTENNA Mg { # SMT
+  datastreams = Smt_ds12,Smt_ds34
+}
+
+ANTENNA Mm { # JCMT
+  datastreams = Jcmt_ds12,Jcmt_ds34
+}
+
+ANTENNA Nn {
+  datastreams = Nn_ds1,Nn_ds2,Nn_ds3,Nn_ds4
+}
+
+ANTENNA Pv {
+  datastreams = Pv_ds12,Pv_ds34
+}
+
+ANTENNA Sw { # SMA APHIDS
+  datastreams = SmaAphids_ds12,SmaAphids_ds34
+  deltaClock = 0 # SMA extra offsets
+}
+
+ANTENNA Sz { # SPT
+  datastreams = Spt_ds12,Spt_ds34
+}
