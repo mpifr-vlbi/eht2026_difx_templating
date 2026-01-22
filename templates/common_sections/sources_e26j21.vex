@@ -1,0 +1,50 @@
+$SOURCE;
+*
+def 3C273;
+     source_name = 3C273;
+*    this source had calibrator code: V
+*    alternate source name: J1229+0203
+*    alternate source name: 1226+023
+*    alternate source name: J122906.6+02
+*    ICRF3 X/S astro solution,  29964 observations.
+     ra = 12h29m06.6997419s; dec =  02d03'08.598116"; ref_coord_frame = J2000;
+*    ra = 12h26m33.2458456s; dec =  02d19'43.305612"; ref_coord_frame = B1950;
+*    ra = 12h30m27.5903894s; dec =  01d54'22.139076"; ref_coord_frame = Date;
+enddef;
+*
+def M87;
+     source_name = M87;
+*    this source had calibrator code: V
+*    alternate source name: J1230+1223
+*    alternate source name: 1228+126
+*    alternate source name: J123049.4+12
+*    alternate source name: 3C274
+*    ICRF3 X/S astro solution,  73316 observations.
+     ra = 12h30m49.4233841s; dec =  12d23'28.043686"; ref_coord_frame = J2000;
+*    ra = 12h28m17.5692819s; dec =  12d40'01.748861"; ref_coord_frame = B1950;
+*    ra = 12h32m09.5281016s; dec =  12d14'38.728699"; ref_coord_frame = Date;
+enddef;
+*
+def 3C279;
+     source_name = 3C279;
+*    this source had calibrator code: V
+*    alternate source name: J1256-0547
+*    alternate source name: 1253-055
+*    alternate source name: J125611.1-05
+*    ICRF3 X/S astro solution,  13257 observations.
+     ra = 12h56m11.1665796s; dec = -05d47'21.525151"; ref_coord_frame = J2000;
+*    ra = 12h53m35.8313120s; dec = -05d31'07.996291"; ref_coord_frame = B1950;
+*    ra = 12h57m32.8695577s; dec = -05d55'54.621541"; ref_coord_frame = Date;
+enddef;
+*
+def J1337-1257;
+     source_name = J1337-1257;
+*    this source had calibrator code: V
+*    alternate source name: 1334-127
+*    alternate source name: J133739.7-12
+*    ICRF3 X/S astro solution, 115025 observations.
+     ra = 13h37m39.7827813s; dec = -12d57'24.693392"; ref_coord_frame = J2000;
+*    ra = 13h34m59.8038761s; dec = -12d42'09.743119"; ref_coord_frame = B1950;
+*    ra = 13h39m03.6676897s; dec = -13d05'25.044377"; ref_coord_frame = Date;
+enddef;
+*------------------------------------------------------------------------------
