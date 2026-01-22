@@ -1,0 +1,1529 @@
+VEX_rev = 1.5;
+*    SCHED vers: Release 12.0; April 2023
+*    VEX/SCHED:  1.5.88
+*    Other versions: Sched:  12.0  Plot: 1.06  JPL-ephem: 1.01
+*------------------------------------------------------------------------------
+$GLOBAL;
+     ref $EXPER = e26j21;
+*                                                      +------------+
+*                         PI revision number:          |    9.0000  |
+*                                                      +------------+
+*    mode:       R2DBE
+*------------------------------------------------------------------------------
+$EXPER;
+*
+def e26j21;
+     exper_name = e26j21;
+     exper_description = "M87 2026 test";
+     PI_name = "EHTC";
+     PI_email = not@an.address;
+*    year, doy: 2026,  21
+*    date     : Wed 21 Jan 2026
+*    MJD      : 61061
+     exper_nominal_start=2026y021d06h43m00s;
+     exper_nominal_stop=2026y021d12h23m00s;
+     target_correlator = HAYSTACK;
+*    distribute_to  : Sub-bands 1 and 4 to MPIfR, 2 and 3 to Haystack
+enddef;
+*------------------------------------------------------------------------------
+$CLOCK;
+*
+* TODO: clock rates below are copies from 2025, update with rates from DR 2026
+*
+def Aa;
+  clock_early = 2026y021d06h43m00s: 2107.147 usec : 2026y021d06h43m00s : -10e-15;
+enddef;
+*
+def Ax;
+  clock_early = 2026y021d06h43m00s: 0.0 usec: 2026y021d06h43m00s : -0.760e-12;
+enddef;
+*
+def Gl;
+  clock_early = 2026y021d06h43m00s: 0.0 usec: 2026y021d06h43m00s : -0.109e-12;
+enddef;
+*
+def Kt;
+  clock_early = 2026y021d06h43m00s: 0.0 usec: 2026y021d06h43m00s : -0.052e-12;
+enddef;
+*
+def Ky;
+  clock_early = 2026y021d06h43m00s: 0.0 usec: 2026y021d06h43m00s : +0.0e-12;
+enddef;
+*
+def Lm;
+  clock_early = 2026y021d06h43m00s: 0.0 usec: 2026y021d06h43m00s : +0.376e-12;
+enddef;
+*
+def Mm; * JCMT
+  clock_early = 2026y021d06h43m00s: 0.0 usec: 2026y021d06h43m00s : +4.076e-12;
+enddef;
+*
+def Mg; * SMT
+  clock_early = 2026y021d06h43m00s: 0.0 usec: 2026y021d06h43m00s : -0.100e-12;
+enddef;
+*
+def Nn; * NOEMA
+ * https://eventhorizontelescope.mywikis.wiki/wiki/NOEMA_setup_2026
+ clock_early = 2026y021d06h43m00s: 0.0 usec: 2026y021d06h43m00s : -0.0002e-12;
+enddef;
+*
+def Pv;
+  clock_early = 2026y021d06h43m00s: 0.0 usec: 2026y021d06h43m00s : -0.105e-12;
+enddef;
+*
+def Sz;
+  clock_early = 2026y021d06h43m00s: 0.0 usec: 2026y021d06h43m00s : -0.498e-12;
+enddef;
+*
+def Sw;
+  clock_early = 2026y021d06h43m00s: 0.0 usec : 2026y021d06h43m00s : -7e-15;
+enddef;
+*------------------------------------------------------------------------------
+$MODE;
+*
+def band6;
+     ref $PROCEDURES = Proc_01;
+     ref $IF = IF_NOMINAL:Nn:Pv:Gl:Ax:Sz:Kt:Lm:Mg:Sw:Mm;
+     ref $IF = IF_APEX:Ax;
+     ref $IF = IF_ALMA:Aa;
+     ref $BBC = BBC_COMMON:Sz:Kt:Gl:Mg:Sw:Mm:Nn:Pv;
+     ref $BBC = BBC_POLSWAP:Lm:Ax;
+     ref $BBC = BBC_ALMA:Aa;
+     ref $FREQ = FREQ_COMMON:Sz:Kt:Lm:Mg:Mm;
+     ref $FREQ = FREQ_SMA:Sw;
+     ref $FREQ = FREQ_DBBC3_AX:Ax;
+     ref $FREQ = FREQ_DBBC3_PV:Pv;
+     ref $FREQ = FREQ_AA:Aa;
+     ref $FREQ = FREQ_GLT:Gl;
+     ref $FREQ = FREQ_Nn:Nn;
+     ref $TRACKS = VDIF8224:Gl:Ax:Pv:Sz:Kt:Lm:Mg:Sw:Mm;
+     ref $TRACKS = VDIF8032:Aa;
+     ref $TRACKS = VDIFILACED:Nn;
+     ref $ROLL = NoRoll:Nn:Gl:Ax:Aa:Sz:Kt:Lm:Mg:Sw:Mm;
+     ref $PHASE_CAL_DETECT = NoDetect:Nn:Gl:Ax:Aa:Sz:Kt:Lm:Mg:Sw:Mm;
+enddef;
+*------------------------------------------------------------------------------
+$PROCEDURES;
+*
+def Proc_01;
+     procedure_name_prefix =  "01";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*------------------------------------------------------------------------------
+$DAS;
+*
+def 2NONE<;
+     record_transport_type = Mark6;
+     electronics_rack_type = none;
+     number_drives = 2;
+     headstack = 1 :            : 0 ;
+     headstack = 2 :            : 1 ;
+     tape_motion = adaptive : 0 min: 0 min: 10 sec;
+enddef;
+*------------------------------------------------------------------------------
+$STATION;
+*
+def Aa;
+     ref $SITE = ALMA;
+     ref $ANTENNA = ALMA;
+     ref $DAS = 2NONE<;
+enddef;
+*
+def Ax;
+     ref $SITE = APEX;
+     ref $ANTENNA = APEX;
+     ref $DAS = 2NONE<;
+enddef;
+*
+def Gl;
+     ref $SITE = THULE;
+     ref $ANTENNA = THULE;
+     ref $DAS = 2NONE<;
+enddef;
+*
+def Kt;
+     ref $SITE = KITTPEAK;
+     ref $ANTENNA = KITTPEAK;
+     ref $DAS = 2NONE<;
+enddef;
+*
+def Ky;
+     ref $SITE = KVNYS;
+     ref $ANTENNA = KVNYS;
+     ref $DAS = 2NONE+MARK5B<;
+enddef;
+*
+def Lm;
+     ref $SITE = LMT;
+     ref $ANTENNA = LMT;
+     ref $DAS = 2NONE<;
+enddef;
+*
+def Mg;
+     ref $SITE = SMTO;
+     ref $ANTENNA = SMTO;
+     ref $DAS = 2NONE<;
+enddef;
+*
+def Mm;
+     ref $SITE = JCMT;
+     ref $ANTENNA = JCMT;
+     ref $DAS = 2NONE<;
+enddef;
+*
+def Nn;
+     ref $SITE = NOEMA;
+     ref $ANTENNA = NOEMA;
+     ref $DAS = 2NONE<;
+enddef;
+*
+def Pv;
+     ref $SITE = PICOVEL;
+     ref $ANTENNA = PICOVEL;
+     ref $DAS = 2NONE<;
+enddef;
+*
+def Sw;
+     ref $SITE = SMAP;
+     ref $ANTENNA = SMAP;
+     ref $DAS = 2NONE<;
+enddef;
+*
+def Sz;
+     ref $SITE = SPT;
+     ref $ANTENNA = SPT;
+     ref $DAS = 2NONE<;
+enddef;
+*------------------------------------------------------------------------------
+$ANTENNA;
+*
+* Note: several stations have Nasmyth-L or Nasmyth-R rather than Az-El mounts,
+* however, VEX 1.5 does not support that axis_type (VEX 2 would...)
+*
+def ALMA;
+     axis_type = az : el;
+     antenna_motion = el : 180.0 deg/min : 30 sec;  *    9.000 deg/sec/sec
+     antenna_motion = az : 360.0 deg/min : 30 sec;  *   18.000 deg/sec/sec
+     axis_offset =    0.00000 m;
+enddef;
+*
+def APEX;
+     axis_type = az : el;
+     antenna_motion = el :  60.0 deg/min : 30 sec;  * 1000.000 deg/sec/sec
+     antenna_motion = az :  60.0 deg/min : 30 sec;  * 1000.000 deg/sec/sec
+     axis_offset =    0.00000 m;
+enddef;
+*
+def JCMT;
+     axis_type = az : el;
+     antenna_motion = el :  42.0 deg/min : 30 sec;  * 1000.000 deg/sec/sec
+     antenna_motion = az :  66.0 deg/min : 30 sec;  * 1000.000 deg/sec/sec
+     axis_offset =    0.00000 m;
+enddef;
+*
+def KITTPEAK;
+     axis_type = az : el;
+     antenna_motion = el :  60.0 deg/min : 30 sec;  *    9.000 deg/sec/sec
+     antenna_motion = az :  60.0 deg/min : 30 sec;  *   18.000 deg/sec/sec
+     axis_offset =    0.00000 m;
+enddef;
+*
+def KVNYS;
+     axis_type = az : el;
+     antenna_motion = el : 177.0 deg/min :  2 sec;  *    3.000 deg/sec/sec
+     antenna_motion = az : 177.0 deg/min :  2 sec;  *    3.000 deg/sec/sec
+     axis_offset =    0.00000 m;
+enddef;
+*
+def LMT;
+     axis_type = az : el;
+     antenna_motion = el :  60.0 deg/min : 30 sec;  *    1.000 deg/sec/sec
+     antenna_motion = az :  42.0 deg/min : 30 sec;  *    0.500 deg/sec/sec
+     axis_offset =    3.30000 m;
+enddef;
+*
+def NOEMA;
+     axis_type = az : el;
+     antenna_motion = el :  30.0 deg/min : 30 sec;  * 1000.000 deg/sec/sec
+     antenna_motion = az :  60.0 deg/min : 30 sec;  * 1000.000 deg/sec/sec
+     axis_offset =    0.00000 m;
+enddef;
+*
+def PICOVEL;
+     axis_type = az : el;
+     antenna_motion = el :  30.0 deg/min : 30 sec;  * 1000.000 deg/sec/sec
+     antenna_motion = az :  30.0 deg/min : 30 sec;  * 1000.000 deg/sec/sec
+     axis_offset =    0.00000 m;
+enddef;
+*
+def SMTO;
+     axis_type = az : el;
+     antenna_motion = el :  60.0 deg/min : 30 sec;  * 1000.000 deg/sec/sec
+     antenna_motion = az :  60.0 deg/min : 30 sec;  * 1000.000 deg/sec/sec
+     axis_offset =    0.00000 m;
+enddef;
+*
+def SMAP;
+     axis_type = az : el;
+     antenna_motion = el : 120.0 deg/min : 30 sec;  * 1000.000 deg/sec/sec
+     antenna_motion = az : 240.0 deg/min : 30 sec;  * 1000.000 deg/sec/sec
+     axis_offset =    0.00000 m;
+enddef;
+*
+def SPT;
+     axis_type = az : el;
+     antenna_motion = el : 120.0 deg/min : 30 sec;  * 1000.000 deg/sec/sec
+     antenna_motion = az : 120.0 deg/min : 30 sec;  * 1000.000 deg/sec/sec
+     axis_offset =    0.00000 m;
+enddef;
+*
+def THULE;
+     axis_type = az : el;
+     antenna_motion = el : 120.0 deg/min : 30 sec;  * 1000.000 deg/sec/sec
+     antenna_motion = az : 120.0 deg/min : 30 sec;  * 1000.000 deg/sec/sec
+     axis_offset =    0.00000 m;
+enddef;
+*------------------------------------------------------------------------------
+$SITE;
+*
+def ALMA;
+     site_type = fixed;
+     site_name = ALMA;
+     site_ID = Aa;
+* position from vf 03 July 2018 email
+     site_position = 2225061.28460 m:-5440061.73794 m:-2481681.15054 m;
+     site_velocity =  0.000000   m/yr:  0.000000   m/yr:  0.000000  m/yr;
+     site_position_epoch =   55646;
+enddef;
+*
+def APEX;
+     site_type = fixed;
+     site_name = APEX;
+     site_ID = Ax;
+     site_position = 2225039.52970 m:-5441197.62920 m:-2479303.35970 m;
+     site_velocity =  0.000000   m/yr:  0.000000   m/yr:  0.000000  m/yr;
+     site_position_epoch =   50449;
+enddef;
+*
+def KITTPEAK;
+     site_type = fixed;
+     site_name = KITTPEAK;
+     site_ID = Kt;
+     * site_position = -1995957.62800 m:-5037394.44600 m: 3357047.27400 m;
+     * New position 22 Nov 2021
+     site_position = -1995957.256267 m:-5037391.224871 m: 3357045.200233 m;
+     site_velocity =  0.000000   m/yr:  0.000000   m/yr:  0.000000  m/yr;
+     site_position_epoch =   55646;
+enddef;
+*
+def KVNYS;
+     site_type = fixed;
+     site_name = KVNYS;
+     site_ID = Ky;
+     site_position =-3042280.90350 m: 4045902.65640 m: 3867374.30870 m;
+     site_velocity =  0.000000   m/yr:  0.000000   m/yr:  0.000000  m/yr;
+     site_position_epoch =   56685;
+     horizon_map_az =  0.0 deg:  5.0: 10.0: 15.0: 25.0: 30.0: 45.0: 65.0: 75.0:
+                                85.0:110.0:112.0:175.0:180.0:200.0:245.0:250.0;
+     horizon_map_el =  3.0 deg:  5.0:  7.0:  9.0:  8.0:  6.0:  7.0:  5.0:  4.0:
+                                 3.0:  6.0:  3.0:  6.0:  7.0:  3.0:  4.0:  3.0;
+enddef;
+*
+def LMT;
+     site_type = fixed;
+     site_name = LMT;
+     site_ID = Lm;
+     site_position = -768715.63200 m:-5988507.07200 m: 2063354.85200 m;
+     site_velocity =  0.000000   m/yr:  0.000000   m/yr:  0.000000  m/yr;
+     site_position_epoch =   54466;
+enddef;
+*
+def PICOVEL;
+     site_type = fixed;
+     site_name = PICOVEL;
+     site_ID = Pv;
+     site_position = 5088967.74544 m: -301681.18586 m: 3825012.20561 m;
+     site_velocity =  0.000000   m/yr:  0.000000   m/yr:  0.000000  m/yr;
+     site_position_epoch =   50449;
+enddef;
+*
+def THULE;
+     site_type = fixed;
+     site_name = THULE;
+     site_ID = Gl;
+     site_position =  541547.00000 m:-1387978.60000 m: 6180982.00000 m;
+     site_velocity =  0.000000   m/yr:  0.000000   m/yr:  0.000000  m/yr;
+     site_position_epoch =   54466;
+enddef;
+*
+def SPT;
+     site_type = fixed;
+     site_name = SPT;
+     site_ID = Sz;
+     * Note: site (ice shelf) drifts ~10 meters per year
+     *
+     * position for Apr 2018 dress rehearsal from Pedro Elosegui - epoch 20180420
+     * site_position =     817.83940 m:    -823.57030 m: -6359568.49310 m;
+     *
+     * position for Apr 2021, epoch 20210415, by M. Titus and V. Fish
+     * site_position =     840.90160 m:    -842.71670 m: -6359567.87550 m;
+     *
+     * position for March 2022, epoch 20220321, per Pedro Elosegui's script
+     * site_position =     848.11910 m:    -848.70500 m: -6359567.69090 m;
+     *
+     * position for April 2023, epoch 20230419, by Dhiman Mondal:
+     * site_position =     856.4590 m:    -855.6301 m: -6359567.4666 m;
+     *
+     * position for April 2024
+     * site_position = todo : todo : todo ;
+     site_position = 0 m : 0 m : 0 m;
+     site_velocity =  0.000000   m/yr:  0.000000   m/yr:  0.000000  m/yr;
+     site_position_epoch =   54466;
+enddef;
+*
+def SMTO;
+     site_type = fixed;
+     site_name = SMTO;
+     site_ID = Mg;
+     site_position =-1828796.20000 m:-5054406.80000 m: 3427865.20000 m;
+     site_velocity =  0.000000   m/yr:  0.000000   m/yr:  0.000000  m/yr;
+     site_position_epoch =   50449;
+     horizon_map_az =  4.0 deg: 14.0: 29.0: 34.0: 39.0: 59.0: 61.0: 64.0: 69.0:
+                                74.0: 85.0: 93.0: 98.0:103.0:107.0:113.0:118.0:
+                               133.0:148.0:153.0:158.0:180.0:187.0:192.0:207.0:
+                               218.0:223.0:243.0:248.0:262.0:272.0:295.0:325.0:
+                               337.0:340.0:360.0;
+     horizon_map_el = 20.0 deg: 18.0: 18.0: 19.0: 22.0: 22.0: 24.0: 23.0: 22.0:
+                                24.0: 24.0: 24.0: 28.0: 28.0: 28.0: 20.0: 20.0:
+                                13.0: 12.0: 13.0: 13.0: 11.0: 11.0: 11.0:  6.0:
+                                 9.0: 10.0: 12.0: 15.0: 20.0: 23.0: 24.0: 20.0:
+                                26.0: 19.0: 19.0;
+enddef;
+*
+def JCMT;
+     site_type = fixed;
+     site_name = JCMT;
+     site_ID = Mm;
+     site_position =-5464584.67600 m:-2493001.17000 m: 2150653.98200 m;
+     site_velocity =  0.000000   m/yr:  0.000000   m/yr:  0.000000  m/yr;
+     site_position_epoch =   50449;
+enddef;
+*
+def SMAP;
+     site_type = fixed;
+     site_name = SMAP;
+     site_ID = Sw;
+     site_position =-5464555.49300 m:-2492927.98900 m: 2150797.17600 m;
+     site_velocity =  0.000000   m/yr:  0.000000   m/yr:  0.000000  m/yr;
+     site_position_epoch =   50449;
+     horizon_map_az =  0.0 deg: 44.0: 45.0: 56.0: 57.0:359.0;
+     horizon_map_el =  8.0 deg:  8.0: 24.0: 24.0:  8.0:  8.0;
+enddef;
+Error: Requested track e26j21 unknown by Class ehtTrackList (currently known: e25j21 e25c04 e25a06 e25f08 e25e09 c251a c251b c251c c251d c251z). 
+*------------------------------------------------------------------------------
+$TRACKS;
+*
+def VDIF8032;
+     track_frame_format = VDIF/8032/2;
+     fanout_def =   : &CH01 : sign : 1:  2;
+     fanout_def =   : &CH01 :  mag : 1:  3;
+     fanout_def =   : &CH02 : sign : 1:  4;
+     fanout_def =   : &CH02 :  mag : 1:  5;
+     fanout_def =   : &CH03 : sign : 1:  6;
+     fanout_def =   : &CH03 :  mag : 1:  7;
+     fanout_def =   : &CH04 : sign : 1:  8;
+     fanout_def =   : &CH04 :  mag : 1:  9;
+     fanout_def =   : &CH05 : sign : 1: 10;
+     fanout_def =   : &CH05 :  mag : 1: 11;
+     fanout_def =   : &CH06 : sign : 1: 12;
+     fanout_def =   : &CH06 :  mag : 1: 13;
+     fanout_def =   : &CH07 : sign : 1: 14;
+     fanout_def =   : &CH07 :  mag : 1: 15;
+     fanout_def =   : &CH08 : sign : 1: 16;
+     fanout_def =   : &CH08 :  mag : 1: 17;
+     fanout_def =   : &CH09 : sign : 1: 18;
+     fanout_def =   : &CH09 :  mag : 1: 19;
+     fanout_def =   : &CH10 : sign : 1: 20;
+     fanout_def =   : &CH10 :  mag : 1: 21;
+     fanout_def =   : &CH11 : sign : 1: 22;
+     fanout_def =   : &CH11 :  mag : 1: 23;
+     fanout_def =   : &CH12 : sign : 1: 24;
+     fanout_def =   : &CH12 :  mag : 1: 25;
+     fanout_def =   : &CH13 : sign : 1: 26;
+     fanout_def =   : &CH13 :  mag : 1: 27;
+     fanout_def =   : &CH14 : sign : 1: 28;
+     fanout_def =   : &CH14 :  mag : 1: 29;
+     fanout_def =   : &CH15 : sign : 1: 30;
+     fanout_def =   : &CH15 :  mag : 1: 31;
+     fanout_def =   : &CH16 : sign : 1: 32;
+     fanout_def =   : &CH16 :  mag : 1: 33;
+     fanout_def =   : &CH17 : sign : 1: 34;
+     fanout_def =   : &CH17 :  mag : 1: 35;
+     fanout_def =   : &CH18 : sign : 1: 36;
+     fanout_def =   : &CH18 :  mag : 1: 37;
+     fanout_def =   : &CH19 : sign : 1: 38;
+     fanout_def =   : &CH19 :  mag : 1: 39;
+     fanout_def =   : &CH20 : sign : 1: 40;
+     fanout_def =   : &CH20 :  mag : 1: 41;
+     fanout_def =   : &CH21 : sign : 1: 42;
+     fanout_def =   : &CH21 :  mag : 1: 43;
+     fanout_def =   : &CH22 : sign : 1: 44;
+     fanout_def =   : &CH22 :  mag : 1: 45;
+     fanout_def =   : &CH23 : sign : 1: 46;
+     fanout_def =   : &CH23 :  mag : 1: 47;
+     fanout_def =   : &CH24 : sign : 1: 48;
+     fanout_def =   : &CH24 :  mag : 1: 49;
+     fanout_def =   : &CH25 : sign : 1: 50;
+     fanout_def =   : &CH25 :  mag : 1: 51;
+     fanout_def =   : &CH26 : sign : 1: 52;
+     fanout_def =   : &CH26 :  mag : 1: 53;
+     fanout_def =   : &CH27 : sign : 1: 54;
+     fanout_def =   : &CH27 :  mag : 1: 55;
+     fanout_def =   : &CH28 : sign : 1: 56;
+     fanout_def =   : &CH28 :  mag : 1: 57;
+     fanout_def =   : &CH29 : sign : 1: 58;
+     fanout_def =   : &CH29 :  mag : 1: 59;
+     fanout_def =   : &CH30 : sign : 1: 60;
+     fanout_def =   : &CH30 :  mag : 1: 61;
+     fanout_def =   : &CH31 : sign : 1: 62;
+     fanout_def =   : &CH31 :  mag : 1: 63;
+     fanout_def =   : &CH32 : sign : 1: 64;
+     fanout_def =   : &CH32 :  mag : 1: 65;
+     fanout_def =   : &CH33 : sign : 1: 66;
+     fanout_def =   : &CH33 :  mag : 1: 67;
+     fanout_def =   : &CH34 : sign : 1: 68;
+     fanout_def =   : &CH34 :  mag : 1: 69;
+     fanout_def =   : &CH35 : sign : 1: 70;
+     fanout_def =   : &CH35 :  mag : 1: 71;
+     fanout_def =   : &CH36 : sign : 1: 72;
+     fanout_def =   : &CH36 :  mag : 1: 73;
+     fanout_def =   : &CH37 : sign : 1: 74;
+     fanout_def =   : &CH37 :  mag : 1: 75;
+     fanout_def =   : &CH38 : sign : 1: 76;
+     fanout_def =   : &CH38 :  mag : 1: 77;
+     fanout_def =   : &CH39 : sign : 1: 78;
+     fanout_def =   : &CH39 :  mag : 1: 79;
+     fanout_def =   : &CH40 : sign : 1: 80;
+     fanout_def =   : &CH40 :  mag : 1: 81;
+     fanout_def =   : &CH41 : sign : 1: 82;
+     fanout_def =   : &CH41 :  mag : 1: 83;
+     fanout_def =   : &CH42 : sign : 1: 84;
+     fanout_def =   : &CH42 :  mag : 1: 85;
+     fanout_def =   : &CH43 : sign : 1: 86;
+     fanout_def =   : &CH43 :  mag : 1: 87;
+     fanout_def =   : &CH44 : sign : 1: 88;
+     fanout_def =   : &CH44 :  mag : 1: 89;
+     fanout_def =   : &CH45 : sign : 1: 90;
+     fanout_def =   : &CH45 :  mag : 1: 91;
+     fanout_def =   : &CH46 : sign : 1: 92;
+     fanout_def =   : &CH46 :  mag : 1: 93;
+     fanout_def =   : &CH47 : sign : 1: 94;
+     fanout_def =   : &CH47 :  mag : 1: 95;
+     fanout_def =   : &CH48 : sign : 1: 96;
+     fanout_def =   : &CH48 :  mag : 1: 97;
+     fanout_def =   : &CH49 : sign : 1: 98;
+     fanout_def =   : &CH49 :  mag : 1: 99;
+     fanout_def =   : &CH50 : sign : 1: 100;
+     fanout_def =   : &CH50 :  mag : 1: 101;
+     fanout_def =   : &CH51 : sign : 1: 102;
+     fanout_def =   : &CH51 :  mag : 1: 103;
+     fanout_def =   : &CH52 : sign : 1: 104;
+     fanout_def =   : &CH52 :  mag : 1: 105;
+     fanout_def =   : &CH53 : sign : 1: 106;
+     fanout_def =   : &CH53 :  mag : 1: 107;
+     fanout_def =   : &CH54 : sign : 1: 108;
+     fanout_def =   : &CH54 :  mag : 1: 109;
+     fanout_def =   : &CH55 : sign : 1: 110;
+     fanout_def =   : &CH55 :  mag : 1: 111;
+     fanout_def =   : &CH56 : sign : 1: 112;
+     fanout_def =   : &CH56 :  mag : 1: 113;
+     fanout_def =   : &CH57 : sign : 1: 114;
+     fanout_def =   : &CH57 :  mag : 1: 115;
+     fanout_def =   : &CH58 : sign : 1: 116;
+     fanout_def =   : &CH58 :  mag : 1: 117;
+     fanout_def =   : &CH59 : sign : 1: 118;
+     fanout_def =   : &CH59 :  mag : 1: 119;
+     fanout_def =   : &CH60 : sign : 1: 120;
+     fanout_def =   : &CH60 :  mag : 1: 121;
+     fanout_def =   : &CH61 : sign : 1: 122;
+     fanout_def =   : &CH61 :  mag : 1: 123;
+     fanout_def =   : &CH62 : sign : 1: 124;
+     fanout_def =   : &CH62 :  mag : 1: 125;
+     fanout_def =   : &CH63 : sign : 1: 126;
+     fanout_def =   : &CH63 :  mag : 1: 127;
+     fanout_def =   : &CH64 : sign : 1: 128;
+     fanout_def =   : &CH64 :  mag : 1: 129;
+enddef;
+*
+def VDIF8224;
+     track_frame_format = VDIF/8224/2;
+     fanout_def =   : &CH01 : sign : 1:  2;
+     fanout_def =   : &CH01 :  mag : 1:  3;
+     fanout_def =   : &CH02 : sign : 1:  4;
+     fanout_def =   : &CH02 :  mag : 1:  5;
+enddef;
+*
+def VDIFILACED;
+     track_frame_format = INTERLACEDVDIF;
+     fanout_def =   : &CH01 : sign : 1:  2;
+     fanout_def =   : &CH01 :  mag : 1:  3;
+     fanout_def =   : &CH02 : sign : 1:  4;
+     fanout_def =   : &CH02 :  mag : 1:  5;
+     fanout_def =   : &CH03 : sign : 1:  6;
+     fanout_def =   : &CH03 :  mag : 1:  7;
+     fanout_def =   : &CH04 : sign : 1:  8;
+     fanout_def =   : &CH04 :  mag : 1:  9;
+     fanout_def =   : &CH05 : sign : 1: 10;
+     fanout_def =   : &CH05 :  mag : 1: 11;
+     fanout_def =   : &CH06 : sign : 1: 12;
+     fanout_def =   : &CH06 :  mag : 1: 13;
+     fanout_def =   : &CH07 : sign : 1: 14;
+     fanout_def =   : &CH07 :  mag : 1: 15;
+     fanout_def =   : &CH08 : sign : 1: 16;
+     fanout_def =   : &CH08 :  mag : 1: 17;
+     fanout_def =   : &CH09 : sign : 1: 18;
+     fanout_def =   : &CH09 :  mag : 1: 19;
+     fanout_def =   : &CH10 : sign : 1: 20;
+     fanout_def =   : &CH10 :  mag : 1: 21;
+     fanout_def =   : &CH11 : sign : 1: 22;
+     fanout_def =   : &CH11 :  mag : 1: 23;
+     fanout_def =   : &CH12 : sign : 1: 24;
+     fanout_def =   : &CH12 :  mag : 1: 25;
+     fanout_def =   : &CH13 : sign : 1: 26;
+     fanout_def =   : &CH13 :  mag : 1: 27;
+     fanout_def =   : &CH14 : sign : 1: 28;
+     fanout_def =   : &CH14 :  mag : 1: 29;
+     fanout_def =   : &CH15 : sign : 1: 30;
+     fanout_def =   : &CH15 :  mag : 1: 31;
+     fanout_def =   : &CH16 : sign : 1: 32;
+     fanout_def =   : &CH16 :  mag : 1: 33;
+     fanout_def =   : &CH17 : sign : 1: 34;
+     fanout_def =   : &CH17 :  mag : 1: 35;
+     fanout_def =   : &CH18 : sign : 1: 36;
+     fanout_def =   : &CH18 :  mag : 1: 37;
+     fanout_def =   : &CH19 : sign : 1: 38;
+     fanout_def =   : &CH19 :  mag : 1: 39;
+     fanout_def =   : &CH20 : sign : 1: 40;
+     fanout_def =   : &CH20 :  mag : 1: 41;
+     fanout_def =   : &CH21 : sign : 1: 42;
+     fanout_def =   : &CH21 :  mag : 1: 43;
+     fanout_def =   : &CH22 : sign : 1: 44;
+     fanout_def =   : &CH22 :  mag : 1: 45;
+     fanout_def =   : &CH23 : sign : 1: 46;
+     fanout_def =   : &CH23 :  mag : 1: 47;
+     fanout_def =   : &CH24 : sign : 1: 48;
+     fanout_def =   : &CH24 :  mag : 1: 49;
+     fanout_def =   : &CH25 : sign : 1: 50;
+     fanout_def =   : &CH25 :  mag : 1: 51;
+     fanout_def =   : &CH26 : sign : 1: 52;
+     fanout_def =   : &CH26 :  mag : 1: 53;
+     fanout_def =   : &CH27 : sign : 1: 54;
+     fanout_def =   : &CH27 :  mag : 1: 55;
+     fanout_def =   : &CH28 : sign : 1: 56;
+     fanout_def =   : &CH28 :  mag : 1: 57;
+     fanout_def =   : &CH29 : sign : 1: 58;
+     fanout_def =   : &CH29 :  mag : 1: 59;
+     fanout_def =   : &CH30 : sign : 1: 60;
+     fanout_def =   : &CH30 :  mag : 1: 61;
+     fanout_def =   : &CH31 : sign : 1: 62;
+     fanout_def =   : &CH31 :  mag : 1: 63;
+     fanout_def =   : &CH32 : sign : 1: 64;
+     fanout_def =   : &CH32 :  mag : 1: 65;
+     fanout_def =   : &CH33 : sign : 1: 66;
+     fanout_def =   : &CH33 :  mag : 1: 67;
+     fanout_def =   : &CH34 : sign : 1: 68;
+     fanout_def =   : &CH34 :  mag : 1: 69;
+     fanout_def =   : &CH35 : sign : 1: 70;
+     fanout_def =   : &CH35 :  mag : 1: 71;
+     fanout_def =   : &CH36 : sign : 1: 72;
+     fanout_def =   : &CH36 :  mag : 1: 73;
+     fanout_def =   : &CH37 : sign : 1: 74;
+     fanout_def =   : &CH37 :  mag : 1: 75;
+     fanout_def =   : &CH38 : sign : 1: 76;
+     fanout_def =   : &CH38 :  mag : 1: 77;
+     fanout_def =   : &CH39 : sign : 1: 78;
+     fanout_def =   : &CH39 :  mag : 1: 79;
+     fanout_def =   : &CH40 : sign : 1: 80;
+     fanout_def =   : &CH40 :  mag : 1: 81;
+     fanout_def =   : &CH41 : sign : 1: 82;
+     fanout_def =   : &CH41 :  mag : 1: 83;
+     fanout_def =   : &CH42 : sign : 1: 84;
+     fanout_def =   : &CH42 :  mag : 1: 85;
+     fanout_def =   : &CH43 : sign : 1: 86;
+     fanout_def =   : &CH43 :  mag : 1: 87;
+     fanout_def =   : &CH44 : sign : 1: 88;
+     fanout_def =   : &CH44 :  mag : 1: 89;
+     fanout_def =   : &CH45 : sign : 1: 90;
+     fanout_def =   : &CH45 :  mag : 1: 91;
+     fanout_def =   : &CH46 : sign : 1: 92;
+     fanout_def =   : &CH46 :  mag : 1: 93;
+     fanout_def =   : &CH47 : sign : 1: 94;
+     fanout_def =   : &CH47 :  mag : 1: 95;
+     fanout_def =   : &CH48 : sign : 1: 96;
+     fanout_def =   : &CH48 :  mag : 1: 97;
+     fanout_def =   : &CH49 : sign : 1: 98;
+     fanout_def =   : &CH49 :  mag : 1: 99;
+     fanout_def =   : &CH50 : sign : 1: 100;
+     fanout_def =   : &CH50 :  mag : 1: 101;
+     fanout_def =   : &CH51 : sign : 1: 102;
+     fanout_def =   : &CH51 :  mag : 1: 103;
+     fanout_def =   : &CH52 : sign : 1: 104;
+     fanout_def =   : &CH52 :  mag : 1: 105;
+     fanout_def =   : &CH53 : sign : 1: 106;
+     fanout_def =   : &CH53 :  mag : 1: 107;
+     fanout_def =   : &CH54 : sign : 1: 108;
+     fanout_def =   : &CH54 :  mag : 1: 109;
+     fanout_def =   : &CH55 : sign : 1: 110;
+     fanout_def =   : &CH55 :  mag : 1: 111;
+     fanout_def =   : &CH56 : sign : 1: 112;
+     fanout_def =   : &CH56 :  mag : 1: 113;
+     fanout_def =   : &CH57 : sign : 1: 114;
+     fanout_def =   : &CH57 :  mag : 1: 115;
+     fanout_def =   : &CH58 : sign : 1: 116;
+     fanout_def =   : &CH58 :  mag : 1: 117;
+     fanout_def =   : &CH59 : sign : 1: 118;
+     fanout_def =   : &CH59 :  mag : 1: 119;
+     fanout_def =   : &CH60 : sign : 1: 120;
+     fanout_def =   : &CH60 :  mag : 1: 121;
+     fanout_def =   : &CH61 : sign : 1: 122;
+     fanout_def =   : &CH61 :  mag : 1: 123;
+     fanout_def =   : &CH62 : sign : 1: 124;
+     fanout_def =   : &CH62 :  mag : 1: 125;
+     fanout_def =   : &CH63 : sign : 1: 126;
+     fanout_def =   : &CH63 :  mag : 1: 127;
+     fanout_def =   : &CH64 : sign : 1: 128;
+     fanout_def =   : &CH64 :  mag : 1: 129;
+enddef;
+*------------------------------------------------------------------------------
+$IF;
+*
+def IF_NOMINAL;
+     if_def = &IF_LCP : A : L : 221100.000000 MHz : U : 0 MHz : 0 Hz;
+     if_def = &IF_RCP : B : R : 221100.000000 MHz : U : 0 MHz : 0 Hz;
+enddef;
+*
+def IF_APEX;
+     if_def = &IF_RCP : A : R : 221103.000015 MHz : U : 0 MHz : 0 Hz;
+     if_def = &IF_LCP : B : L : 221103.000015 MHz : U : 0 MHz : 0 Hz;
+enddef;
+*
+def IF_ALMA;
+    if_def = &IF_X : A : X : 221100.00 MHz : U : 0 MHz : 0 Hz;
+    if_def = &IF_Y : B : Y : 221100.00 MHz : U : 0 MHz : 0 Hz;
+enddef;
+*------------------------------------------------------------------------------
+$BBC;
+*
+def BBC_COMMON;
+     BBC_assign = &BBC01 : 1 : &IF_LCP;
+     BBC_assign = &BBC02 : 2 : &IF_RCP;
+enddef;
+*
+def BBC_POLSWAP;
+     BBC_assign = &BBC01 : 1 : &IF_RCP;
+     BBC_assign = &BBC02 : 2 : &IF_LCP;
+enddef;
+*
+def BBC_ALMA;
+    BBC_assign = &BBC01 :  1 : &IF_X;
+    BBC_assign = &BBC02 :  1 : &IF_Y;
+enddef;
+*------------------------------------------------------------------------------
+$FREQ;
+*
+def FREQ_COMMON;
+     sample_rate =  4096.000 Ms/sec;
+     chan_def = &B:214100.000 MHz : U :2048.00 MHz : &CH01 : &BBC01 : &NoCal; * LCP
+     chan_def = &B:214100.000 MHz : U :2048.00 MHz : &CH02 : &BBC02 : &NoCal; * RCP
+enddef;
+*
+def FREQ_DBBC3_AX;
+     sample_rate =  4096.000 Ms/sec;
+     chan_def = &B:216148.0 MHz : L :2048.00 MHz : &CH01 : &BBC01 : &NoCal; * LCP
+     chan_def = &B:216148.0 MHz : L :2048.00 MHz : &CH02 : &BBC02 : &NoCal; * RCP
+enddef;
+*
+def FREQ_DBBC3_PV;
+     sample_rate =  4096.000 Ms/sec;
+     chan_def = &B:216148.0 MHz : L :2048.00 MHz : &CH01 : &BBC01 : &NoCal; * LCP
+     chan_def = &B:216148.0 MHz : L :2048.00 MHz : &CH02 : &BBC02 : &NoCal; * RCP
+enddef;
+*
+def FREQ_GLT;
+     sample_rate =  4096.000 Ms/sec;
+     chan_def = &B:213911.000 MHz : U : 2048.00 MHz : &CH01 : &BBC01 : &NoCal; * LCP
+     chan_def = &B:213911.000 MHz : U : 2048.00 MHz : &CH02 : &BBC02 : &NoCal; * RCP
+enddef;
+*
+def FREQ_SMA;
+     sample_rate =  4096.000 Ms/sec;
+     chan_def = &B:216148.000 MHz : L :2048.00 MHz : &CH01 : &BBC01 : &NoCal; * LCP
+     chan_def = &B:216148.000 MHz : L :2048.00 MHz : &CH02 : &BBC02 : &NoCal; * RCP
+enddef;
+def FREQ_Nn; * derived for on lo1=221.100 lo2=7.744 GHz
+   sample_rate = 128.0 Ms/sec;  * (2bits/sample)
+   * Recorder 2, slot 1, LSB-Inner, LCP, subbands 32-43,12-15
+   chan_def = &B: 215372.00 MHz : U : 64.00 MHz : &CH01 : &BBC01 : &NoCal; * b2
+   chan_def = &B: 215436.00 MHz : U : 64.00 MHz : &CH02 : &BBC01 : &NoCal; * b2
+   chan_def = &B: 215500.00 MHz : U : 64.00 MHz : &CH03 : &BBC01 : &NoCal; * b2
+   chan_def = &B: 215564.00 MHz : U : 64.00 MHz : &CH04 : &BBC01 : &NoCal; * b2
+   chan_def = &B: 215628.00 MHz : U : 64.00 MHz : &CH05 : &BBC01 : &NoCal; * b2
+   chan_def = &B: 215692.00 MHz : U : 64.00 MHz : &CH06 : &BBC01 : &NoCal; * b2
+   chan_def = &B: 215756.00 MHz : U : 64.00 MHz : &CH07 : &BBC01 : &NoCal; * b2
+   chan_def = &B: 215820.00 MHz : U : 64.00 MHz : &CH08 : &BBC01 : &NoCal; * b2
+   chan_def = &B: 215884.00 MHz : U : 64.00 MHz : &CH09 : &BBC01 : &NoCal; * b2
+   chan_def = &B: 215948.00 MHz : U : 64.00 MHz : &CH10 : &BBC01 : &NoCal; * b2
+   chan_def = &B: 216012.00 MHz : U : 64.00 MHz : &CH11 : &BBC01 : &NoCal; * b2
+   chan_def = &B: 216076.00 MHz : U : 64.00 MHz : &CH12 : &BBC01 : &NoCal; * b2
+   chan_def = &B: 214092.00 MHz : U : 64.00 MHz : &CH13 : &BBC01 : &NoCal; * b1,b2
+   chan_def = &B: 214156.00 MHz : U : 64.00 MHz : &CH14 : &BBC01 : &NoCal; * b2
+   chan_def = &B: 214220.00 MHz : U : 64.00 MHz : &CH15 : &BBC01 : &NoCal; * b2
+   chan_def = &B: 214284.00 MHz : U : 64.00 MHz : &CH16 : &BBC01 : &NoCal; * b2
+   * Recorder 2, slot 2, LSB-Inner, LCP, subbands 16-31
+   chan_def = &B: 214348.00 MHz : U : 64.00 MHz : &CH17 : &BBC01 : &NoCal; * b2
+   chan_def = &B: 214412.00 MHz : U : 64.00 MHz : &CH18 : &BBC01 : &NoCal; * b2
+   chan_def = &B: 214476.00 MHz : U : 64.00 MHz : &CH19 : &BBC01 : &NoCal; * b2
+   chan_def = &B: 214540.00 MHz : U : 64.00 MHz : &CH20 : &BBC01 : &NoCal; * b2
+   chan_def = &B: 214604.00 MHz : U : 64.00 MHz : &CH21 : &BBC01 : &NoCal; * b2
+   chan_def = &B: 214668.00 MHz : U : 64.00 MHz : &CH22 : &BBC01 : &NoCal; * b2
+   chan_def = &B: 214732.00 MHz : U : 64.00 MHz : &CH23 : &BBC01 : &NoCal; * b2
+   chan_def = &B: 214796.00 MHz : U : 64.00 MHz : &CH24 : &BBC01 : &NoCal; * b2
+   chan_def = &B: 214860.00 MHz : U : 64.00 MHz : &CH25 : &BBC01 : &NoCal; * b2
+   chan_def = &B: 214924.00 MHz : U : 64.00 MHz : &CH26 : &BBC01 : &NoCal; * b2
+   chan_def = &B: 214988.00 MHz : U : 64.00 MHz : &CH27 : &BBC01 : &NoCal; * b2
+   chan_def = &B: 215052.00 MHz : U : 64.00 MHz : &CH28 : &BBC01 : &NoCal; * b2
+   chan_def = &B: 215116.00 MHz : U : 64.00 MHz : &CH29 : &BBC01 : &NoCal; * b2
+   chan_def = &B: 215180.00 MHz : U : 64.00 MHz : &CH30 : &BBC01 : &NoCal; * b2
+   chan_def = &B: 215244.00 MHz : U : 64.00 MHz : &CH31 : &BBC01 : &NoCal; * b2
+   chan_def = &B: 215308.00 MHz : U : 64.00 MHz : &CH32 : &BBC01 : &NoCal; * b2
+   * Recorder 2, slot 3, LSB-Inner, RCP, subbands 16-31
+   chan_def = &B: 214348.00 MHz : U : 64.00 MHz : &CH33 : &BBC02 : &NoCal; * b2
+   chan_def = &B: 214412.00 MHz : U : 64.00 MHz : &CH34 : &BBC02 : &NoCal; * b2
+   chan_def = &B: 214476.00 MHz : U : 64.00 MHz : &CH35 : &BBC02 : &NoCal; * b2
+   chan_def = &B: 214540.00 MHz : U : 64.00 MHz : &CH36 : &BBC02 : &NoCal; * b2
+   chan_def = &B: 214604.00 MHz : U : 64.00 MHz : &CH37 : &BBC02 : &NoCal; * b2
+   chan_def = &B: 214668.00 MHz : U : 64.00 MHz : &CH38 : &BBC02 : &NoCal; * b2
+   chan_def = &B: 214732.00 MHz : U : 64.00 MHz : &CH39 : &BBC02 : &NoCal; * b2
+   chan_def = &B: 214796.00 MHz : U : 64.00 MHz : &CH40 : &BBC02 : &NoCal; * b2
+   chan_def = &B: 214860.00 MHz : U : 64.00 MHz : &CH41 : &BBC02 : &NoCal; * b2
+   chan_def = &B: 214924.00 MHz : U : 64.00 MHz : &CH42 : &BBC02 : &NoCal; * b2
+   chan_def = &B: 214988.00 MHz : U : 64.00 MHz : &CH43 : &BBC02 : &NoCal; * b2
+   chan_def = &B: 215052.00 MHz : U : 64.00 MHz : &CH44 : &BBC02 : &NoCal; * b2
+   chan_def = &B: 215116.00 MHz : U : 64.00 MHz : &CH45 : &BBC02 : &NoCal; * b2
+   chan_def = &B: 215180.00 MHz : U : 64.00 MHz : &CH46 : &BBC02 : &NoCal; * b2
+   chan_def = &B: 215244.00 MHz : U : 64.00 MHz : &CH47 : &BBC02 : &NoCal; * b2
+   chan_def = &B: 215308.00 MHz : U : 64.00 MHz : &CH48 : &BBC02 : &NoCal; * b2
+   * Recorder 2, slot 4, LSB-Inner, RCP, subbands 32-43,12-15
+   chan_def = &B: 215372.00 MHz : U : 64.00 MHz : &CH49 : &BBC02 : &NoCal; * b2
+   chan_def = &B: 215436.00 MHz : U : 64.00 MHz : &CH50 : &BBC02 : &NoCal; * b2
+   chan_def = &B: 215500.00 MHz : U : 64.00 MHz : &CH51 : &BBC02 : &NoCal; * b2
+   chan_def = &B: 215564.00 MHz : U : 64.00 MHz : &CH52 : &BBC02 : &NoCal; * b2
+   chan_def = &B: 215628.00 MHz : U : 64.00 MHz : &CH53 : &BBC02 : &NoCal; * b2
+   chan_def = &B: 215692.00 MHz : U : 64.00 MHz : &CH54 : &BBC02 : &NoCal; * b2
+   chan_def = &B: 215756.00 MHz : U : 64.00 MHz : &CH55 : &BBC02 : &NoCal; * b2
+   chan_def = &B: 215820.00 MHz : U : 64.00 MHz : &CH56 : &BBC02 : &NoCal; * b2
+   chan_def = &B: 215884.00 MHz : U : 64.00 MHz : &CH57 : &BBC02 : &NoCal; * b2
+   chan_def = &B: 215948.00 MHz : U : 64.00 MHz : &CH58 : &BBC02 : &NoCal; * b2
+   chan_def = &B: 216012.00 MHz : U : 64.00 MHz : &CH59 : &BBC02 : &NoCal; * b2
+   chan_def = &B: 216076.00 MHz : U : 64.00 MHz : &CH60 : &BBC02 : &NoCal; * b2
+   chan_def = &B: 214092.00 MHz : U : 64.00 MHz : &CH61 : &BBC02 : &NoCal; * b1,b2
+   chan_def = &B: 214156.00 MHz : U : 64.00 MHz : &CH62 : &BBC02 : &NoCal; * b2
+   chan_def = &B: 214220.00 MHz : U : 64.00 MHz : &CH63 : &BBC02 : &NoCal; * b2
+   chan_def = &B: 214284.00 MHz : U : 64.00 MHz : &CH64 : &BBC02 : &NoCal; * b2
+enddef;
+def FREQ_AA; * derived for on lo1=221.100 lo2=1.875 GHz
+   sample_rate = 125.0 Ms/sec;  * (2bits/sample)
+   * Recorder 2, slots 1+2, LSB around LO1-6 GHz, X-pol, subbands 0-31
+   chan_def = &B: 216039.453125 MHz : L : 62.50 MHz : &CH01 : &BBC01 : &NoCal; * b2 X
+   chan_def = &B: 215980.859375 MHz : L : 62.50 MHz : &CH02 : &BBC01 : &NoCal; * b2 X
+   chan_def = &B: 215922.265625 MHz : L : 62.50 MHz : &CH03 : &BBC01 : &NoCal; * b2 X
+   chan_def = &B: 215863.671875 MHz : L : 62.50 MHz : &CH04 : &BBC01 : &NoCal; * b2 X
+   chan_def = &B: 215805.078125 MHz : L : 62.50 MHz : &CH05 : &BBC01 : &NoCal; * b2 X
+   chan_def = &B: 215746.484375 MHz : L : 62.50 MHz : &CH06 : &BBC01 : &NoCal; * b2 X
+   chan_def = &B: 215687.890625 MHz : L : 62.50 MHz : &CH07 : &BBC01 : &NoCal; * b2 X
+   chan_def = &B: 215629.296875 MHz : L : 62.50 MHz : &CH08 : &BBC01 : &NoCal; * b2 X
+   chan_def = &B: 215570.703125 MHz : L : 62.50 MHz : &CH09 : &BBC01 : &NoCal; * b2 X
+   chan_def = &B: 215512.109375 MHz : L : 62.50 MHz : &CH10 : &BBC01 : &NoCal; * b2 X
+   chan_def = &B: 215453.515625 MHz : L : 62.50 MHz : &CH11 : &BBC01 : &NoCal; * b2 X
+   chan_def = &B: 215394.921875 MHz : L : 62.50 MHz : &CH12 : &BBC01 : &NoCal; * b2 X
+   chan_def = &B: 215336.328125 MHz : L : 62.50 MHz : &CH13 : &BBC01 : &NoCal; * b2 X
+   chan_def = &B: 215277.734375 MHz : L : 62.50 MHz : &CH14 : &BBC01 : &NoCal; * b2 X
+   chan_def = &B: 215219.140625 MHz : L : 62.50 MHz : &CH15 : &BBC01 : &NoCal; * b2 X
+   chan_def = &B: 215160.546875 MHz : L : 62.50 MHz : &CH16 : &BBC01 : &NoCal; * b2 X
+   chan_def = &B: 215101.953125 MHz : L : 62.50 MHz : &CH17 : &BBC01 : &NoCal; * b2 X
+   chan_def = &B: 215043.359375 MHz : L : 62.50 MHz : &CH18 : &BBC01 : &NoCal; * b2 X
+   chan_def = &B: 214984.765625 MHz : L : 62.50 MHz : &CH19 : &BBC01 : &NoCal; * b2 X
+   chan_def = &B: 214926.171875 MHz : L : 62.50 MHz : &CH20 : &BBC01 : &NoCal; * b2 X
+   chan_def = &B: 214867.578125 MHz : L : 62.50 MHz : &CH21 : &BBC01 : &NoCal; * b2 X
+   chan_def = &B: 214808.984375 MHz : L : 62.50 MHz : &CH22 : &BBC01 : &NoCal; * b2 X
+   chan_def = &B: 214750.390625 MHz : L : 62.50 MHz : &CH23 : &BBC01 : &NoCal; * b2 X
+   chan_def = &B: 214691.796875 MHz : L : 62.50 MHz : &CH24 : &BBC01 : &NoCal; * b2 X
+   chan_def = &B: 214633.203125 MHz : L : 62.50 MHz : &CH25 : &BBC01 : &NoCal; * b2 X
+   chan_def = &B: 214574.609375 MHz : L : 62.50 MHz : &CH26 : &BBC01 : &NoCal; * b2 X
+   chan_def = &B: 214516.015625 MHz : L : 62.50 MHz : &CH27 : &BBC01 : &NoCal; * b2 X
+   chan_def = &B: 214457.421875 MHz : L : 62.50 MHz : &CH28 : &BBC01 : &NoCal; * b2 X
+   chan_def = &B: 214398.828125 MHz : L : 62.50 MHz : &CH29 : &BBC01 : &NoCal; * b2 X
+   chan_def = &B: 214340.234375 MHz : L : 62.50 MHz : &CH30 : &BBC01 : &NoCal; * b2 X
+   chan_def = &B: 214281.640625 MHz : L : 62.50 MHz : &CH31 : &BBC01 : &NoCal; * b2 X
+   chan_def = &B: 214223.046875 MHz : L : 62.50 MHz : &CH32 : &BBC01 : &NoCal; * b2 X
+   * Recorder 2, slots 3+4, LSB around LO1-6 GHz, Y-pol, subbands 0-31
+   chan_def = &B: 216039.453125 MHz : L : 62.50 MHz : &CH33 : &BBC02 : &NoCal; * b2 Y
+   chan_def = &B: 215980.859375 MHz : L : 62.50 MHz : &CH34 : &BBC02 : &NoCal; * b2 Y
+   chan_def = &B: 215922.265625 MHz : L : 62.50 MHz : &CH35 : &BBC02 : &NoCal; * b2 Y
+   chan_def = &B: 215863.671875 MHz : L : 62.50 MHz : &CH36 : &BBC02 : &NoCal; * b2 Y
+   chan_def = &B: 215805.078125 MHz : L : 62.50 MHz : &CH37 : &BBC02 : &NoCal; * b2 Y
+   chan_def = &B: 215746.484375 MHz : L : 62.50 MHz : &CH38 : &BBC02 : &NoCal; * b2 Y
+   chan_def = &B: 215687.890625 MHz : L : 62.50 MHz : &CH39 : &BBC02 : &NoCal; * b2 Y
+   chan_def = &B: 215629.296875 MHz : L : 62.50 MHz : &CH40 : &BBC02 : &NoCal; * b2 Y
+   chan_def = &B: 215570.703125 MHz : L : 62.50 MHz : &CH41 : &BBC02 : &NoCal; * b2 Y
+   chan_def = &B: 215512.109375 MHz : L : 62.50 MHz : &CH42 : &BBC02 : &NoCal; * b2 Y
+   chan_def = &B: 215453.515625 MHz : L : 62.50 MHz : &CH43 : &BBC02 : &NoCal; * b2 Y
+   chan_def = &B: 215394.921875 MHz : L : 62.50 MHz : &CH44 : &BBC02 : &NoCal; * b2 Y
+   chan_def = &B: 215336.328125 MHz : L : 62.50 MHz : &CH45 : &BBC02 : &NoCal; * b2 Y
+   chan_def = &B: 215277.734375 MHz : L : 62.50 MHz : &CH46 : &BBC02 : &NoCal; * b2 Y
+   chan_def = &B: 215219.140625 MHz : L : 62.50 MHz : &CH47 : &BBC02 : &NoCal; * b2 Y
+   chan_def = &B: 215160.546875 MHz : L : 62.50 MHz : &CH48 : &BBC02 : &NoCal; * b2 Y
+   chan_def = &B: 215101.953125 MHz : L : 62.50 MHz : &CH49 : &BBC02 : &NoCal; * b2 Y
+   chan_def = &B: 215043.359375 MHz : L : 62.50 MHz : &CH50 : &BBC02 : &NoCal; * b2 Y
+   chan_def = &B: 214984.765625 MHz : L : 62.50 MHz : &CH51 : &BBC02 : &NoCal; * b2 Y
+   chan_def = &B: 214926.171875 MHz : L : 62.50 MHz : &CH52 : &BBC02 : &NoCal; * b2 Y
+   chan_def = &B: 214867.578125 MHz : L : 62.50 MHz : &CH53 : &BBC02 : &NoCal; * b2 Y
+   chan_def = &B: 214808.984375 MHz : L : 62.50 MHz : &CH54 : &BBC02 : &NoCal; * b2 Y
+   chan_def = &B: 214750.390625 MHz : L : 62.50 MHz : &CH55 : &BBC02 : &NoCal; * b2 Y
+   chan_def = &B: 214691.796875 MHz : L : 62.50 MHz : &CH56 : &BBC02 : &NoCal; * b2 Y
+   chan_def = &B: 214633.203125 MHz : L : 62.50 MHz : &CH57 : &BBC02 : &NoCal; * b2 Y
+   chan_def = &B: 214574.609375 MHz : L : 62.50 MHz : &CH58 : &BBC02 : &NoCal; * b2 Y
+   chan_def = &B: 214516.015625 MHz : L : 62.50 MHz : &CH59 : &BBC02 : &NoCal; * b2 Y
+   chan_def = &B: 214457.421875 MHz : L : 62.50 MHz : &CH60 : &BBC02 : &NoCal; * b2 Y
+   chan_def = &B: 214398.828125 MHz : L : 62.50 MHz : &CH61 : &BBC02 : &NoCal; * b2 Y
+   chan_def = &B: 214340.234375 MHz : L : 62.50 MHz : &CH62 : &BBC02 : &NoCal; * b2 Y
+   chan_def = &B: 214281.640625 MHz : L : 62.50 MHz : &CH63 : &BBC02 : &NoCal; * b2 Y
+   chan_def = &B: 214223.046875 MHz : L : 62.50 MHz : &CH64 : &BBC02 : &NoCal; * b2 Y
+enddef;
+*------------------------------------------------------------------------------
+$PHASE_CAL_DETECT;
+*
+def NoDetect;
+     phase_cal_detect = &NoCal;
+enddef;
+*------------------------------------------------------------------------------
+$HEAD_POS;
+def DiskVoid;
+*     Head positions irrelevant for Disk: empty def
+enddef;
+*------------------------------------------------------------------------------
+$PASS_ORDER;
+*
+def DiskVoid;
+*     Pass orders irrelevant for Disk: empty def
+enddef;
+*------------------------------------------------------------------------------
+$ROLL;
+*
+def NoRoll;
+*    barrel-roll set to 'roll_off', so reverse-roll by  0 (1 head)
+     roll = off;
+enddef;
+*------------------------------------------------------------------------------
+*------------------------------------------------------------------------------
+$SOURCE;
+*
+def 3C273;
+     source_name = 3C273;
+*    this source had calibrator code: V
+*    alternate source name: J1229+0203
+*    alternate source name: 1226+023
+*    alternate source name: J122906.6+02
+*    ICRF3 X/S astro solution,  29964 observations.
+     ra = 12h29m06.6997419s; dec =  02d03'08.598116"; ref_coord_frame = J2000;
+*    ra = 12h26m33.2458456s; dec =  02d19'43.305612"; ref_coord_frame = B1950;
+*    ra = 12h30m27.5903894s; dec =  01d54'22.139076"; ref_coord_frame = Date;
+enddef;
+*
+def M87;
+     source_name = M87;
+*    this source had calibrator code: V
+*    alternate source name: J1230+1223
+*    alternate source name: 1228+126
+*    alternate source name: J123049.4+12
+*    alternate source name: 3C274
+*    ICRF3 X/S astro solution,  73316 observations.
+     ra = 12h30m49.4233841s; dec =  12d23'28.043686"; ref_coord_frame = J2000;
+*    ra = 12h28m17.5692819s; dec =  12d40'01.748861"; ref_coord_frame = B1950;
+*    ra = 12h32m09.5281016s; dec =  12d14'38.728699"; ref_coord_frame = Date;
+enddef;
+*
+def 3C279;
+     source_name = 3C279;
+*    this source had calibrator code: V
+*    alternate source name: J1256-0547
+*    alternate source name: 1253-055
+*    alternate source name: J125611.1-05
+*    ICRF3 X/S astro solution,  13257 observations.
+     ra = 12h56m11.1665796s; dec = -05d47'21.525151"; ref_coord_frame = J2000;
+*    ra = 12h53m35.8313120s; dec = -05d31'07.996291"; ref_coord_frame = B1950;
+*    ra = 12h57m32.8695577s; dec = -05d55'54.621541"; ref_coord_frame = Date;
+enddef;
+*
+def J1337-1257;
+     source_name = J1337-1257;
+*    this source had calibrator code: V
+*    alternate source name: 1334-127
+*    alternate source name: J133739.7-12
+*    ICRF3 X/S astro solution, 115025 observations.
+     ra = 13h37m39.7827813s; dec = -12d57'24.693392"; ref_coord_frame = J2000;
+*    ra = 13h34m59.8038761s; dec = -12d42'09.743119"; ref_coord_frame = B1950;
+*    ra = 13h39m03.6676897s; dec = -13d05'25.044377"; ref_coord_frame = Date;
+enddef;
+*------------------------------------------------------------------------------
+$SCHED;
+* schedule section for experiment e26j21          
+* M87 2026 test                                                           
+scan 021-0643;
+     start=2026y021d06h43m00s; mode=band6; source=3C273;
+*              :data_good:data_stop:goto_foot: pass:  wrap :driv:tape at
+     station=Nn:    0 sec:  120 sec:       0.000 GB:   : &n    : 1;
+     station=Pv:    0 sec:  120 sec:       0.000 GB:   : &n    : 1;
+     station=Gl:    0 sec:  120 sec:       0.000 GB:   : &ccw  : 1;
+     station=Ax:    0 sec:  120 sec:       0.000 GB:   : &n    : 1;
+     station=Lm:    0 sec:  120 sec:       0.000 GB:   : &n    : 1;
+     station=Kt:    0 sec:  120 sec:       0.000 GB:   : &n    : 1;
+endscan;
+scan 021-0648;
+     start=2026y021d06h48m00s; mode=band6; source=M87;
+     station=Nn:    0 sec:  240 sec:     123.077 GB:   : &n    : 1;
+     station=Pv:    0 sec:  240 sec:     123.077 GB:   : &n    : 1;
+     station=Gl:    0 sec:  240 sec:     123.077 GB:   : &ccw  : 1;
+     station=Ax:    0 sec:  240 sec:     123.077 GB:   : &n    : 1;
+     station=Lm:    0 sec:  240 sec:     123.077 GB:   : &ccw  : 1;
+     station=Kt:    0 sec:  240 sec:     123.077 GB:   : &ccw  : 1;
+endscan;
+scan 021-0702;
+     start=2026y021d07h02m00s; mode=band6; source=3C279;
+     station=Nn:    0 sec:  120 sec:     369.230 GB:   : &n    : 1;
+     station=Pv:    0 sec:  120 sec:     369.230 GB:   : &n    : 1;
+     station=Ax:    0 sec:  120 sec:     369.230 GB:   : &n    : 1;
+     station=Lm:    0 sec:  120 sec:     369.230 GB:   : &n    : 1;
+endscan;
+scan 021-0707;
+     start=2026y021d07h07m00s; mode=band6; source=M87;
+     station=Nn:    0 sec:  240 sec:     492.306 GB:   : &n    : 1;
+     station=Pv:    0 sec:  240 sec:     492.306 GB:   : &n    : 1;
+     station=Gl:    0 sec:  240 sec:     369.230 GB:   : &ccw  : 1;
+     station=Ax:    0 sec:  240 sec:     492.306 GB:   : &n    : 1;
+     station=Lm:    0 sec:  240 sec:     492.306 GB:   : &ccw  : 1;
+     station=Kt:    0 sec:  240 sec:     369.230 GB:   : &ccw  : 1;
+endscan;
+scan 021-0721;
+     start=2026y021d07h21m00s; mode=band6; source=3C273;
+     station=Nn:    0 sec:  120 sec:     738.460 GB:   : &n    : 1;
+     station=Pv:    0 sec:  120 sec:     738.460 GB:   : &n    : 1;
+     station=Gl:    0 sec:  120 sec:     615.383 GB:   : &ccw  : 1;
+     station=Ax:    0 sec:  120 sec:     738.460 GB:   : &n    : 1;
+     station=Lm:    0 sec:  120 sec:     738.460 GB:   : &n    : 1;
+     station=Kt:    0 sec:  120 sec:     615.383 GB:   : &n    : 1;
+endscan;
+scan 021-0726;
+     start=2026y021d07h26m00s; mode=band6; source=M87;
+     station=Nn:    0 sec:  240 sec:     861.536 GB:   : &n    : 1;
+     station=Pv:    0 sec:  240 sec:     861.536 GB:   : &n    : 1;
+     station=Gl:    0 sec:  240 sec:     738.460 GB:   : &ccw  : 1;
+     station=Ax:    0 sec:  240 sec:     861.536 GB:   : &n    : 1;
+     station=Lm:    0 sec:  240 sec:     861.536 GB:   : &ccw  : 1;
+     station=Kt:    0 sec:  240 sec:     738.460 GB:   : &n    : 1;
+endscan;
+scan 021-0740;
+     start=2026y021d07h40m00s; mode=band6; source=3C279;
+     station=Nn:    0 sec:  120 sec:    1107.689 GB:   : &n    : 1;
+     station=Pv:    0 sec:  120 sec:    1107.689 GB:   : &n    : 1;
+     station=Gl:    0 sec:  120 sec:     984.613 GB:   : &ccw  : 1;
+     station=Ax:    0 sec:  120 sec:    1107.689 GB:   : &n    : 1;
+     station=Lm:    0 sec:  120 sec:    1107.689 GB:   : &n    : 1;
+     station=Kt:    0 sec:  120 sec:     984.613 GB:   : &n    : 1;
+endscan;
+scan 021-0745;
+     start=2026y021d07h45m00s; mode=band6; source=M87;
+     station=Nn:    0 sec:  240 sec:    1230.766 GB:   : &n    : 1;
+     station=Pv:    0 sec:  240 sec:    1230.766 GB:   : &n    : 1;
+     station=Gl:    0 sec:  240 sec:    1107.689 GB:   : &ccw  : 1;
+     station=Ax:    0 sec:  240 sec:    1230.766 GB:   : &n    : 1;
+     station=Lm:    0 sec:  240 sec:    1230.766 GB:   : &n    : 1;
+     station=Kt:    0 sec:  240 sec:    1107.689 GB:   : &n    : 1;
+endscan;
+scan 021-0751;
+     start=2026y021d07h51m00s; mode=band6; source=J1337-1257;
+     station=Nn:    0 sec:  120 sec:    1476.919 GB:   : &n    : 1;
+     station=Pv:    0 sec:  120 sec:    1476.919 GB:   : &n    : 1;
+     station=Ax:    0 sec:  120 sec:    1476.919 GB:   : &n    : 1;
+     station=Lm:    0 sec:  120 sec:    1476.919 GB:   : &n    : 1;
+endscan;
+scan 021-0804;
+* intent = "apsmode = fast-abs"
+* intent = "ALMA:AUTOPHASE_DETERMINE"
+* intent = "ALMA:PROJECT_FIRST_SCAN:m87"
+* intent = "ALMA:SCHEDBLOCK_STARTER:m87"
+     start=2026y021d08h04m00s; mode=band6; source=3C273;
+*              :data_good:data_stop:goto_foot: pass:  wrap :driv:tape at
+     station=Nn:    0 sec:  120 sec:    1599.996 GB:   : &n    : 1;
+     station=Pv:    0 sec:  120 sec:    1599.996 GB:   : &n    : 1;
+     station=Gl:    0 sec:  120 sec:    1353.843 GB:   : &ccw  : 1;
+     station=Ax:    0 sec:  120 sec:    1599.996 GB:   : &n    : 1;
+     station=Lm:    0 sec:  120 sec:    1599.996 GB:   : &n    : 1;
+     station=Kt:    0 sec:  120 sec:    1353.843 GB:   : &n    : 1;
+     station=Aa:    0 sec:  120 sec:       0.000 GB:   : &ccw  : 1;
+     station=Mg:    0 sec:  120 sec:       0.000 GB:   : &ccw  : 1;
+endscan;
+scan 021-0809;
+* intent = "apsmode = fast-abs"
+* intent = "ALMA:AUTOPHASE_DETERMINE"
+     start=2026y021d08h09m00s; mode=band6; source=M87;
+     station=Nn:    0 sec:  240 sec:    1723.073 GB:   : &n    : 1;
+     station=Pv:    0 sec:  240 sec:    1723.073 GB:   : &n    : 1;
+     station=Gl:    0 sec:  240 sec:    1476.919 GB:   : &ccw  : 1;
+     station=Ax:    0 sec:  240 sec:    1723.073 GB:   : &n    : 1;
+     station=Lm:    0 sec:  240 sec:    1723.073 GB:   : &n    : 1;
+     station=Kt:    0 sec:  240 sec:    1476.919 GB:   : &n    : 1;
+     station=Aa:    0 sec:  240 sec:     123.077 GB:   : &ccw  : 1;
+     station=Mg:    0 sec:  240 sec:     123.077 GB:   : &ccw  : 1;
+endscan;
+scan 021-0818;
+* intent = "apsmode = fast-abs"
+* intent = "ALMA:AUTOPHASE_DETERMINE"
+     start=2026y021d08h18m00s; mode=band6; source=J1337-1257;
+     station=Nn:    0 sec:  120 sec:    1969.226 GB:   : &n    : 1;
+     station=Pv:    0 sec:  120 sec:    1969.226 GB:   : &n    : 1;
+     station=Ax:    0 sec:  120 sec:    1969.226 GB:   : &n    : 1;
+     station=Lm:    0 sec:  120 sec:    1969.226 GB:   : &n    : 1;
+     station=Kt:    0 sec:  120 sec:    1723.073 GB:   : &n    : 1;
+     station=Aa:    0 sec:  120 sec:     369.230 GB:   : &ccw  : 1;
+endscan;
+scan 021-0825;
+* intent = "apsmode = fast-abs"
+* intent = "ALMA:AUTOPHASE_DETERMINE"
+     start=2026y021d08h25m00s; mode=band6; source=3C279;
+     station=Nn:    0 sec:  120 sec:    2092.302 GB:   : &n    : 1;
+     station=Pv:    0 sec:  120 sec:    2092.302 GB:   : &n    : 1;
+     station=Gl:    0 sec:  120 sec:    1723.073 GB:   : &ccw  : 1;
+     station=Ax:    0 sec:  120 sec:    2092.302 GB:   : &n    : 1;
+     station=Lm:    0 sec:  120 sec:    2092.302 GB:   : &n    : 1;
+     station=Kt:    0 sec:  120 sec:    1846.149 GB:   : &n    : 1;
+     station=Aa:    0 sec:  120 sec:     492.306 GB:   : &ccw  : 1;
+     station=Mg:    0 sec:  120 sec:     369.230 GB:   : &ccw  : 1;
+endscan;
+scan 021-0830;
+* intent = "apsmode = fast-abs"
+* intent = "ALMA:AUTOPHASE_DETERMINE"
+     start=2026y021d08h30m00s; mode=band6; source=M87;
+     station=Nn:    0 sec:  240 sec:    2215.379 GB:   : &n    : 1;
+     station=Pv:    0 sec:  240 sec:    2215.379 GB:   : &n    : 1;
+     station=Gl:    0 sec:  240 sec:    1846.149 GB:   : &ccw  : 1;
+     station=Ax:    0 sec:  240 sec:    2215.379 GB:   : &n    : 1;
+     station=Lm:    0 sec:  240 sec:    2215.379 GB:   : &n    : 1;
+     station=Kt:    0 sec:  240 sec:    1969.226 GB:   : &n    : 1;
+     station=Aa:    0 sec:  240 sec:     615.383 GB:   : &ccw  : 1;
+     station=Mg:    0 sec:  240 sec:     492.306 GB:   : &ccw  : 1;
+endscan;
+scan 021-0843;
+* intent = "apsmode = fast-abs"
+* intent = "ALMA:AUTOPHASE_DETERMINE"
+     start=2026y021d08h43m00s; mode=band6; source=3C279;
+     station=Nn:    0 sec:  120 sec:    2461.532 GB:   : &n    : 1;
+     station=Pv:    0 sec:  120 sec:    2461.532 GB:   : &n    : 1;
+     station=Gl:    0 sec:  120 sec:    2092.302 GB:   : &ccw  : 1;
+     station=Ax:    0 sec:  120 sec:    2461.532 GB:   : &n    : 1;
+     station=Lm:    0 sec:  120 sec:    2461.532 GB:   : &n    : 1;
+     station=Kt:    0 sec:  120 sec:    2215.379 GB:   : &n    : 1;
+     station=Aa:    0 sec:  120 sec:     861.536 GB:   : &ccw  : 1;
+     station=Mg:    0 sec:  120 sec:     738.460 GB:   : &ccw  : 1;
+endscan;
+scan 021-0848;
+* intent = "apsmode = fast-abs"
+* intent = "ALMA:AUTOPHASE_DETERMINE"
+     start=2026y021d08h48m00s; mode=band6; source=M87;
+     station=Nn:    0 sec:  240 sec:    2584.609 GB:   : &n    : 1;
+     station=Pv:    0 sec:  240 sec:    2584.609 GB:   : &n    : 1;
+     station=Gl:    0 sec:  240 sec:    2215.379 GB:   : &ccw  : 1;
+     station=Ax:    0 sec:  240 sec:    2584.609 GB:   : &n    : 1;
+     station=Lm:    0 sec:  240 sec:    2584.609 GB:   : &n    : 1;
+     station=Kt:    0 sec:  240 sec:    2338.456 GB:   : &n    : 1;
+     station=Aa:    0 sec:  240 sec:     984.613 GB:   : &ccw  : 1;
+     station=Mg:    0 sec:  240 sec:     861.536 GB:   : &ccw  : 1;
+endscan;
+scan 021-0901;
+* intent = "apsmode = fast-abs"
+* intent = "ALMA:AUTOPHASE_DETERMINE"
+     start=2026y021d09h01m00s; mode=band6; source=3C279;
+*              :data_good:data_stop:goto_foot: pass:  wrap :driv:tape at
+     station=Nn:    0 sec:  120 sec:    2830.762 GB:   : &n    : 1;
+     station=Pv:    0 sec:  120 sec:    2830.762 GB:   : &n    : 1;
+     station=Gl:    0 sec:  120 sec:    2461.532 GB:   : &ccw  : 1;
+     station=Ax:    0 sec:  120 sec:    2830.762 GB:   : &n    : 1;
+     station=Lm:    0 sec:  120 sec:    2830.762 GB:   : &n    : 1;
+     station=Kt:    0 sec:  120 sec:    2584.609 GB:   : &n    : 1;
+     station=Aa:    0 sec:  120 sec:    1230.766 GB:   : &ccw  : 1;
+     station=Mg:    0 sec:  120 sec:    1107.689 GB:   : &ccw  : 1;
+endscan;
+scan 021-0906;
+* intent = "apsmode = fast-abs"
+* intent = "ALMA:AUTOPHASE_DETERMINE"
+     start=2026y021d09h06m00s; mode=band6; source=M87;
+     station=Nn:    0 sec:  240 sec:    2953.839 GB:   : &n    : 1;
+     station=Pv:    0 sec:  240 sec:    2953.839 GB:   : &n    : 1;
+     station=Gl:    0 sec:  240 sec:    2584.609 GB:   : &n    : 1;
+     station=Ax:    0 sec:  240 sec:    2953.839 GB:   : &n    : 1;
+     station=Lm:    0 sec:  240 sec:    2953.839 GB:   : &n    : 1;
+     station=Kt:    0 sec:  240 sec:    2707.686 GB:   : &n    : 1;
+     station=Aa:    0 sec:  240 sec:    1353.843 GB:   : &n    : 1;
+     station=Mg:    0 sec:  240 sec:    1230.766 GB:   : &ccw  : 1;
+endscan;
+scan 021-0920;
+* intent = "apsmode = fast-abs"
+* intent = "ALMA:AUTOPHASE_DETERMINE"
+* intent = "ALMA:SCHEDBLOCK_STARTER:m87"
+     start=2026y021d09h20m00s; mode=band6; source=3C273;
+     station=Nn:    0 sec:  120 sec:    3199.992 GB:   : &n    : 1;
+     station=Pv:    0 sec:  120 sec:    3199.992 GB:   : &n    : 1;
+     station=Gl:    0 sec:  120 sec:    2830.762 GB:   : &n    : 1;
+     station=Ax:    0 sec:  120 sec:    3199.992 GB:   : &n    : 1;
+     station=Lm:    0 sec:  120 sec:    3199.992 GB:   : &n    : 1;
+     station=Kt:    0 sec:  120 sec:    2953.839 GB:   : &n    : 1;
+     station=Aa:    0 sec:  120 sec:    1599.996 GB:   : &n    : 1;
+     station=Mg:    0 sec:  120 sec:    1476.919 GB:   : &ccw  : 1;
+endscan;
+scan 021-0925;
+* intent = "apsmode = fast-abs"
+* intent = "ALMA:AUTOPHASE_DETERMINE"
+     start=2026y021d09h25m00s; mode=band6; source=M87;
+     station=Nn:    0 sec:  240 sec:    3323.069 GB:   : &n    : 1;
+     station=Pv:    0 sec:  240 sec:    3323.069 GB:   : &n    : 1;
+     station=Gl:    0 sec:  240 sec:    2953.839 GB:   : &n    : 1;
+     station=Ax:    0 sec:  240 sec:    3323.069 GB:   : &n    : 1;
+     station=Lm:    0 sec:  240 sec:    3323.069 GB:   : &n    : 1;
+     station=Kt:    0 sec:  240 sec:    3076.916 GB:   : &n    : 1;
+     station=Aa:    0 sec:  240 sec:    1723.073 GB:   : &n    : 1;
+     station=Mg:    0 sec:  240 sec:    1599.996 GB:   : &ccw  : 1;
+     station=Mm:    0 sec:  240 sec:       0.000 GB:   : &ccw  : 1;
+endscan;
+scan 021-0932;
+* intent = "apsmode = fast-abs"
+* intent = "ALMA:AUTOPHASE_DETERMINE"
+     start=2026y021d09h32m00s; mode=band6; source=J1337-1257;
+     station=Nn:    0 sec:  120 sec:    3569.222 GB:   : &n    : 1;
+     station=Pv:    0 sec:  120 sec:    3569.222 GB:   : &n    : 1;
+     station=Ax:    0 sec:  120 sec:    3569.222 GB:   : &n    : 1;
+     station=Lm:    0 sec:  120 sec:    3569.222 GB:   : &n    : 1;
+     station=Kt:    0 sec:  120 sec:    3323.069 GB:   : &n    : 1;
+     station=Aa:    0 sec:  120 sec:    1969.226 GB:   : &cw   : 1;
+     station=Mg:    0 sec:  120 sec:    1846.149 GB:   : &ccw  : 1;
+endscan;
+scan 021-0941;
+* intent = "apsmode = fast-abs"
+* intent = "ALMA:AUTOPHASE_DETERMINE"
+     start=2026y021d09h41m00s; mode=band6; source=3C279;
+     station=Pv:    0 sec:  120 sec:    3692.299 GB:   : &n    : 1;
+     station=Gl:    0 sec:  120 sec:    3199.992 GB:   : &n    : 1;
+     station=Ax:    0 sec:  120 sec:    3692.299 GB:   : &n    : 1;
+     station=Lm:    0 sec:  120 sec:    3692.299 GB:   : &n    : 1;
+     station=Kt:    0 sec:  120 sec:    3446.146 GB:   : &n    : 1;
+     station=Aa:    0 sec:  120 sec:    2092.302 GB:   : &n    : 1;
+     station=Mg:    0 sec:  120 sec:    1969.226 GB:   : &ccw  : 1;
+endscan;
+scan 021-0946;
+* intent = "apsmode = fast-abs"
+* intent = "ALMA:AUTOPHASE_DETERMINE"
+     start=2026y021d09h46m00s; mode=band6; source=M87;
+*              :data_good:data_stop:goto_foot: pass:  wrap :driv:tape at
+     station=Nn:    0 sec:  240 sec:    3692.299 GB:   : &n    : 1;
+     station=Pv:    0 sec:  240 sec:    3815.376 GB:   : &n    : 1;
+     station=Gl:    0 sec:  240 sec:    3323.069 GB:   : &n    : 1;
+     station=Ax:    0 sec:  240 sec:    3815.376 GB:   : &n    : 1;
+     station=Lm:    0 sec:  240 sec:    3815.376 GB:   : &n    : 1;
+     station=Kt:    0 sec:  240 sec:    3569.222 GB:   : &n    : 1;
+     station=Aa:    0 sec:  240 sec:    2215.379 GB:   : &n    : 1;
+     station=Mg:    0 sec:  240 sec:    2092.302 GB:   : &ccw  : 1;
+     station=Mm:    0 sec:  240 sec:     246.153 GB:   : &ccw  : 1;
+     station=Sw:    0 sec:  240 sec:       0.000 GB:   : &n    : 1;
+endscan;
+scan 021-0953;
+* intent = "apsmode = fast-abs"
+* intent = "ALMA:AUTOPHASE_DETERMINE"
+     start=2026y021d09h53m00s; mode=band6; source=M87;
+     station=Nn:    0 sec:  240 sec:    3938.452 GB:   : &n    : 1;
+     station=Pv:    0 sec:  240 sec:    4061.529 GB:   : &n    : 1;
+     station=Gl:    0 sec:  240 sec:    3569.222 GB:   : &n    : 1;
+     station=Ax:    0 sec:  240 sec:    4061.529 GB:   : &n    : 1;
+     station=Lm:    0 sec:  240 sec:    4061.529 GB:   : &n    : 1;
+     station=Kt:    0 sec:  240 sec:    3815.376 GB:   : &n    : 1;
+     station=Aa:    0 sec:  240 sec:    2461.532 GB:   : &n    : 1;
+     station=Mg:    0 sec:  240 sec:    2338.456 GB:   : &ccw  : 1;
+     station=Mm:    0 sec:  240 sec:     492.306 GB:   : &ccw  : 1;
+     station=Sw:    0 sec:  240 sec:     246.153 GB:   : &n    : 1;
+endscan;
+scan 021-1005;
+* intent = "apsmode = fast-abs"
+* intent = "ALMA:AUTOPHASE_DETERMINE"
+     start=2026y021d10h05m00s; mode=band6; source=3C279;
+     station=Gl:    0 sec:  120 sec:    3815.376 GB:   : &n    : 1;
+     station=Ax:    0 sec:  120 sec:    4307.682 GB:   : &n    : 1;
+     station=Lm:    0 sec:  120 sec:    4307.682 GB:   : &n    : 1;
+     station=Kt:    0 sec:  120 sec:    4061.529 GB:   : &n    : 1;
+     station=Aa:    0 sec:  120 sec:    2707.686 GB:   : &n    : 1;
+     station=Mg:    0 sec:  120 sec:    2584.609 GB:   : &ccw  : 1;
+     station=Mm:    0 sec:  120 sec:     738.460 GB:   : &n    : 1;
+endscan;
+scan 021-1010;
+* intent = "apsmode = fast-abs"
+* intent = "ALMA:AUTOPHASE_DETERMINE"
+     start=2026y021d10h10m00s; mode=band6; source=M87;
+     station=Nn:    0 sec:  240 sec:    4184.605 GB:   : &n    : 1;
+     station=Pv:    0 sec:  240 sec:    4307.682 GB:   : &n    : 1;
+     station=Gl:    0 sec:  240 sec:    3938.452 GB:   : &n    : 1;
+     station=Ax:    0 sec:  240 sec:    4430.759 GB:   : &n    : 1;
+     station=Lm:    0 sec:  240 sec:    4430.759 GB:   : &n    : 1;
+     station=Kt:    0 sec:  240 sec:    4184.605 GB:   : &n    : 1;
+     station=Aa:    0 sec:  240 sec:    2830.762 GB:   : &n    : 1;
+     station=Mg:    0 sec:  240 sec:    2707.686 GB:   : &ccw  : 1;
+     station=Mm:    0 sec:  240 sec:     861.536 GB:   : &ccw  : 1;
+     station=Sw:    0 sec:  240 sec:     492.306 GB:   : &n    : 1;
+endscan;
+scan 021-1017;
+* intent = "apsmode = fast-abs"
+* intent = "ALMA:AUTOPHASE_DETERMINE"
+     start=2026y021d10h17m00s; mode=band6; source=M87;
+     station=Nn:    0 sec:  240 sec:    4430.759 GB:   : &n    : 1;
+     station=Pv:    0 sec:  240 sec:    4553.835 GB:   : &n    : 1;
+     station=Gl:    0 sec:  240 sec:    4184.605 GB:   : &n    : 1;
+     station=Ax:    0 sec:  240 sec:    4676.912 GB:   : &n    : 1;
+     station=Lm:    0 sec:  240 sec:    4676.912 GB:   : &n    : 1;
+     station=Kt:    0 sec:  240 sec:    4430.759 GB:   : &n    : 1;
+     station=Aa:    0 sec:  240 sec:    3076.916 GB:   : &n    : 1;
+     station=Mg:    0 sec:  240 sec:    2953.839 GB:   : &ccw  : 1;
+     station=Mm:    0 sec:  240 sec:    1107.689 GB:   : &ccw  : 1;
+     station=Sw:    0 sec:  240 sec:     738.460 GB:   : &n    : 1;
+endscan;
+scan 021-1031;
+* intent = "apsmode = fast-abs"
+* intent = "ALMA:AUTOPHASE_DETERMINE"
+* intent = "ALMA:SCHEDBLOCK_STARTER:m87"
+     start=2026y021d10h31m00s; mode=band6; source=3C273;
+     station=Gl:    0 sec:  120 sec:    4430.759 GB:   : &n    : 1;
+     station=Ax:    0 sec:  120 sec:    4923.065 GB:   : &n    : 1;
+     station=Lm:    0 sec:  120 sec:    4923.065 GB:   : &n    : 1;
+     station=Kt:    0 sec:  120 sec:    4676.912 GB:   : &n    : 1;
+     station=Aa:    0 sec:  120 sec:    3323.069 GB:   : &n    : 1;
+     station=Mg:    0 sec:  120 sec:    3199.992 GB:   : &ccw  : 1;
+     station=Mm:    0 sec:  120 sec:    1353.843 GB:   : &n    : 1;
+     station=Sw:    0 sec:  120 sec:     984.613 GB:   : &cw   : 1;
+endscan;
+scan 021-1036;
+* intent = "apsmode = fast-abs"
+* intent = "ALMA:AUTOPHASE_DETERMINE"
+     start=2026y021d10h36m00s; mode=band6; source=M87;
+*              :data_good:data_stop:goto_foot: pass:  wrap :driv:tape at
+     station=Gl:    0 sec:  240 sec:    4553.835 GB:   : &n    : 1;
+     station=Ax:    0 sec:  240 sec:    5046.142 GB:   : &n    : 1;
+     station=Lm:    0 sec:  240 sec:    5046.142 GB:   : &n    : 1;
+     station=Kt:    0 sec:  240 sec:    4799.989 GB:   : &n    : 1;
+     station=Aa:    0 sec:  240 sec:    3446.146 GB:   : &n    : 1;
+     station=Mg:    0 sec:  240 sec:    3323.069 GB:   : &ccw  : 1;
+     station=Mm:    0 sec:  240 sec:    1476.919 GB:   : &ccw  : 1;
+     station=Sw:    0 sec:  240 sec:    1107.689 GB:   : &n    : 1;
+endscan;
+scan 021-1045;
+* intent = "apsmode = fast-abs"
+* intent = "ALMA:AUTOPHASE_DETERMINE"
+     start=2026y021d10h45m00s; mode=band6; source=J1337-1257;
+     station=Ax:    0 sec:  120 sec:    5292.295 GB:   : &n    : 1;
+     station=Lm:    0 sec:  120 sec:    5292.295 GB:   : &n    : 1;
+     station=Kt:    0 sec:  120 sec:    5046.142 GB:   : &n    : 1;
+     station=Aa:    0 sec:  120 sec:    3692.299 GB:   : &n    : 1;
+     station=Mg:    0 sec:  120 sec:    3569.222 GB:   : &ccw  : 1;
+endscan;
+scan 021-1053;
+* intent = "apsmode = fast-abs"
+* intent = "ALMA:AUTOPHASE_DETERMINE"
+     start=2026y021d10h53m00s; mode=band6; source=3C279;
+     station=Gl:    0 sec:  120 sec:    4799.989 GB:   : &n    : 1;
+     station=Ax:    0 sec:  120 sec:    5415.372 GB:   : &n    : 1;
+     station=Lm:    0 sec:  120 sec:    5415.372 GB:   : &n    : 1;
+     station=Kt:    0 sec:  120 sec:    5169.219 GB:   : &n    : 1;
+     station=Aa:    0 sec:  120 sec:    3815.376 GB:   : &n    : 1;
+     station=Mg:    0 sec:  120 sec:    3692.299 GB:   : &ccw  : 1;
+     station=Mm:    0 sec:  120 sec:    1723.073 GB:   : &n    : 1;
+     station=Sw:    0 sec:  120 sec:    1353.843 GB:   : &cw   : 1;
+endscan;
+scan 021-1100;
+* intent = "apsmode = fast-abs"
+* intent = "ALMA:AUTOPHASE_DETERMINE"
+* intent = "ALMA:PROJECT_FINAL_SCAN:m87"
+     start=2026y021d11h00m00s; mode=band6; source=M87;
+     station=Gl:    0 sec:  240 sec:    4923.065 GB:   : &n    : 1;
+     station=Ax:    0 sec:  240 sec:    5538.449 GB:   : &n    : 1;
+     station=Lm:    0 sec:  240 sec:    5538.449 GB:   : &n    : 1;
+     station=Kt:    0 sec:  240 sec:    5292.295 GB:   : &n    : 1;
+     station=Aa:    0 sec:  240 sec:    3938.452 GB:   : &n    : 1;
+     station=Mg:    0 sec:  240 sec:    3815.376 GB:   : &ccw  : 1;
+     station=Mm:    0 sec:  240 sec:    1846.149 GB:   : &ccw  : 1;
+     station=Sw:    0 sec:  240 sec:    1476.919 GB:   : &n    : 1;
+endscan;
+scan 021-1113;
+     start=2026y021d11h13m00s; mode=band6; source=3C279;
+     station=Gl:    0 sec:  120 sec:    5169.219 GB:   : &n    : 1;
+     station=Ax:    0 sec:  120 sec:    5784.602 GB:   : &n    : 1;
+     station=Lm:    0 sec:  120 sec:    5784.602 GB:   : &n    : 1;
+     station=Kt:    0 sec:  120 sec:    5538.449 GB:   : &n    : 1;
+     station=Mg:    0 sec:  120 sec:    4061.529 GB:   : &ccw  : 1;
+     station=Mm:    0 sec:  120 sec:    2092.302 GB:   : &n    : 1;
+     station=Sw:    0 sec:  120 sec:    1723.073 GB:   : &cw   : 1;
+endscan;
+scan 021-1118;
+     start=2026y021d11h18m00s; mode=band6; source=M87;
+     station=Gl:    0 sec:  240 sec:    5292.295 GB:   : &n    : 1;
+     station=Ax:    0 sec:  240 sec:    5907.679 GB:   : &n    : 1;
+     station=Lm:    0 sec:  240 sec:    5907.679 GB:   : &n    : 1;
+     station=Kt:    0 sec:  240 sec:    5661.525 GB:   : &n    : 1;
+     station=Mg:    0 sec:  240 sec:    4184.605 GB:   : &ccw  : 1;
+     station=Mm:    0 sec:  240 sec:    2215.379 GB:   : &ccw  : 1;
+     station=Sw:    0 sec:  240 sec:    1846.149 GB:   : &n    : 1;
+endscan;
+scan 021-1130;
+     start=2026y021d11h30m00s; mode=band6; source=3C279;
+     station=Gl:    0 sec:  120 sec:    5538.449 GB:   : &n    : 1;
+     station=Ax:    0 sec:  120 sec:    6153.832 GB:   : &n    : 1;
+     station=Lm:    0 sec:  120 sec:    6153.832 GB:   : &n    : 1;
+     station=Kt:    0 sec:  120 sec:    5907.679 GB:   : &n    : 1;
+     station=Mg:    0 sec:  120 sec:    4430.759 GB:   : &ccw  : 1;
+     station=Mm:    0 sec:  120 sec:    2461.532 GB:   : &n    : 1;
+     station=Sw:    0 sec:  120 sec:    2092.302 GB:   : &cw   : 1;
+endscan;
+scan 021-1134;
+     start=2026y021d11h34m00s; mode=band6; source=J1337-1257;
+*              :data_good:data_stop:goto_foot: pass:  wrap :driv:tape at
+     station=Ax:    0 sec:  120 sec:    6276.909 GB:   : &n    : 1;
+     station=Lm:    0 sec:  120 sec:    6276.909 GB:   : &n    : 1;
+     station=Kt:    0 sec:  120 sec:    6030.755 GB:   : &n    : 1;
+     station=Mg:    0 sec:  120 sec:    4553.835 GB:   : &ccw  : 1;
+     station=Mm:    0 sec:  120 sec:    2584.609 GB:   : &n    : 1;
+     station=Sw:    0 sec:  120 sec:    2215.379 GB:   : &cw   : 1;
+endscan;
+scan 021-1140;
+     start=2026y021d11h40m00s; mode=band6; source=M87;
+     station=Gl:    0 sec:  240 sec:    5661.525 GB:   : &n    : 1;
+     station=Ax:    0 sec:  240 sec:    6399.985 GB:   : &n    : 1;
+     station=Lm:    0 sec:  240 sec:    6399.985 GB:   : &n    : 1;
+     station=Kt:    0 sec:  240 sec:    6153.832 GB:   : &n    : 1;
+     station=Mg:    0 sec:  240 sec:    4676.912 GB:   : &ccw  : 1;
+     station=Mm:    0 sec:  240 sec:    2707.686 GB:   : &n    : 1;
+     station=Sw:    0 sec:  240 sec:    2338.456 GB:   : &cw   : 1;
+endscan;
+scan 021-1152;
+     start=2026y021d11h52m00s; mode=band6; source=3C273;
+     station=Gl:    0 sec:  120 sec:    5907.679 GB:   : &n    : 1;
+     station=Ax:    0 sec:  120 sec:    6646.139 GB:   : &n    : 1;
+     station=Lm:    0 sec:  120 sec:    6646.139 GB:   : &n    : 1;
+     station=Kt:    0 sec:  120 sec:    6399.985 GB:   : &n    : 1;
+     station=Mg:    0 sec:  120 sec:    4923.065 GB:   : &ccw  : 1;
+     station=Mm:    0 sec:  120 sec:    2953.839 GB:   : &n    : 1;
+     station=Sw:    0 sec:  120 sec:    2584.609 GB:   : &cw   : 1;
+endscan;
+scan 021-1157;
+     start=2026y021d11h57m00s; mode=band6; source=M87;
+     station=Gl:    0 sec:  240 sec:    6030.755 GB:   : &n    : 1;
+     station=Ax:    0 sec:  240 sec:    6769.215 GB:   : &n    : 1;
+     station=Lm:    0 sec:  240 sec:    6769.215 GB:   : &n    : 1;
+     station=Kt:    0 sec:  240 sec:    6523.062 GB:   : &n    : 1;
+     station=Mg:    0 sec:  240 sec:    5046.142 GB:   : &ccw  : 1;
+     station=Mm:    0 sec:  240 sec:    3076.916 GB:   : &n    : 1;
+     station=Sw:    0 sec:  240 sec:    2707.686 GB:   : &cw   : 1;
+endscan;
+scan 021-1209;
+     start=2026y021d12h09m00s; mode=band6; source=3C279;
+     station=Ax:    0 sec:  120 sec:    7015.369 GB:   : &n    : 1;
+     station=Lm:    0 sec:  120 sec:    7015.369 GB:   : &n    : 1;
+     station=Kt:    0 sec:  120 sec:    6769.215 GB:   : &n    : 1;
+     station=Mg:    0 sec:  120 sec:    5292.295 GB:   : &ccw  : 1;
+     station=Mm:    0 sec:  120 sec:    3323.069 GB:   : &n    : 1;
+     station=Sw:    0 sec:  120 sec:    2953.839 GB:   : &cw   : 1;
+endscan;
+scan 021-1214;
+     start=2026y021d12h14m00s; mode=band6; source=M87;
+     station=Gl:    0 sec:  240 sec:    6276.909 GB:   : &n    : 1;
+     station=Ax:    0 sec:  240 sec:    7138.445 GB:   : &n    : 1;
+     station=Lm:    0 sec:  240 sec:    7138.445 GB:   : &n    : 1;
+     station=Kt:    0 sec:  240 sec:    6892.292 GB:   : &n    : 1;
+     station=Mg:    0 sec:  240 sec:    5415.372 GB:   : &ccw  : 1;
+     station=Mm:    0 sec:  240 sec:    3446.146 GB:   : &n    : 1;
+     station=Sw:    0 sec:  240 sec:    3076.916 GB:   : &cw   : 1;
+endscan;
+scan 021-1221;
+     start=2026y021d12h21m00s; mode=band6; source=J1337-1257;
+     station=Ax:    0 sec:  120 sec:    7384.599 GB:   : &n    : 1;
+     station=Lm:    0 sec:  120 sec:    7384.599 GB:   : &n    : 1;
+     station=Kt:    0 sec:  120 sec:    7138.445 GB:   : &n    : 1;
+     station=Mg:    0 sec:  120 sec:    5661.525 GB:   : &ccw  : 1;
+     station=Mm:    0 sec:  120 sec:    3692.299 GB:   : &n    : 1;
+     station=Sw:    0 sec:  120 sec:    3323.069 GB:   : &cw   : 1;
+endscan;
+*------------------------------------------------------------------------------
+$EOP;
+  def EOP19;
+    TAI-UTC= 37 sec;
+    A1-TAI= 0 sec;
+    eop_ref_epoch=2026y19d;
+    num_eop_points=1;
+    eop_interval=24 hr;
+    ut1-utc  = 0.074207 sec;
+    x_wobble = 0.093449 asec;
+    y_wobble = 0.343407 asec;
+  enddef;
+  def EOP20;
+    TAI-UTC= 37 sec;
+    A1-TAI= 0 sec;
+    eop_ref_epoch=2026y20d;
+    num_eop_points=1;
+    eop_interval=24 hr;
+    ut1-utc  = 0.074344 sec;
+    x_wobble = 0.092278 asec;
+    y_wobble = 0.344586 asec;
+  enddef;
+  def EOP21;
+    TAI-UTC= 37 sec;
+    A1-TAI= 0 sec;
+    eop_ref_epoch=2026y21d;
+    num_eop_points=1;
+    eop_interval=24 hr;
+    ut1-utc  = 0.074205 sec;
+    x_wobble = 0.091132 asec;
+    y_wobble = 0.345608 asec;
+  enddef;
+  def EOP22;
+    TAI-UTC= 37 sec;
+    A1-TAI= 0 sec;
+    eop_ref_epoch=2026y22d;
+    num_eop_points=1;
+    eop_interval=24 hr;
+    ut1-utc  = 0.073774 sec;
+    x_wobble = 0.090225 asec;
+    y_wobble = 0.346778 asec;
+  enddef;
+  def EOP23;
+    TAI-UTC= 37 sec;
+    A1-TAI= 0 sec;
+    eop_ref_epoch=2026y23d;
+    num_eop_points=1;
+    eop_interval=24 hr;
+    ut1-utc  = 0.073129 sec;
+    x_wobble = 0.089404 asec;
+    y_wobble = 0.347805 asec;
+  enddef;
+*------------------------------------------------------------------------------
+
