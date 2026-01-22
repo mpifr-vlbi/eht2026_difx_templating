@@ -1,6 +1,6 @@
 # Which tracks to generate
-TRACKS_230G := e26j21 e26j22 e26j23 
-TRACKS_345G := e26a00
+TRACKS_230G := e26j21
+TRACKS_345G :=
 
 # Revision of correlation run, e.g., v1a, gold253, gold261, gold262
 #REV  := v1

@@ -60,7 +60,7 @@ def main():
 	ehtTracks = ehtTrackList()
 	sites = ['NOEMA']
 
-	tracks = ehtTracks.listTracks(2025)
+	tracks = ehtTracks.listTracks(2026)
 	doVex = False
 
 	if len(sys.argv) >= 2:
