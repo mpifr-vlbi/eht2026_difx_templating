@@ -1,0 +1,51 @@
+VEX_rev = 1.5;
+*    SCHED vers: Release 12.0; April 2023
+*    VEX/SCHED:  1.5.88
+*    Other versions: Sched:  12.0  Plot: 1.06  JPL-ephem: 1.01
+*------------------------------------------------------------------------------
+$GLOBAL;
+     ref $EXPER = e26j21;
+*                                                      +------------+
+*                         PI revision number:          |    9.0000  |
+*                                                      +------------+
+*    mode:       R2DBE
+*------------------------------------------------------------------------------
+$EXPER;
+*
+def e26j21;
+     exper_name = e26j21;
+     exper_description = "M87 2026 test";
+     PI_name = "EHTC";
+     PI_email = not@an.address;
+*    year, doy: 2026,  21
+*    date     : Wed 21 Jan 2026
+*    MJD      : 61061
+     exper_nominal_start=2026y021d06h43m00s;
+     exper_nominal_stop=2026y021d12h23m00s;
+     target_correlator = HAYSTACK;
+*    distribute_to  : Sub-bands 1 and 4 to MPIfR, 2 and 3 to Haystack
+enddef;
+*------------------------------------------------------------------------------
+** include <clocks_initial.vex>
+** include <clocks_SMA.vex>
+** include <mode_proc_das.vex>
+** include <stations.vex>
+** include <antennas.vex>
+** include <sites_consistent.vex>
+** include <sites_NOEMA_e26j21.vex>
+** include <tracks.vex>
+** include <if.vex>
+** include <bbc.vex>
+** include <freqs.vex>
+** include <freqs_NOEMA.vex>
+** include <freqs_ALMA.vex>
+** include <phasecal.vex>
+** include <tape.vex>
+*------------------------------------------------------------------------------
+** include <sources_e26j21.vex>
+** include <sched_e26j21.vex>
+*------------------------------------------------------------------------------
+** include <eop_e26j21.vex>
+** loaddata <clocks_e26j21.dat>
+*------------------------------------------------------------------------------
+

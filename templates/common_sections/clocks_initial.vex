@@ -1,0 +1,49 @@
+$CLOCK;
+*
+* TODO: clock rates below are copies from 2025, update with rates from DR 2026
+*
+def Aa;
+  clock_early = 2026y021d06h43m00s: 2107.147 usec : 2026y021d06h43m00s : -10e-15;
+enddef;
+*
+def Ax;
+  clock_early = 2026y021d06h43m00s: 0.0 usec: 2026y021d06h43m00s : -0.760e-12;
+enddef;
+*
+def Gl;
+  clock_early = 2026y021d06h43m00s: 0.0 usec: 2026y021d06h43m00s : -0.109e-12;
+enddef;
+*
+def Kt;
+  clock_early = 2026y021d06h43m00s: 0.0 usec: 2026y021d06h43m00s : -0.052e-12;
+enddef;
+*
+def Ky;
+  clock_early = 2026y021d06h43m00s: 0.0 usec: 2026y021d06h43m00s : +0.0e-12;
+enddef;
+*
+def Lm;
+  clock_early = 2026y021d06h43m00s: 0.0 usec: 2026y021d06h43m00s : +0.376e-12;
+enddef;
+*
+def Mm; * JCMT
+  clock_early = 2026y021d06h43m00s: 0.0 usec: 2026y021d06h43m00s : +4.076e-12;
+enddef;
+*
+def Mg; * SMT
+  clock_early = 2026y021d06h43m00s: 0.0 usec: 2026y021d06h43m00s : -0.100e-12;
+enddef;
+*
+def Nn; * NOEMA
+ * https://eventhorizontelescope.mywikis.wiki/wiki/NOEMA_setup_2026
+ clock_early = 2026y021d06h43m00s: 0.0 usec: 2026y021d06h43m00s : -0.0002e-12;
+enddef;
+*
+def Pv;
+  clock_early = 2026y021d06h43m00s: 0.0 usec: 2026y021d06h43m00s : -0.105e-12;
+enddef;
+*
+def Sz;
+  clock_early = 2026y021d06h43m00s: 0.0 usec: 2026y021d06h43m00s : -0.498e-12;
+enddef;
+*

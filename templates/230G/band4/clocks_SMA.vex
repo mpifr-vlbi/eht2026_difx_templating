@@ -1,0 +1,3 @@
+def Sw;
+  clock_early = 2026y021d06h43m00s: 0.0 usec : 2026y021d06h43m00s : -7e-15;
+enddef;
