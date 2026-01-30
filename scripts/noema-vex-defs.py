@@ -61,10 +61,14 @@ class EHTBandLabels:
 
 	def __init__(self):
 		self.bands = [
-			BandLabel('b1',212.052,214.100),
-			BandLabel('b2',214.100,216.148),
-			BandLabel('b3',226.052,228.100),
-			BandLabel('b4',228.100,230.148),
+			BandLabel('b1_1.3mm',212.052,214.100),
+			BandLabel('b2_1.3mm',214.100,216.148),
+			BandLabel('b3_1.3mm',226.052,228.100),
+			BandLabel('b4_1.3mm',228.100,230.148),
+			BandLabel('b1_1.0mm',250.452,252.500),
+			BandLabel('b2_1.0mm',252.500,254.548),
+			BandLabel('b3_1.0mm',264.452,266.500),
+			BandLabel('b4_1.0mm',266.500,268.548),
 			BandLabel('b1_0.8mm',334.552,336.600),
 			BandLabel('b2_0.8mm',336.600,338.648),
 			BandLabel('b3_0.8mm',346.552,348.600),
@@ -238,6 +242,7 @@ class NoemaVexFreqGenerator:
 
 		USB, LSB = True, False
 		OUTER, INNER = True, False
+		remappedSubbands = True
 
 		if 1 in recorders:
 
@@ -252,14 +257,24 @@ class NoemaVexFreqGenerator:
 
 		if 2 in recorders:
 
-			print('%s* Recorder 2, slot 1, LSB-Lower/Inner PolyFiX 6 SFP+ 3, LCP, subbands 48-63' % (self.indent))
-			subblock(LSB, INNER, range(48,64), 'L')
+			if not remappedSubbands:
+				print('%s* Recorder 2, slot 1, LSB-Lower/Inner PolyFiX 6 SFP+ 3, LCP, subbands 48-63' % (self.indent))
+				subblock(LSB, INNER, range(48,64), 'L')
+			else:
+				print('%s* Recorder 2, slot 1, LSB-Lower/Inner PolyFiX 6 SFP+ 3, LCP, subbands 48-59 & 28-31' % (self.indent))
+				subblock(LSB, INNER, range(48,60), 'L')
+				subblock(LSB, INNER, range(28,32), 'L')
 			print('%s* Recorder 2, slot 2, LSB-Lower/Inner PolyFiX 6 SFP+ 2, LCP, subbands 32-47' % (self.indent))
 			subblock(LSB, INNER, range(32,48), 'L')
 			print('%s* Recorder 2, slot 3, LSB-Lower/Inner PolyFiX 2 SFP+ 2, RCP, subbands 32-47' % (self.indent))
 			subblock(LSB, INNER, range(32,48), 'R')
-			print('%s* Recorder 2, slot 4, LSB-Lower/Inner PolyFiX 2 SFP+ 3, RCP, subbands 48-63' % (self.indent))
-			subblock(LSB, INNER, range(48,64), 'R')
+			if not remappedSubbands:
+				print('%s* Recorder 2, slot 4, LSB-Lower/Inner PolyFiX 2 SFP+ 3, RCP, subbands 48-63' % (self.indent))
+				subblock(LSB, INNER, range(48,64), 'R')
+			else:
+				print('%s* Recorder 2, slot 4, LSB-Lower/Inner PolyFiX 2 SFP+ 3, RCP, subbands 48-59 & 28-31' % (self.indent))
+				subblock(LSB, INNER, range(48,60), 'R')
+				subblock(LSB, INNER, range(28,32), 'R')
 
 		if 3 in recorders:
 
@@ -274,14 +289,24 @@ class NoemaVexFreqGenerator:
 
 		if 4 in recorders:
 
-			print('%s* Recorder 4, slot 1, USB-Lower/Inner PolyFiX 7 SFP+ 3, LCP, subbands 48-63' % (self.indent))
-			subblock(USB, INNER, range(48,64), 'L')
+			if not remappedSubbands:
+				print('%s* Recorder 4, slot 1, USB-Lower/Inner PolyFiX 7 SFP+ 3, LCP, subbands 48-63' % (self.indent))
+				subblock(USB, INNER, range(48,64), 'L')
+			else:
+				print('%s* Recorder 4, slot 1, USB-Lower/Inner PolyFiX 7 SFP+ 3, LCP, subbands 48-59 & 28-31' % (self.indent))
+				subblock(USB, INNER, range(48,60), 'L')
+				subblock(USB, INNER, range(28,32), 'L')
 			print('%s* Recorder 4, slot 2, USB-Lower/Inner PolyFiX 7 SFP+ 2, LCP, subbands 32-47' % (self.indent))
 			subblock(USB, INNER, range(32,48), 'L')
 			print('%s* Recorder 4, slot 4, USB-Lower/Inner PolyFiX 3 SFP+ 2, RCP, subbands 32-47' % (self.indent))
 			subblock(USB, INNER, range(32,48), 'R')
-			print('%s* Recorder 4, slot 3, USB-Lower/Inner PolyFiX 3 SFP+ 3, RCP, subbands 48-63' % (self.indent))
-			subblock(USB, INNER, range(48,64), 'R')
+			if not remappedSubbands:
+				print('%s* Recorder 4, slot 3, USB-Lower/Inner PolyFiX 3 SFP+ 3, RCP, subbands 48-63' % (self.indent))
+				subblock(USB, INNER, range(48,64), 'R')
+			else:
+				print('%s* Recorder 4, slot 3, USB-Lower/Inner PolyFiX 3 SFP+ 3, RCP, subbands 48-59 & 28-31' % (self.indent))
+				subblock(USB, INNER, range(48,60), 'R')
+				subblock(USB, INNER, range(28,32), 'R')
 
 		print('enddef;')
 
