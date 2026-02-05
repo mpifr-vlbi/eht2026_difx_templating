@@ -16,6 +16,7 @@ bonn: aa_b1 aa_b4 ax_b1 ax_b4 gl_b1 gl_b4 mm_b1 mm_b4 mg_b1 mg_b4 \
 hays: pv_b2 pv_b3
 
 ## ALMA - infos by email
+# todo
 
 aa_b1:
 	$(call mk6dir2filelist,mark6-10,12,EHT%1231,ALMA_b1.12.filelist)
@@ -34,6 +35,7 @@ aa_b4:
 	$(call mk6dir2filelist,mark6-10,34,MPI%1205,ALMA_b4.34.filelist)
 
 ## APEX - https://eventhorizontelescope.mywikis.wiki/wiki/APEX_setup_2026
+# todo
 
 ax_b1:
 	$(call mk6dir2filelist,mark6-09,12,EHT%0078,APEX_b1.12.filelist)
@@ -52,6 +54,7 @@ ax_b4:
 	$(call mk6dir2filelist,mark6-10,34,BHC%0109,APEX_b4.34.filelist)
 
 ## GLT - https://eventhorizontelescope.mywikis.wiki/wiki/GLT_(Gl)_setup_2026
+# todo
 
 gl_b1:
 	$(call mk6dir2filelist,mark6-06,12,EHT%1101,GLT_b1.12.filelist)
@@ -70,6 +73,7 @@ gl_b4:
 	$(call mk6dir2filelist,mark6-06,34,EHT%1225,GLT_b4.34.filelist)
 
 ## JCMT - https://eventhorizontelescope.mywikis.wiki/wiki/JCMT_setup_2026
+# todo
 
 mm_b1:
 	$(call mk6dir2filelist,mark6-11,12,EHT%0084,JCMT_b1.12.filelist)
@@ -88,6 +92,7 @@ mm_b4:
 	$(call mk6dir2filelist,mark6-08,34,SHAO%008,JCMT_b4.34.filelist)
 
 ## Kitt Peak - https://eventhorizontelescope.mywikis.wiki/wiki/KP_setup_2026
+# todo
 
 kt_b1:
 	$(call mk6dir2filelist,mark6-02,12,EHT%1235,KT_b1.12.filelist)
@@ -106,6 +111,7 @@ kt_b4:
 	$(call mk6dir2filelist,mark6-02,34,EHT%1258,KT_b4.34.filelist)
 
 ## LMT - https://eventhorizontelescope.mywikis.wiki/wiki/LMT_2026_Apr_setup
+# todo
 
 lm_b1:
 	$(call mk6dir2filelist,mark6-07,12,BHC%0001,LMT_b4.12.filelist)
@@ -118,30 +124,31 @@ lm_b4:
 ## NOEMA - https://eventhorizontelescope.mywikis.wiki/wiki/NOEMA_setup_2026
 	
 nn_b1:
-	$(call mk6dir2filelist,mark6-09,1,IRAM%005,NOEMA_b1.1.filelist)
-	$(call mk6dir2filelist,mark6-09,2,IRAM%006,NOEMA_b1.2.filelist)
-	$(call mk6dir2filelist,mark6-09,3,IRAM%007,NOEMA_b1.3.filelist)
-	$(call mk6dir2filelist,mark6-09,4,IRAM%008,NOEMA_b1.4.filelist)
+	$(call mk6dir2filelist,mark6-09,1,MPI%6411,NOEMA_b1.1.filelist)
+	$(call mk6dir2filelist,mark6-09,2,MPI%6412,NOEMA_b1.2.filelist)
+	$(call mk6dir2filelist,mark6-09,3,MPI%6413,NOEMA_b1.3.filelist)
+	$(call mk6dir2filelist,mark6-09,4,MPI%6414,NOEMA_b1.4.filelist)
 
 nn_b2:
-	$(call mk6dir2filelist,mark6-09,1,MPI%8010,NOEMA_b2.1.filelist)
-	$(call mk6dir2filelist,mark6-09,2,MPI%8035,NOEMA_b2.2.filelist)
-	$(call mk6dir2filelist,mark6-09,3,MPI%8057,NOEMA_b2.3.filelist)
-	$(call mk6dir2filelist,mark6-09,4,MPI%8058,NOEMA_b2.4.filelist)
+	$(call mk6dir2filelist,mark6-09,1,MPI%6415,NOEMA_b2.1.filelist)
+	$(call mk6dir2filelist,mark6-09,2,MPI%6416,NOEMA_b2.2.filelist)
+	$(call mk6dir2filelist,mark6-09,3,MPI%6417,NOEMA_b2.3.filelist)
+	$(call mk6dir2filelist,mark6-09,4,MPI%6426,NOEMA_b2.4.filelist)
 
 nn_b3:
-	$(call mk6dir2filelist,mark6-09,1,SHAO%016,NOEMA_b3.1.filelist)
-	$(call mk6dir2filelist,mark6-09,2,SHAO%037,NOEMA_b3.2.filelist)
-	$(call mk6dir2filelist,mark6-09,3,SHAO%049,NOEMA_b3.3.filelist)
-	$(call mk6dir2filelist,mark6-09,4,SHAO%050,NOEMA_b3.4.filelist)
+	$(call mk6dir2filelist,mark6-09,1,MPI%6427,NOEMA_b3.1.filelist)
+	$(call mk6dir2filelist,mark6-09,2,MPI%6428,NOEMA_b3.2.filelist)
+	$(call mk6dir2filelist,mark6-09,3,MPI%6432,NOEMA_b3.3.filelist)
+	$(call mk6dir2filelist,mark6-09,4,MPI%6433,NOEMA_b3.4.filelist)
 
 nn_b4:
-	$(call mk6dir2filelist,mark6-09,1,BHC%0144,NOEMA_b4.1.filelist)
-	$(call mk6dir2filelist,mark6-09,2,BHC%0145,NOEMA_b4.2.filelist)
-	$(call mk6dir2filelist,mark6-09,3,BHC%0146,NOEMA_b4.3.filelist)
-	$(call mk6dir2filelist,mark6-09,4,BHC%0147,NOEMA_b4.4.filelist)
+	$(call mk6dir2filelist,mark6-09,1,MPI%6442,NOEMA_b4.1.filelist)
+	$(call mk6dir2filelist,mark6-09,2,MPI%6444,NOEMA_b4.2.filelist)
+	$(call mk6dir2filelist,mark6-09,3,MPI%6445,NOEMA_b4.3.filelist)
+	$(call mk6dir2filelist,mark6-09,4,BHC%0097,NOEMA_b4.4.filelist)
 
 ## Pico - https://eventhorizontelescope.mywikis.wiki/wiki/IRAM30m_setup_2026
+# todo
 
 pv_b1:
 	$(call mk6dir2filelist,mark6-05,12,BHC%0078,Pico_b1.12.filelist)
@@ -160,8 +167,17 @@ pv_b4:
 	$(call mk6dir2filelist,mark6-05,34,MPI%6422,Pico_b4.34.filelist)
 
 ## SMA APHIDS - https://eventhorizontelescope.mywikis.wiki/wiki/SMA_setup_2026
+# todo
 
 sw_b1: # todo post-APHIDS MSNs
+	#$(call mk6dir2filelist,mark6-05,12,...,SMA_b1.12.filelist)
+	#$(call mk6dir2filelist,mark6-05,34,...,SMA_b1.34.filelist)
+
+sw_b2: # todo post-APHIDS MSNs
+	#$(call mk6dir2filelist,mark6-05,12,...,SMA_b1.12.filelist)
+	#$(call mk6dir2filelist,mark6-05,34,...,SMA_b1.34.filelist)
+
+sw_b3: # todo post-APHIDS MSNs
 	#$(call mk6dir2filelist,mark6-05,12,...,SMA_b1.12.filelist)
 	#$(call mk6dir2filelist,mark6-05,34,...,SMA_b1.34.filelist)
 
@@ -170,6 +186,7 @@ sw_b4: # todo post-APHIDS MSNs
 	#$(call mk6dir2filelist,mark6-05,34,...,SMA_b4.34.filelist)
 
 ## SMT - https://eventhorizontelescope.mywikis.wiki/wiki/SMT_setup_2026
+# todo
 
 mg_b1:
 	$(call mk6dir2filelist,mark6-04,12,EHT%1205,SMT_b1.12.filelist)
@@ -188,8 +205,17 @@ mg_b4:
 	$(call mk6dir2filelist,mark6-04,34,EHT%1217,SMT_b4.34.filelist)
 
 ## SPT
+# todo
 
 sz_b1: # todo
+	#$(call mk6dir2filelist,mark6-04,12,ALMA%029,SPT_b1.12.filelist)
+	#$(call mk6dir2filelist,mark6-04,34,ALMA%031,SPT_b1.34.filelist)
+
+sz_b2: # todo
+	#$(call mk6dir2filelist,mark6-04,12,ALMA%029,SPT_b1.12.filelist)
+	#$(call mk6dir2filelist,mark6-04,34,ALMA%031,SPT_b1.34.filelist)
+
+sz_b3: # todo
 	#$(call mk6dir2filelist,mark6-04,12,ALMA%029,SPT_b1.12.filelist)
 	#$(call mk6dir2filelist,mark6-04,34,ALMA%031,SPT_b1.34.filelist)
 
