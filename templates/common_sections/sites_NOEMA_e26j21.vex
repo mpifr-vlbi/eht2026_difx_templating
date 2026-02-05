@@ -1,1 +1,8 @@
-Error: Requested track e26j21 unknown by Class ehtTrackList (currently known: e25j21 e25c04 e25a06 e25f08 e25e09 c251a c251b c251c c251d c251z). 
+def NOEMA;
+     site_name = NOEMA;
+     site_ID = Nn;
+     site_type = fixed;
+     site_velocity =  0.0 m/yr : 0.0 m/yr : 0.0 m/yr;
+     site_position_epoch = 0;
+     site_position = 4523887.2529 m : 468025.3224 m : 4460427.5004 m; * position of pad N020
+enddef;
