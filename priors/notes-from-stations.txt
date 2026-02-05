@@ -2,7 +2,8 @@
 == Dress Rehearsal e26j21 ==
 
   NOEMA
-    Referenzantenne war auf Pad N20. Drift des Masers vs. GPS war klein (https://eventhorizontelescope.mywikis.wiki/wiki/NOEMA_setup_2026).
+    Reference antenna was on pad N020, drift of H-maser wrt GPS was small (https://eventhorizontelescope.mywikis.wiki/wiki/NOEMA_setup_2026).
+    New network switch installed prior to e26j21 caused initial issues, some scans in some bands not recorded.
   Pico
     ?
   GLT
