@@ -1,0 +1,38 @@
+
+== Dress Rehearsal e26j21 ==
+
+  $ ../scripts/vlbimonitordb/report_clock_model_2025.py  --start-time=2026y020d01h01m01s --stop-time 2026y022d12h01m01s
+  SMTO
+  band 3: rate = -0.241 +/- 0.006 ps/s, offset = -23.532 ns @ 2026y020d01h01m35s [2186 pts]
+  band 3: rate = -0.241 +/- 0.006 ps/s, offset = -23.532 ns @ 2026y020d01h01m35s [2186 pts]
+  band 3: rate = -0.241 +/- 0.006 ps/s, offset = -23.532 ns @ 2026y020d01h01m35s [2186 pts]
+  band 3: rate = -0.241 +/- 0.006 ps/s, offset = -23.532 ns @ 2026y020d01h01m35s [2186 pts]
+  JCMT
+    (no data for site)
+  APEX
+    (no data for site)
+  GLT
+    (no data for site)
+  SPT
+    (no data for site)
+  LMT
+    (no data for site)
+  PICO
+    (no data for site)
+  KP
+    (no data for site)
+
+  Separate station data
+
+    ALMA  : ?
+    APEX  : not in e26j21
+    NOEMA : -0.005 ns/day = -0.005e-9 / (24*60*60) ~= -5.7870e-17 and way below 1e-12 s/s i.e. practically 0
+            https://eventhorizontelescope.mywikis.wiki/wiki/NOEMA_setup_2026
+    Pico  : ?
+    SMA   : ?
+    SPT   : ?
+
+
+== Movie Campaign ==
+
+tbd

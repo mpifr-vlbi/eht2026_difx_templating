@@ -1,0 +1,24 @@
+
+== Dress Rehearsal e26j21 ==
+
+  NOEMA
+    Referenzantenne war auf Pad N20. Drift des Masers vs. GPS war klein (https://eventhorizontelescope.mywikis.wiki/wiki/NOEMA_setup_2026).
+  Pico
+    ?
+  GLT
+    ?
+
+  $ noemaPadPositions.py --vex N020
+  def NOEMA;
+       site_name = NOEMA;
+       site_ID = Nn;
+       site_type = fixed;
+       site_velocity =  0.0 m/yr : 0.0 m/yr : 0.0 m/yr;
+       site_position_epoch = 0;
+       site_position = 4523887.2529 m : 468025.3224 m : 4460427.5004 m; * position of pad N020
+  enddef;
+
+
+== Movie Campaign ==
+
+tbd
