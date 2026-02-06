@@ -16,6 +16,7 @@ singleScan = True
 singleSetup = True
 # maxReadSize = 67108864
 
+antennas=Nn,Pv
 
 #==================================================================
 # ANTENNA DATA
@@ -83,23 +84,31 @@ DATASTREAM Ky_ds34 { filelist = KY_b4.34.filelist }
 DATASTREAM Lmt_ds12 { filelist = LMT_b4.12.filelist }
 DATASTREAM Lmt_ds34 { filelist = LMT_b4.34.filelist }
 DATASTREAM Nn_ds1 {
-  filelist = NOEMA_b4.1.filelist
-  format = INTERLACEDVDIF/0:1:2:3/8224/2
+  # filelist = NOEMA_b4.1.filelist
+  # format = INTERLACEDVDIF/8:9:10:11/8224/2 # b4 vdif e26j21
+  filelist = NOEMA_b3.1.filelist
+  format = INTERLACEDVDIF/0:1:2:3/8224/2 # b3 vdif e26j21
   nBand = 16
 }
 DATASTREAM Nn_ds2 {
-  filelist = NOEMA_b4.2.filelist
-  format = INTERLACEDVDIF/0:1:2:3/8224/2
+  # filelist = NOEMA_b4.2.filelist
+  # format = INTERLACEDVDIF/4:5:6:7/8224/2 # b4 vdif e26j21
+  filelist = NOEMA_b3.2.filelist
+  format = INTERLACEDVDIF/0:1:2:3/8224/2 # b3 vdif e26j21
   nBand = 16
 }
 DATASTREAM Nn_ds3 {
-  filelist = NOEMA_b4.3.filelist
-  format = INTERLACEDVDIF/0:1:2:3/8224/2
+  # filelist = NOEMA_b4.3.filelist
+  # format = INTERLACEDVDIF/4:5:6:7/8224/2 # b4 vdif e26j21
+  filelist = NOEMA_b3.3.filelist
+  format = INTERLACEDVDIF/0:1:2:3/8224/2 # b3 vdif e26j21
   nBand = 16
 }
 DATASTREAM Nn_ds4 {
-  filelist = NOEMA_b4.4.filelist
-  format = INTERLACEDVDIF/0:1:2:3/8224/2
+  # filelist = NOEMA_b4.4.filelist
+  # format = INTERLACEDVDIF/8:9:10:11/8224/2 # b4 vdif e26j21
+  filelist = NOEMA_b3.4.filelist
+  format = INTERLACEDVDIF/0:1:2:3/8224/2 # b3 vdif e26j21
   nBand = 16
 }
 DATASTREAM Pv_ds12 { filelist = Pico_b4.12.filelist }
@@ -116,47 +125,52 @@ DATASTREAM Spt_ds34 { filelist = SPT_b4.34.filelist }
 # CORRELATION CONFIG
 #==================================================================
 
-OUTPUTBAND outputbands {
-  addOutputBand = freq@228162.796875/bw@58.0
-  addOutputBand = freq@228221.390625/bw@58.0
-  addOutputBand = freq@228279.984375/bw@58.0
-  addOutputBand = freq@228338.578125/bw@58.0
-  addOutputBand = freq@228397.171875/bw@58.0
-  addOutputBand = freq@228455.765625/bw@58.0
-  addOutputBand = freq@228514.359375/bw@58.0
-  addOutputBand = freq@228572.953125/bw@58.0
-  addOutputBand = freq@228631.546875/bw@58.0
-  addOutputBand = freq@228690.140625/bw@58.0
-  addOutputBand = freq@228748.734375/bw@58.0
-  addOutputBand = freq@228807.328125/bw@58.0
-  addOutputBand = freq@228865.921875/bw@58.0
-  addOutputBand = freq@228924.515625/bw@58.0
-  addOutputBand = freq@228983.109375/bw@58.0
-  addOutputBand = freq@229041.703125/bw@58.0
-  addOutputBand = freq@229100.296875/bw@58.0
-  addOutputBand = freq@229158.890625/bw@58.0
-  addOutputBand = freq@229217.484375/bw@58.0
-  addOutputBand = freq@229276.078125/bw@58.0
-  addOutputBand = freq@229334.671875/bw@58.0
-  addOutputBand = freq@229393.265625/bw@58.0
-  addOutputBand = freq@229451.859375/bw@58.0
-  addOutputBand = freq@229510.453125/bw@58.0
-  addOutputBand = freq@229569.046875/bw@58.0
-  addOutputBand = freq@229627.640625/bw@58.0
-  addOutputBand = freq@229686.234375/bw@58.0
-  addOutputBand = freq@229744.828125/bw@58.0
-  addOutputBand = freq@229803.421875/bw@58.0
-  addOutputBand = freq@229862.015625/bw@58.0
-  addOutputBand = freq@229920.609375/bw@58.0
-  addOutputBand = freq@229979.203125/bw@58.0
+#OUTPUTBAND outputbands {
+#  addOutputBand = freq@228162.796875/bw@58.0
+#  addOutputBand = freq@228221.390625/bw@58.0
+#  addOutputBand = freq@228279.984375/bw@58.0
+#  addOutputBand = freq@228338.578125/bw@58.0
+#  addOutputBand = freq@228397.171875/bw@58.0
+#  addOutputBand = freq@228455.765625/bw@58.0
+#  addOutputBand = freq@228514.359375/bw@58.0
+#  addOutputBand = freq@228572.953125/bw@58.0
+#  addOutputBand = freq@228631.546875/bw@58.0
+#  addOutputBand = freq@228690.140625/bw@58.0
+#  addOutputBand = freq@228748.734375/bw@58.0
+#  addOutputBand = freq@228807.328125/bw@58.0
+#  addOutputBand = freq@228865.921875/bw@58.0
+#  addOutputBand = freq@228924.515625/bw@58.0
+#  addOutputBand = freq@228983.109375/bw@58.0
+#  addOutputBand = freq@229041.703125/bw@58.0
+#  addOutputBand = freq@229100.296875/bw@58.0
+#  addOutputBand = freq@229158.890625/bw@58.0
+#  addOutputBand = freq@229217.484375/bw@58.0
+#  addOutputBand = freq@229276.078125/bw@58.0
+#  addOutputBand = freq@229334.671875/bw@58.0
+#  addOutputBand = freq@229393.265625/bw@58.0
+#  addOutputBand = freq@229451.859375/bw@58.0
+#  addOutputBand = freq@229510.453125/bw@58.0
+#  addOutputBand = freq@229569.046875/bw@58.0
+#  addOutputBand = freq@229627.640625/bw@58.0
+#  addOutputBand = freq@229686.234375/bw@58.0
+#  addOutputBand = freq@229744.828125/bw@58.0
+#  addOutputBand = freq@229803.421875/bw@58.0
+#  addOutputBand = freq@229862.015625/bw@58.0
+#  addOutputBand = freq@229920.609375/bw@58.0
+#  addOutputBand = freq@229979.203125/bw@58.0
+#}
+
+OUTPUTBAND auto64M {
+   outputBandwidth = 64.0
 }
 
 SETUP zoomSetup {
   numBufferedFFTs = 20
-  tInt = 0.400
+  # tInt = 0.400
+  tInt = 0.200
   # subintNS =  3200000  # terribly slow at MPIfR
   subintNS =  40000000   # by factor 2 zippier correlation at MPIfR
-  FFTSpecRes = 0.015625
+  # FFTSpecRes = 0.015625
   outputSpecRes = 0.5
   xmacLength = 0
   strideLength = 0
@@ -168,5 +182,6 @@ SETUP zoomSetup {
 
 RULE defaultRule {
   setup = zoomSetup
+  # scan = 021-0830
 }
 

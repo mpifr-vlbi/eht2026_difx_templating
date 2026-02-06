@@ -67,7 +67,7 @@ def Nn; * NOEMA
 enddef;
 *
 def Pv;
-  clock_early = 2026y021d06h43m00s : +0.8576 usec : 2026y021d06h43m00s : -0.105e-12;
+  clock_early = 2026y021d06h43m00s: 0.8576 usec: 2026y021d06h43m00s : -0.105e-12;
 enddef;
 *
 def Sz;
@@ -85,8 +85,8 @@ def band6;
      ref $IF = IF_NOMINAL:Nn:Pv:Gl:Ax:Sz:Kt:Lm:Mg:Sw:Mm;
      ref $IF = IF_APEX:Ax;
      ref $IF = IF_ALMA:Aa;
-     ref $BBC = BBC_COMMON:Sz:Kt:Gl:Mg:Sw:Mm:Nn;
-     ref $BBC = BBC_POLSWAP:Lm:Ax:Pv;
+     ref $BBC = BBC_COMMON:Sz:Kt:Gl:Mg:Sw:Mm:Nn:Pv;
+     ref $BBC = BBC_POLSWAP:Lm:Ax;
      ref $BBC = BBC_ALMA:Aa;
      ref $FREQ = FREQ_COMMON:Sz:Kt:Lm:Mg:Sw:Mm;
      ref $FREQ = FREQ_DBBC3_AX:Ax;
