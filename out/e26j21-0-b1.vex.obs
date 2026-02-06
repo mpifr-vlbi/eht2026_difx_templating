@@ -63,12 +63,11 @@ def Mg; * SMT
 enddef;
 *
 def Nn; * NOEMA
- * https://eventhorizontelescope.mywikis.wiki/wiki/NOEMA_setup_2026
- clock_early = 2026y021d06h43m00s: 0.0 usec: 2026y021d06h43m00s : -0.0002e-12;
+ clock_early = 2026y021d06h43m00s : +12.0 usec : 2026y021d06h43m00s : 0.0e-12;
 enddef;
 *
 def Pv;
-  clock_early = 2026y021d06h43m00s: 0.0 usec: 2026y021d06h43m00s : -0.105e-12;
+  clock_early = 2026y021d06h43m00s : +0.8576 usec : 2026y021d06h43m00s : -0.105e-12;
 enddef;
 *
 def Sz;
