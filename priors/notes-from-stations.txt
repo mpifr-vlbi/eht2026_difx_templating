@@ -19,6 +19,10 @@
        site_position = 4523887.2529 m : 468025.3224 m : 4460427.5004 m; * position of pad N020
   enddef;
 
+  There are two scans from Jan 21 identified for e-transfer:
+      Band 2: No0014: 08:30:00 M87 (Nn, Pv, Gl, Lm, Aa, Mg) -- no LMT (skipped)
+      Band 2: No0031: 10:53:00 3C279 (Lm, Kt, Aa, Mg, Mm) -- no GLT (low elev)
+      20 seconds from beginning of scan No0014 will be transferred from GLT due to available bandwidth (~40 GB)
 
 == Movie Campaign ==
 
