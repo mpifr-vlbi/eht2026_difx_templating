@@ -40,6 +40,12 @@ enddef;
 *
 def Gl;
   clock_early = 2026y021d06h43m00s: 0.0 usec: 2026y021d06h43m00s : -0.109e-12;
+  * clock_early = 2026y021d06h43m00s: +24.0 usec: 2026y021d06h43m00s : -0.109e-12;
+  * clock_early = 2026y021d06h43m00s: -24.0 usec: 2026y021d06h43m00s : -0.109e-12;
+  * clock_early = 2026y021d06h43m00s: -45.0 usec: 2026y021d06h43m00s : -0.109e-12;
+  * clock_early = 2026y021d06h43m00s: +45.0 usec: 2026y021d06h43m00s : -0.109e-12;
+  * clock_early = 2026y021d06h43m00s: +1.0 sec: 2026y021d06h43m00s : -0.109e-12;
+  * clock_early = 2026y021d06h43m00s: -1.0 sec: 2026y021d06h43m00s : -0.109e-12;
 enddef;
 *
 def Kt;
@@ -67,7 +73,7 @@ def Nn; * NOEMA
 enddef;
 *
 def Pv;
-  clock_early = 2026y021d06h43m00s : +0.8576 usec : 2026y021d06h43m00s : -0.105e-12;
+  clock_early = 2026y021d06h43m00s: +0.8576 usec: 2026y021d06h43m00s : -0.105e-12;
 enddef;
 *
 def Sz;
@@ -747,6 +753,7 @@ enddef;
 $FREQ;
 *
 def FREQ_COMMON;
+     * EHT230G band 2 nominal is 214.100G USB
      sample_rate =  4096.000 Ms/sec;
      chan_def = &B:214100.000 MHz : U :2048.00 MHz : &CH01 : &BBC01 : &NoCal; * LCP
      chan_def = &B:214100.000 MHz : U :2048.00 MHz : &CH02 : &BBC02 : &NoCal; * RCP
@@ -766,8 +773,16 @@ enddef;
 *
 def FREQ_GLT;
      sample_rate =  4096.000 Ms/sec;
-     chan_def = &B:213911.000 MHz : U : 2048.00 MHz : &CH01 : &BBC01 : &NoCal; * LCP
-     chan_def = &B:213911.000 MHz : U : 2048.00 MHz : &CH02 : &BBC02 : &NoCal; * RCP
+     * chan_def = &B:213911.000 MHz : U : 2048.00 MHz : &CH01 : &BBC01 : &NoCal; * LCP
+     * chan_def = &B:213911.000 MHz : U : 2048.00 MHz : &CH02 : &BBC02 : &NoCal; * RCP
+     *
+     * No fringes:
+     chan_def = &B:214100.000 MHz : U :2048.00 MHz : &CH01 : &BBC01 : &NoCal; * LCP
+     chan_def = &B:216148.000 MHz : L :2048.00 MHz : &CH02 : &BBC02 : &NoCal; * RCP
+     *
+     * Ref setup from EHT 2024 fringes:
+     * chan_def = &B:214100.000 MHz : U :2048.00 MHz : &CH01 : &BBC01 : &NoCal; * LCP
+     * chan_def = &B:214100.000 MHz : U :2048.00 MHz : &CH02 : &BBC02 : &NoCal; * RCP
 enddef;
 *
 def FREQ_SMA;
