@@ -1,0 +1,30 @@
+# simplified for fringe check with NOEMA, non-ALMA
+OUTPUTBAND noemaFreqs {
+  addOutputBand = freq@212364.00/bw@64.0
+  addOutputBand = freq@212428.00/bw@64.0
+  addOutputBand = freq@212492.00/bw@64.0
+  addOutputBand = freq@212556.00/bw@64.0
+  addOutputBand = freq@212620.00/bw@64.0
+  addOutputBand = freq@212684.00/bw@64.0
+  addOutputBand = freq@212748.00/bw@64.0
+  addOutputBand = freq@212812.00/bw@64.0
+  addOutputBand = freq@212876.00/bw@64.0
+  addOutputBand = freq@212940.00/bw@64.0
+  addOutputBand = freq@213004.00/bw@64.0
+  addOutputBand = freq@213068.00/bw@64.0
+  addOutputBand = freq@213132.00/bw@64.0
+  addOutputBand = freq@213196.00/bw@64.0
+  addOutputBand = freq@213260.00/bw@64.0
+  addOutputBand = freq@213324.00/bw@64.0
+  addOutputBand = freq@213388.00/bw@64.0
+  addOutputBand = freq@213452.00/bw@64.0
+  addOutputBand = freq@213516.00/bw@64.0
+  addOutputBand = freq@213580.00/bw@64.0
+  addOutputBand = freq@213644.00/bw@64.0
+  addOutputBand = freq@213708.00/bw@64.0
+  addOutputBand = freq@213772.00/bw@64.0
+  addOutputBand = freq@213836.00/bw@64.0
+  addOutputBand = freq@213900.00/bw@64.0
+  addOutputBand = freq@213964.00/bw@64.0
+  addOutputBand = freq@214028.00/bw@64.0
+}
