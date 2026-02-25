@@ -32,6 +32,8 @@
     SMA   : ?
     SPT   : ?
 
+    GLT   :  -0.08 ps/s
+             "maser drift rate should still be quite small -- around -0.08 ps/s and stable over weeks" (Lindy)
 
 == Movie Campaign ==
 
