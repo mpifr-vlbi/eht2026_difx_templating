@@ -6,7 +6,7 @@ VEX_rev = 1.5;
 $GLOBAL;
      ref $EXPER = e26a21;
 *                                                      +------------+
-*                         PI revision number:          |    9.0000  |
+*                         PI revision number:          |   11.0000  |
 *                                                      +------------+
 *    mode:       R2DBE
 *------------------------------------------------------------------------------
@@ -14,15 +14,12 @@ $EXPER;
 *
 def e26a21;
      exper_name = e26a21;
-     exper_description = "M87 2026 test";
+     exper_description = "M87 2026 MOVIE Campaign";
      PI_name = "EHTC";
      PI_email = not@an.address;
-*    year, doy: 2026,  21
-*    date     : Wed 21 Jan 2026
-*    MJD      : 61061
-     exper_nominal_start=2026y021d06h43m00s;
-     exper_nominal_stop=2026y021d12h23m00s;
-     target_correlator = HAYSTACK;
+     exper_nominal_start=2026y111d00h48m00s;
+     exper_nominal_stop=2026y111d10h39m00s;
+     target_correlator = shared;
 *    distribute_to  : Sub-bands 1 and 4 to MPIfR, 2 and 3 to Haystack
 enddef;
 *------------------------------------------------------------------------------
