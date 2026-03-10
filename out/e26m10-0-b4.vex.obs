@@ -32,7 +32,7 @@ def Aa;
 enddef;
 *
 def Ax;
-  clock_early = 2026y021d06h43m00s: 0.0 usec: 2026y021d06h43m00s : -0.760e-12;
+  clock_early = 2026y021d06h43m00s: 0.0 usec: 2026y021d06h43m00s : +0.7115e-12;
 enddef;
 *
 def Gl;
@@ -71,6 +71,13 @@ def Sz;
   clock_early = 2026y021d06h43m00s: 0.0 usec: 2026y021d06h43m00s : -0.498e-12;
 enddef;
 *
+def Ky;
+  clock_early = 2026y021d06h43m00s: 0.0 usec: 2026y021d06h43m00s : 0.0e-12;
+enddef;
+*
+def Pc;
+  clock_early = 2026y021d06h43m00s: 0.0 usec: 2026y021d06h43m00s : 0.0e-12;
+enddef;
 def Sw;
   clock_early = 2026y021d06h43m00s: 0.0 usec : 2026y021d06h43m00s : -7e-15;
 enddef;
@@ -198,6 +205,18 @@ def Sz;
      ref $ANTENNA = SPT;
      ref $DAS = 2NONE<;
 enddef;
+*
+def Ky;
+     ref $SITE = KVNYS;
+     ref $ANTENNA = KVNYS;
+     ref $DAS = 2NONE+MARK5B<;
+enddef;
+*
+def Pc;
+     ref $SITE = KVNPC;
+     ref $ANTENNA = KVNPC;
+     ref $DAS = 2NONE+MARK5B<;
+enddef;
 *------------------------------------------------------------------------------
 $ANTENNA;
 *
@@ -285,6 +304,20 @@ def THULE;
      axis_type = az : el;
      antenna_motion = el : 120.0 deg/min : 30 sec;  * 1000.000 deg/sec/sec
      antenna_motion = az : 120.0 deg/min : 30 sec;  * 1000.000 deg/sec/sec
+     axis_offset =    0.00000 m;
+enddef;
+*
+def KVNYS;
+     axis_type = az : el;
+     antenna_motion = el : 177.0 deg/min :  2 sec;  *    3.000 deg/sec/sec
+     antenna_motion = az : 177.0 deg/min :  2 sec;  *    3.000 deg/sec/sec
+     axis_offset =    0.00000 m;
+enddef;
+*
+def KVNPC;
+     axis_type = az : el;
+     antenna_motion = el : 177.0 deg/min :  2 sec;  *    3.000 deg/sec/sec
+     antenna_motion = az : 177.0 deg/min :  2 sec;  *    3.000 deg/sec/sec
      axis_offset =    0.00000 m;
 enddef;
 *------------------------------------------------------------------------------
