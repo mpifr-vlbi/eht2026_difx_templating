@@ -457,6 +457,35 @@ def SMAP;
      horizon_map_az =  0.0 deg: 44.0: 45.0: 56.0: 57.0:359.0;
      horizon_map_el =  8.0 deg:  8.0: 24.0: 24.0:  8.0:  8.0;
 enddef;
+*
+def KVNYS;
+     site_type = fixed;
+     site_name = KVNYS;
+     site_ID = Ky;
+*    elev=  121.65 long=-126:56:27. lat= 37:33:54.6
+     site_position =-3042280.90350 m: 4045902.65640 m: 3867374.30870 m;
+     site_velocity =  0.000000   m/yr:  0.000000   m/yr:  0.000000  m/yr;
+*    First line below is VEX standard format.  Use only when readers are ready.
+*    site_position_epoch = 2014y028d;
+     site_position_epoch =   56685;
+     horizon_map_az =  0.0 deg:  5.0: 10.0: 15.0: 25.0: 30.0: 45.0: 65.0: 75.0:
+                                85.0:110.0:112.0:175.0:180.0:200.0:245.0:250.0;
+     horizon_map_el =  3.0 deg:  5.0:  7.0:  9.0:  8.0:  6.0:  7.0:  5.0:  4.0:
+                                 3.0:  6.0:  3.0:  6.0:  7.0:  3.0:  4.0:  3.0;
+enddef;
+*
+def KVNPC;
+     site_type = fixed;
+     site_name = KVNPC;
+     site_ID = Pc;
+*    elev=  541.26 long=-128:26:55. lat= 37:32:00.1
+     site_position =-3149221.05200 m: 3966404.92200 m: 3864830.70100 m;
+     site_velocity =  0.000000   m/yr:  0.000000   m/yr:  0.000000  m/yr;
+*    First line below is VEX standard format.  Use only when readers are ready.
+*    site_position_epoch = 2014y028d;
+     site_position_epoch =   56685;
+enddef;
+*
 def NOEMA;
      site_name = NOEMA;
      site_ID = Nn;
