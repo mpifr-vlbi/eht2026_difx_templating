@@ -71,4 +71,16 @@ def Sz;
      ref $ANTENNA = SPT;
      ref $DAS = 2NONE<;
 enddef;
+*
+def Ky;
+     ref $SITE = KVNYS;
+     ref $ANTENNA = KVNYS;
+     ref $DAS = 2NONE+MARK5B<;
+enddef;
+*
+def Pc;
+     ref $SITE = KVNPC;
+     ref $ANTENNA = KVNPC;
+     ref $DAS = 2NONE+MARK5B<;
+enddef;
 *------------------------------------------------------------------------------
