@@ -1,7 +1,7 @@
 #!/bin/bash
 
 tracklist=`grep TRACKS_230G ../Makefile.inc | sed "s/TRACKS_230G := //g"`
-stations="Aa Ax Gl Nn Pv Lm Kt Mg Mm Sw Sz Ky Pc"
+stations="Aa Ax Gl Pv Lm Kt Mg Mm Sw Sz Ky Pc"
 
 function makeBonnDatadir() {
 	cmd="mkdir /data/"$1
@@ -17,26 +17,23 @@ if true; then
 		for station in ${stations}; do
 			makeBonnDatadir ${track}
 			makeBonnDatadir ${track}/${station}
-			makeBonnDatadir ${track}/${station}/b1/
-			makeBonnDatadir ${track}/${station}/b2/
-			makeBonnDatadir ${track}/${station}/b3/
-			makeBonnDatadir ${track}/${station}/b4/
-			makeBonnDatadir ${track}/${station}/b1/12/
-			makeBonnDatadir ${track}/${station}/b1/34/
-			makeBonnDatadir ${track}/${station}/b2/12/
-			makeBonnDatadir ${track}/${station}/b2/34/
-			makeBonnDatadir ${track}/${station}/b3/12/
-			makeBonnDatadir ${track}/${station}/b3/34/
-			makeBonnDatadir ${track}/${station}/b4/12/
-			makeBonnDatadir ${track}/${station}/b4/34/
-			makeBonnDatadir ${track}/${station}/b1/s12/
-			makeBonnDatadir ${track}/${station}/b1/s34/
-			makeBonnDatadir ${track}/${station}/b2/s12/
-			makeBonnDatadir ${track}/${station}/b2/s34/
-			makeBonnDatadir ${track}/${station}/b3/s12/
-			makeBonnDatadir ${track}/${station}/b3/s34/
-			makeBonnDatadir ${track}/${station}/b4/s12/
-			makeBonnDatadir ${track}/${station}/b4/s34/
+			for band in b1 b2 b3 b4; do
+				makeBonnDatadir ${track}/${station}/${band}/
+				makeBonnDatadir ${track}/${station}/${band}/12
+				makeBonnDatadir ${track}/${station}/${band}/34
+				makeBonnDatadir ${track}/${station}/${band}/s12
+				makeBonnDatadir ${track}/${station}/${band}/s34
+			done
+		done
+		# Special case: NOEMA
+		station=Nn
+		makeBonnDatadir ${track}/${station}
+		for band in b1 b2 b3 b4; do
+			makeBonnDatadir ${track}/${station}/${band}/
+			for slot in 1 2 3 4; do
+				makeBonnDatadir ${track}/${station}/${band}/${slot}/
+				makeBonnDatadir ${track}/${station}/${band}/s${slot}/
+			done
 		done
 	done
 fi
