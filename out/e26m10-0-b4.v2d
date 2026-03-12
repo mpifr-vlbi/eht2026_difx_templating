@@ -1,8 +1,12 @@
 #==================================================================
 # DiFX version 2.9.0 as default
 #
-# Track e26m10 band 4
-# Notes: ...
+# Track e26m10 band 2
+# Notes:
+# - observed at Gl Lm Pv Mm Ax
+# - Pv joined from 069-0611 onwards but bad weather
+# - SMA probably also joined
+# - No ALMA(?), no NOEMA
 #==================================================================
 
 vex = e26m10-0-b4.vex.obs
