@@ -29,6 +29,14 @@ if true; then
 			makeBonnDatadir ${track}/${station}/b3/34/
 			makeBonnDatadir ${track}/${station}/b4/12/
 			makeBonnDatadir ${track}/${station}/b4/34/
+			makeBonnDatadir ${track}/${station}/b1/s12/
+			makeBonnDatadir ${track}/${station}/b1/s34/
+			makeBonnDatadir ${track}/${station}/b2/s12/
+			makeBonnDatadir ${track}/${station}/b2/s34/
+			makeBonnDatadir ${track}/${station}/b3/s12/
+			makeBonnDatadir ${track}/${station}/b3/s34/
+			makeBonnDatadir ${track}/${station}/b4/s12/
+			makeBonnDatadir ${track}/${station}/b4/s34/
 		done
 	done
 fi
