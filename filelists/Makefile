@@ -15,8 +15,10 @@ mk6dir2filelist = grep "^e26" $(M6DIRS)/$(3).filelist | sort -k 2 | sed -e 's/^/
 bonn: aa_b1 aa_b4 ax_b1 ax_b4 gl_b1 gl_b4 mm_b1 mm_b4 mg_b1 mg_b4 \
 	kt_b1 kt_b4 lm_b1 lm_b4 pv_b1 pv_b4 nn_b1 nn_b4 sw_b1 sw_b4 sz_b1 sz_b4
 
-bonn_xfer: ax_b2_beegfs nn_b2_beegfs lm_b2_beegfs mg_b2_beegfs kt_b2_beegfs \
-	pv_b1_beegfs pv_b2_beegfs pv_b3_beegfs mm_b1_beegfs mm_b2_beegfs
+bonn_xfer: ax_b2_beegfs lm_b2_beegfs mg_b2_beegfs kt_b2_beegfs \
+	pv_b1_beegfs pv_b2_beegfs pv_b3_beegfs \
+	mm_b1_beegfs mm_b2_beegfs mm_b3_beegfs mm_b4_beegfs \
+	nn_b1_beegfs nn_b2_beegfs
 
 hays: pv_b2 pv_b3
 
@@ -37,6 +39,12 @@ pv_b2_beegfs:
 pv_b3_beegfs:
 	vsum -s /data/e26[ma]??/Pv/b3/*12/*.vdif > Pico_b3.12.filelist-beegfs
 	vsum -s /data/e26[ma]??/Pv/b3/*34/*.vdif > Pico_b3.34.filelist-beegfs
+
+nn_b1_beegfs:
+	vsum -s /data/e26[ma]??/Nn/b1/*1/*.vdif > NOEMA_b1.1.filelist-beegfs
+	vsum -s /data/e26[ma]??/Nn/b1/*2/*.vdif > NOEMA_b1.2.filelist-beegfs
+	vsum -s /data/e26[ma]??/Nn/b1/*3/*.vdif > NOEMA_b1.3.filelist-beegfs
+	vsum -s /data/e26[ma]??/Nn/b1/*4/*.vdif > NOEMA_b1.4.filelist-beegfs
 
 nn_b2_beegfs:
 	vsum -s /data/e26[ma]??/Nn/b2/*1/*.vdif > NOEMA_b2.1.filelist-beegfs
@@ -61,6 +69,14 @@ mm_b1_beegfs:
 	vsum -s /data/e26[ma]??/Mm/b1/*34/*.vdif > JCMT_b1.34.filelist-beegfs
 
 mm_b2_beegfs:
+	vsum -s /data/e26[ma]??/Mm/b2/*12/*.vdif > JCMT_b2.12.filelist-beegfs
+	vsum -s /data/e26[ma]??/Mm/b2/*34/*.vdif > JCMT_b2.34.filelist-beegfs
+
+mm_b3_beegfs:
+	vsum -s /data/e26[ma]??/Mm/b2/*12/*.vdif > JCMT_b2.12.filelist-beegfs
+	vsum -s /data/e26[ma]??/Mm/b2/*34/*.vdif > JCMT_b2.34.filelist-beegfs
+
+mm_b4_beegfs:
 	vsum -s /data/e26[ma]??/Mm/b2/*12/*.vdif > JCMT_b2.12.filelist-beegfs
 	vsum -s /data/e26[ma]??/Mm/b2/*34/*.vdif > JCMT_b2.34.filelist-beegfs
 
