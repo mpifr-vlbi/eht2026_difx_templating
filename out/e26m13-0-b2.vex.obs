@@ -48,7 +48,7 @@ def Ky;
 enddef;
 *
 def Lm;
-  clock_early = 2026y021d06h43m00s: 0.0 usec: 2026y021d06h43m00s : +0.376e-12;
+  clock_early = 2026y021d06h43m00s: 0.0 usec: 2026y021d06h43m00s : -0.523321e-12;
 enddef;
 *
 def Mm; * JCMT
@@ -60,7 +60,7 @@ def Mg; * SMT
 enddef;
 *
 def Nn; * NOEMA
- clock_early = 2026y021d06h43m00s: 0.0 usec: 2026y021d06h43m00s : 0.0e-12;
+ clock_early = 2026y021d06h43m00s: 12.0 usec: 2026y021d06h43m00s : 0.0e-12;
 enddef;
 *
 def Pv;
@@ -492,7 +492,8 @@ def NOEMA;
      site_type = fixed;
      site_velocity =  0.0 m/yr : 0.0 m/yr : 0.0 m/yr;
      site_position_epoch = 0;
-     * TODO: actual pad is tbd, and known once observations have started
+     * https://eventhorizontelescope.mywikis.wiki/wiki/NOEMA_setup_2026
+     * 13-Mar-2026 Reference antenna A02 on pad N020, 10 phased antennas
      site_position = 4523887.2529 m : 468025.3224 m : 4460427.5004 m; * position of pad N020
 enddef;
 *------------------------------------------------------------------------------
