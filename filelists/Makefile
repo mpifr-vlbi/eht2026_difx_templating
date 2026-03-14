@@ -15,14 +15,19 @@ mk6dir2filelist = grep "^e26" $(M6DIRS)/$(3).filelist | sort -k 2 | sed -e 's/^/
 bonn: aa_b1 aa_b4 ax_b1 ax_b4 gl_b1 gl_b4 mm_b1 mm_b4 mg_b1 mg_b4 \
 	kt_b1 kt_b4 lm_b1 lm_b4 pv_b1 pv_b4 nn_b1 nn_b4 sw_b1 sw_b4 sz_b1 sz_b4
 
-bonn_xfer: ax_b2_beegfs lm_b2_beegfs mg_b2_beegfs kt_b2_beegfs \
-	pv_b1_beegfs pv_b2_beegfs pv_b3_beegfs \
-	mm_b1_beegfs mm_b2_beegfs mm_b3_beegfs mm_b4_beegfs \
-	nn_b1_beegfs nn_b2_beegfs
-
 hays: pv_b2 pv_b3
 
 ## E-transfer
+
+bonn_xfer: ax_beegfs lm_beegfs pv_beegfs mg_beegfs mm_beegfs nn_beegfs kt_beegfs
+
+ax_beegfs: ax_b2_beegfs
+pv_beegfs: pv_b1_beegfs pv_b2_beegfs pv_b3_beegfs
+nn_beegfs: nn_b1_beegfs nn_b2_beegfs
+lm_beegfs: lm_b1_beegfs lm_b2_beegfs
+mg_beegfs: mg_b1_beegfs mg_b2_beegfs mg_b3_beegfs
+mm_beegfs: mm_b1_beegfs mm_b2_beegfs mm_b3_beegfs mm_b4_beegfs
+kt_beegfs: kt_b2_beegfs
 
 ax_b2_beegfs:
 	vsum -s /data/e26[ma]??/Ax/b2/*12/*.vdif > APEX_b2.12.filelist-beegfs
@@ -52,6 +57,10 @@ nn_b2_beegfs:
 	vsum -s /data/e26[ma]??/Nn/b2/*3/*.vdif > NOEMA_b2.3.filelist-beegfs
 	vsum -s /data/e26[ma]??/Nn/b2/*4/*.vdif > NOEMA_b2.4.filelist-beegfs
 
+lm_b1_beegfs:
+	vsum -s /data/e26[ma]??/Lm/b1/*12/*.vdif > LMT_b1.12.filelist-beegfs
+	vsum -s /data/e26[ma]??/Lm/b1/*34/*.vdif > LMT_b1.34.filelist-beegfs
+
 lm_b2_beegfs:
 	vsum -s /data/e26[ma]??/Lm/b2/*12/*.vdif > LMT_b2.12.filelist-beegfs
 	vsum -s /data/e26[ma]??/Lm/b2/*34/*.vdif > LMT_b2.34.filelist-beegfs
@@ -60,9 +69,17 @@ kt_b2_beegfs:
 	vsum -s /data/e26[ma]??/Kt/b2/*12/*.vdif > KT_b2.12.filelist-beegfs
 	vsum -s /data/e26[ma]??/Kt/b2/*34/*.vdif > KT_b2.34.filelist-beegfs
 
+mg_b1_beegfs:
+	vsum -s /data/e26[ma]??/Mg/b1/*12/*.vdif > SMT_b1.12.filelist-beegfs
+	vsum -s /data/e26[ma]??/Mg/b1/*34/*.vdif > SMT_b1.34.filelist-beegfs
+
 mg_b2_beegfs:
 	vsum -s /data/e26[ma]??/Mg/b2/*12/*.vdif > SMT_b2.12.filelist-beegfs
 	vsum -s /data/e26[ma]??/Mg/b2/*34/*.vdif > SMT_b2.34.filelist-beegfs
+
+mg_b3_beegfs:
+	vsum -s /data/e26[ma]??/Mg/b3/*12/*.vdif > SMT_b3.12.filelist-beegfs
+	vsum -s /data/e26[ma]??/Mg/b3/*34/*.vdif > SMT_b3.34.filelist-beegfs
 
 mm_b1_beegfs:
 	vsum -s /data/e26[ma]??/Mm/b1/*12/*.vdif > JCMT_b1.12.filelist-beegfs
