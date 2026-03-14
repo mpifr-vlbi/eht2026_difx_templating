@@ -35,6 +35,16 @@
     GLT   :  -0.08 ps/s
              "maser drift rate should still be quite small -- around -0.08 ps/s and stable over weeks" (Lindy)
 
-== Movie Campaign ==
+== Monitoring Campaign ==
 
 tbd
+
+  $ ../scripts/vlbimonitordb/report_clock_model_2025.py --bands 3 --start-time=2026y060d01h01m01s --stop-time 2026y074d12h01m01s
+
+  JCMT
+     band 3: rate = +4.054 +/- 0.000 ps/s, offset = +18342.625 ns @ 2026y060d01h01m18s [17687 pts]
+  LMT
+     band 3: rate = -0.223 +/- 0.000 ps/s, offset = -338.666 ns @ 2026y060d01h01m39s [18546 pts]
+
+  KP  nearly zero, +0.006 ps/s
+  SMT nearly zero, +0.007 ps/s
