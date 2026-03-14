@@ -2,7 +2,8 @@
 # DiFX version 2.9.0 as default
 #
 # Track e26m13 band 3
-# Notes: ...
+# Notes:
+# - JCMT, SMA did not observe
 #==================================================================
 
 vex = e26m13-0-b3.vex.obs
