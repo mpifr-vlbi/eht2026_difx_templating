@@ -90,12 +90,12 @@ mm_b2_beegfs:
 	vsum -s /data/e26[ma]??/Mm/b2/*34/*.vdif > JCMT_b2.34.filelist-beegfs
 
 mm_b3_beegfs:
-	vsum -s /data/e26[ma]??/Mm/b2/*12/*.vdif > JCMT_b3.12.filelist-beegfs
-	vsum -s /data/e26[ma]??/Mm/b2/*34/*.vdif > JCMT_b3.34.filelist-beegfs
+	vsum -s /data/e26[ma]??/Mm/b3/*12/*.vdif > JCMT_b3.12.filelist-beegfs
+	vsum -s /data/e26[ma]??/Mm/b3/*34/*.vdif > JCMT_b3.34.filelist-beegfs
 
 mm_b4_beegfs:
-	vsum -s /data/e26[ma]??/Mm/b2/*12/*.vdif > JCMT_b4.12.filelist-beegfs
-	vsum -s /data/e26[ma]??/Mm/b2/*34/*.vdif > JCMT_b4.34.filelist-beegfs
+	vsum -s /data/e26[ma]??/Mm/b4/*12/*.vdif > JCMT_b4.12.filelist-beegfs
+	vsum -s /data/e26[ma]??/Mm/b4/*34/*.vdif > JCMT_b4.34.filelist-beegfs
 
 
 ## ALMA - infos by email
