@@ -32,4 +32,10 @@ checking b1 b3 b4 and adding this e26m10 Ax chan_def exception into the template
 
 So far all-nominal.
 
+## e26m17
 
+## e26m20
+
+SMA/JCMT adjusted their H-maser tuning after e26m17, rate break, tbd
+
+##
