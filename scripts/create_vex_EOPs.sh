@@ -13,7 +13,6 @@ pushd $SCRIPT_DIR  2>&1 > /dev/null
 ./geteop.pl 2026-077  5 $OUTDIR/eop_e26m20.vex  # e26m20.vex: year, doy: 2026,  79
 ./geteop.pl 2026-081  5 $OUTDIR/eop_e26m24.vex  # e26m24.vex: year, doy: 2026,  83
 ./geteop.pl 2026-084  5 $OUTDIR/eop_e26m27.vex  # e26m27.vex: year, doy: 2026,  86
-./geteop.pl 2026-088  5 $OUTDIR/eop_e26m31.vex  # e26m31.vex: year, doy: 2026,  90
 
 ./geteop.pl 2026-091  5 $OUTDIR/eop_e26a03.vex  # e26a03.vex: year, doy: 2026,  93
 ./geteop.pl 2026-095  5 $OUTDIR/eop_e26a07.vex  # e26a07.vex: year, doy: 2026,  97
