@@ -33,7 +33,7 @@ enddef;
 ** include <tracks.vex>
 ** include <if.vex>
 ** include <bbc.vex>
-** include <freqs.vex>
+** include <freqs_e26m10.vex>
 ** include <freqs_NOEMA.vex>
 ** include <freqs_ALMA.vex>
 ** include <phasecal.vex>
