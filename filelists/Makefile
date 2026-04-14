@@ -21,6 +21,9 @@ hays: pv_b2 pv_b3
 
 bonn_xfer: ax_beegfs lm_beegfs pv_beegfs mg_beegfs mm_beegfs nn_beegfs kt_beegfs
 
+# For NOEMA-Pico checks
+bonn_check: nn_beegfs pv_beegfs
+
 ax_beegfs: ax_b2_beegfs
 pv_beegfs: pv_b1_beegfs pv_b2_beegfs pv_b3_beegfs
 nn_beegfs: nn_b1_beegfs nn_b2_beegfs
