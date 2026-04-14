@@ -25,8 +25,8 @@ bonn_xfer: ax_beegfs lm_beegfs pv_beegfs mg_beegfs mm_beegfs nn_beegfs kt_beegfs
 bonn_check: nn_beegfs pv_beegfs
 
 ax_beegfs: ax_b2_beegfs
-pv_beegfs: pv_b1_beegfs pv_b2_beegfs pv_b3_beegfs
-nn_beegfs: nn_b1_beegfs nn_b2_beegfs
+pv_beegfs: pv_b1_beegfs pv_b2_beegfs pv_b3_beegfs pv_b4_beegfs
+nn_beegfs: nn_b1_beegfs nn_b2_beegfs nn_b3_beegfs nn_b4_beegfs
 lm_beegfs: lm_b1_beegfs lm_b2_beegfs
 mg_beegfs: mg_b1_beegfs mg_b2_beegfs mg_b3_beegfs
 mm_beegfs: mm_b1_beegfs mm_b2_beegfs mm_b3_beegfs mm_b4_beegfs
@@ -48,6 +48,10 @@ pv_b3_beegfs:
 	vsum -s /data/e26[ma]??/Pv/b3/*12/*.vdif > Pico_b3.12.filelist-beegfs
 	vsum -s /data/e26[ma]??/Pv/b3/*34/*.vdif > Pico_b3.34.filelist-beegfs
 
+pv_b4_beegfs:
+	vsum -s /data/e26[ma]??/Pv/b4/*12/*.vdif > Pico_b4.12.filelist-beegfs
+	vsum -s /data/e26[ma]??/Pv/b4/*34/*.vdif > Pico_b4.34.filelist-beegfs
+
 nn_b1_beegfs:
 	vsum -s /data/e26[ma]??/Nn/b1/*1/*.vdif > NOEMA_b1.1.filelist-beegfs
 	vsum -s /data/e26[ma]??/Nn/b1/*2/*.vdif > NOEMA_b1.2.filelist-beegfs
@@ -59,6 +63,18 @@ nn_b2_beegfs:
 	vsum -s /data/e26[ma]??/Nn/b2/*2/*.vdif > NOEMA_b2.2.filelist-beegfs
 	vsum -s /data/e26[ma]??/Nn/b2/*3/*.vdif > NOEMA_b2.3.filelist-beegfs
 	vsum -s /data/e26[ma]??/Nn/b2/*4/*.vdif > NOEMA_b2.4.filelist-beegfs
+
+nn_b3_beegfs:
+	vsum -s /data/e26[ma]??/Nn/b3/*1/*.vdif > NOEMA_b3.1.filelist-beegfs
+	vsum -s /data/e26[ma]??/Nn/b3/*2/*.vdif > NOEMA_b3.2.filelist-beegfs
+	vsum -s /data/e26[ma]??/Nn/b3/*3/*.vdif > NOEMA_b3.3.filelist-beegfs
+	vsum -s /data/e26[ma]??/Nn/b3/*4/*.vdif > NOEMA_b3.4.filelist-beegfs
+
+nn_b4_beegfs:
+	vsum -s /data/e26[ma]??/Nn/b4/*1/*.vdif > NOEMA_b4.1.filelist-beegfs
+	vsum -s /data/e26[ma]??/Nn/b4/*2/*.vdif > NOEMA_b4.2.filelist-beegfs
+	vsum -s /data/e26[ma]??/Nn/b4/*3/*.vdif > NOEMA_b4.3.filelist-beegfs
+	vsum -s /data/e26[ma]??/Nn/b4/*4/*.vdif > NOEMA_b4.4.filelist-beegfs
 
 lm_b1_beegfs:
 	vsum -s /data/e26[ma]??/Lm/b1/*12/*.vdif > LMT_b1.12.filelist-beegfs
