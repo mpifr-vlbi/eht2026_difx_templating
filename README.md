@@ -30,12 +30,46 @@ checking b1 b3 b4 and adding this e26m10 Ax chan_def exception into the template
 
 ## e26m13
 
-So far all-nominal.
+No notes so far
 
 ## e26m17
 
-## e26m20
-
 SMA/JCMT adjusted their H-maser tuning after e26m17, rate break, tbd
 
-##
+## e26m20
+
+No notes so far
+
+## e26m24
+
+NOEMA issue with Polyfix#1 VLBI card, half the channels in b1 RCP have no fringes. Found out only after seeing the issue in e26a14 b2, during check for rate sidelobes.
+
+Affected NOEMA VLBI card got relocated after the observation into PolyFix#6 in 25th March. The issue (now known at the time) moved together with the card.
+
+## e26m27
+
+Probably NOEMA issue with PolyFix#6 (ex-#1) card; expecting in b2 entire LCP no fringes, b1 half of LCP channels no fringe (cf e26a14)
+
+## e26a03
+
+Probably continued NOEMA b1 b2 LCP issue, just not checked yet
+
+## e26a07
+
+Probably continued NOEMA b1 b2 LCP issue, just not checked yet
+
+## e26a14
+
+Found NOEMA b2 entire LCP pol has no fringes, and in b1 half of the LCP pol channels have no fringes. Their data originate from PolyFix#6.
+After e26a14 the affected card might be swapped.
+
+## e26a17
+
+NOEMA other issues (5 MHz distributor), larger part of track failed, only got some low-elevation scans
+
+## e26a21
+
+## e26a24
+
+## e26a28
+
