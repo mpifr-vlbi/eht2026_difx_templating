@@ -28,7 +28,7 @@ $CLOCK;
 * TODO: clock rates below are copies from 2025, update with rates from DR 2026
 *
 def Aa;
-  clock_early = 2026y021d06h43m00s: 2107.147 usec : 2026y021d06h43m00s : -10e-15;
+  clock_early = 2026y021d06h43m00s : +2107.147 usec : 2026y021d06h43m00s : -10e-15;
 enddef;
 *
 def Ax;
