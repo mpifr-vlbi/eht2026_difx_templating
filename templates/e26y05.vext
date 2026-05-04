@@ -1,0 +1,48 @@
+VEX_rev = 1.5;
+*    SCHED vers: Release 12.0; April 2023
+*    VEX/SCHED:  1.5.88
+*    Other versions: Sched:  12.0  Plot: 1.06  JPL-ephem: 1.01
+*------------------------------------------------------------------------------
+$GLOBAL;
+     ref $EXPER = e26y05;
+*                                                      +------------+
+*                         PI revision number:          |   12.0000  |
+*                                                      +------------+
+*    mode:       R2DBE
+*------------------------------------------------------------------------------
+$EXPER;
+*
+def e26y05;
+     exper_name = e26y05;
+     exper_description = "M87 2026 MOVIE Campaign";
+     PI_name = "EHTC";
+     PI_email = not@an.address;
+     exper_nominal_start=2026y124d23h53m00s;
+     exper_nominal_stop=2026y125d05h33m00s;
+     target_correlator = shared;
+*    distribute_to  : Sub-bands 1 and 4 to MPIfR, 2 and 3 to Haystack
+enddef;
+*------------------------------------------------------------------------------
+** include <clocks_initial.vex>
+** include <clocks_SMA.vex>
+** include <mode_proc_das.vex>
+** include <stations.vex>
+** include <antennas.vex>
+** include <sites_consistent.vex>
+** include <sites_NOEMA_e26y05.vex>
+** include <tracks.vex>
+** include <if.vex>
+** include <bbc.vex>
+** include <freqs.vex>
+** include <freqs_NOEMA.vex>
+** include <freqs_ALMA.vex>
+** include <phasecal.vex>
+** include <tape.vex>
+*------------------------------------------------------------------------------
+** include <sources_e26y05.vex>
+** include <sched_e26y05.vex>
+*------------------------------------------------------------------------------
+** include <eop_e26y05.vex>
+** loaddata <clocks_e26y05.dat>
+*------------------------------------------------------------------------------
+
