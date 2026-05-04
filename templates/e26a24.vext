@@ -18,7 +18,7 @@ def e26a24;
      PI_name = "EHTC";
      PI_email = not@an.address;
      exper_nominal_start=2026y114d00h36m00s;
-     exper_nominal_stop=2026y114d10h27m00s;
+     exper_nominal_stop=2026y114d06h16m00s;
      target_correlator = shared;
 *    distribute_to  : Sub-bands 1 and 4 to MPIfR, 2 and 3 to Haystack
 enddef;
