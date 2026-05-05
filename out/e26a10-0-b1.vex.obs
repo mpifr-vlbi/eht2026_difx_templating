@@ -6,7 +6,7 @@ VEX_rev = 1.5;
 $GLOBAL;
      ref $EXPER = e26a10;
 *                                                      +------------+
-*                         PI revision number:          |   11.0000  |
+*                         PI revision number:          |   12.0000  |
 *                                                      +------------+
 *    mode:       R2DBE
 *------------------------------------------------------------------------------
@@ -60,7 +60,7 @@ def Mg; * SMT
 enddef;
 *
 def Nn; * NOEMA
-  clock_early = 2026y021d06h43m00s: 12.0 usec: 2026y021d06h43m00s : 0.0e-12;
+  clock_early = 2026y021d06h43m00s : +12.0 usec : 2026y021d06h43m00s : 0.0e-12;
 enddef;
 *
 def Pv;
@@ -1565,9 +1565,9 @@ $EOP;
     eop_ref_epoch=2026y98d;
     num_eop_points=1;
     eop_interval=24 hr;
-    ut1-utc  = 0.051243 sec;
-    x_wobble = 0.122873 asec;
-    y_wobble = 0.411245 asec;
+    ut1-utc  = 0.047755 sec;
+    x_wobble = 0.136926 asec;
+    y_wobble = 0.413585 asec;
   enddef;
   def EOP99;
     TAI-UTC= 37 sec;
@@ -1575,9 +1575,9 @@ $EOP;
     eop_ref_epoch=2026y99d;
     num_eop_points=1;
     eop_interval=24 hr;
-    ut1-utc  = 0.051297 sec;
-    x_wobble = 0.123669 asec;
-    y_wobble = 0.411641 asec;
+    ut1-utc  = 0.047704 sec;
+    x_wobble = 0.138461 asec;
+    y_wobble = 0.413645 asec;
   enddef;
   def EOP100;
     TAI-UTC= 37 sec;
@@ -1585,9 +1585,9 @@ $EOP;
     eop_ref_epoch=2026y100d;
     num_eop_points=1;
     eop_interval=24 hr;
-    ut1-utc  = 0.051304 sec;
-    x_wobble = 0.124477 asec;
-    y_wobble = 0.412026 asec;
+    ut1-utc  = 0.047582 sec;
+    x_wobble = 0.139835 asec;
+    y_wobble = 0.413663 asec;
   enddef;
   def EOP101;
     TAI-UTC= 37 sec;
@@ -1595,9 +1595,9 @@ $EOP;
     eop_ref_epoch=2026y101d;
     num_eop_points=1;
     eop_interval=24 hr;
-    ut1-utc  = 0.051183 sec;
-    x_wobble = 0.125298 asec;
-    y_wobble = 0.412398 asec;
+    ut1-utc  = 0.047294 sec;
+    x_wobble = 0.141187 asec;
+    y_wobble = 0.413821 asec;
   enddef;
   def EOP102;
     TAI-UTC= 37 sec;
@@ -1605,9 +1605,9 @@ $EOP;
     eop_ref_epoch=2026y102d;
     num_eop_points=1;
     eop_interval=24 hr;
-    ut1-utc  = 0.050859 sec;
-    x_wobble = 0.126131 asec;
-    y_wobble = 0.412759 asec;
+    ut1-utc  = 0.046833 sec;
+    x_wobble = 0.142367 asec;
+    y_wobble = 0.414201 asec;
   enddef;
 *------------------------------------------------------------------------------
 

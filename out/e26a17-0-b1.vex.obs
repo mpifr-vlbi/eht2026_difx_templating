@@ -6,7 +6,7 @@ VEX_rev = 1.5;
 $GLOBAL;
      ref $EXPER = e26a17;
 *                                                      +------------+
-*                         PI revision number:          |   11.0000  |
+*                         PI revision number:          |   12.0000  |
 *                                                      +------------+
 *    mode:       R2DBE
 *------------------------------------------------------------------------------
@@ -18,7 +18,7 @@ def e26a17;
      PI_name = "EHTC";
      PI_email = not@an.address;
      exper_nominal_start=2026y107d01h04m00s;
-     exper_nominal_stop=2026y107d10h55m00s;
+     exper_nominal_stop=2026y107d06h44m00s;
      target_correlator = shared;
 *    distribute_to  : Sub-bands 1 and 4 to MPIfR, 2 and 3 to Haystack
 enddef;
@@ -60,7 +60,7 @@ def Mg; * SMT
 enddef;
 *
 def Nn; * NOEMA
-  clock_early = 2026y021d06h43m00s: 12.0 usec: 2026y021d06h43m00s : 0.0e-12;
+  clock_early = 2026y021d06h43m00s : +12.0 usec : 2026y021d06h43m00s : 0.0e-12;
 enddef;
 *
 def Pv;
@@ -1557,185 +1557,6 @@ scan 107-0642;
      station=Mm:    0 sec:  120 sec:    3692.299 GB:   : &n    : 1;
      station=Sw:    0 sec:  120 sec:    3323.069 GB:   : &cw   : 1;
 endscan;
-scan 107-0855;
-* intent = "SMA:AUTOPHASE_DETERMINE"
-     start=2026y107d08h55m00s; mode=band6; source=M87;
-     station=Gl:    0 sec:  240 sec:    6523.062 GB:   : &n    : 1;
-     station=Lm:    0 sec:  240 sec:    7507.675 GB:   : &cw   : 1;
-     station=Kt:    0 sec:  240 sec:    7261.522 GB:   : &n    : 1;
-     station=Mg:    0 sec:  240 sec:    5661.525 GB:   : &ccw  : 1;
-     station=Mm:    0 sec:  240 sec:    3815.376 GB:   : &n    : 1;
-     station=Sw:    0 sec:  240 sec:    3446.146 GB:   : &cw   : 1;
-     station=Ky:    0 sec:  240 sec:       0.000 GB:   : &ccw  : 1;
-     station=Pc:    0 sec:  240 sec:       0.000 GB:   : &ccw  : 1;
-endscan;
-scan 107-0907;
-* intent = "SMA:AUTOPHASE_DETERMINE"
-     start=2026y107d09h07m00s; mode=band6; source=3C273;
-*              :data_good:data_stop:goto_foot: pass:  wrap :driv:tape at
-     station=Lm:    0 sec:  120 sec:    7753.829 GB:   : &n    : 1;
-     station=Kt:    0 sec:  120 sec:    7507.675 GB:   : &n    : 1;
-     station=Mg:    0 sec:  120 sec:    5907.679 GB:   : &ccw  : 1;
-     station=Mm:    0 sec:  120 sec:    4061.529 GB:   : &n    : 1;
-     station=Sw:    0 sec:  120 sec:    3692.299 GB:   : &cw   : 1;
-     station=Ky:    0 sec:  120 sec:     246.153 GB:   : &n    : 1;
-     station=Pc:    0 sec:  120 sec:     246.153 GB:   : &n    : 1;
-endscan;
-scan 107-0912;
-* intent = "SMA:AUTOPHASE_DETERMINE"
-     start=2026y107d09h12m00s; mode=band6; source=M87;
-     station=Gl:    0 sec:  240 sec:    6769.215 GB:   : &n    : 1;
-     station=Lm:    0 sec:  240 sec:    7876.905 GB:   : &cw   : 1;
-     station=Kt:    0 sec:  240 sec:    7630.752 GB:   : &n    : 1;
-     station=Mg:    0 sec:  240 sec:    6030.755 GB:   : &ccw  : 1;
-     station=Mm:    0 sec:  240 sec:    4184.605 GB:   : &n    : 1;
-     station=Sw:    0 sec:  240 sec:    3815.376 GB:   : &cw   : 1;
-     station=Ky:    0 sec:  240 sec:     369.230 GB:   : &ccw  : 1;
-     station=Pc:    0 sec:  240 sec:     369.230 GB:   : &ccw  : 1;
-endscan;
-scan 107-0924;
-* intent = "SMA:AUTOPHASE_DETERMINE"
-     start=2026y107d09h24m00s; mode=band6; source=3C273;
-     station=Lm:    0 sec:  120 sec:    8123.059 GB:   : &n    : 1;
-     station=Kt:    0 sec:  120 sec:    7876.905 GB:   : &n    : 1;
-     station=Mg:    0 sec:  120 sec:    6276.909 GB:   : &ccw  : 1;
-     station=Mm:    0 sec:  120 sec:    4430.759 GB:   : &n    : 1;
-     station=Sw:    0 sec:  120 sec:    4061.529 GB:   : &cw   : 1;
-     station=Ky:    0 sec:  120 sec:     615.383 GB:   : &n    : 1;
-     station=Pc:    0 sec:  120 sec:     615.383 GB:   : &n    : 1;
-endscan;
-scan 107-0929;
-* intent = "SMA:AUTOPHASE_DETERMINE"
-     start=2026y107d09h29m00s; mode=band6; source=M87;
-     station=Gl:    0 sec:  240 sec:    7015.369 GB:   : &n    : 1;
-     station=Lm:    0 sec:  240 sec:    8246.135 GB:   : &cw   : 1;
-     station=Kt:    0 sec:  240 sec:    7999.982 GB:   : &n    : 1;
-     station=Mg:    0 sec:  240 sec:    6399.985 GB:   : &ccw  : 1;
-     station=Mm:    0 sec:  240 sec:    4553.835 GB:   : &n    : 1;
-     station=Sw:    0 sec:  240 sec:    4184.605 GB:   : &cw   : 1;
-     station=Ky:    0 sec:  240 sec:     738.460 GB:   : &n    : 1;
-     station=Pc:    0 sec:  240 sec:     738.460 GB:   : &n    : 1;
-endscan;
-scan 107-0941;
-* intent = "SMA:AUTOPHASE_DETERMINE"
-     start=2026y107d09h41m00s; mode=band6; source=3C273;
-     station=Lm:    0 sec:  120 sec:    8492.288 GB:   : &n    : 1;
-     station=Kt:    0 sec:  120 sec:    8246.135 GB:   : &n    : 1;
-     station=Mg:    0 sec:  120 sec:    6646.139 GB:   : &ccw  : 1;
-     station=Mm:    0 sec:  120 sec:    4799.989 GB:   : &n    : 1;
-     station=Sw:    0 sec:  120 sec:    4430.759 GB:   : &cw   : 1;
-     station=Ky:    0 sec:  120 sec:     984.613 GB:   : &n    : 1;
-     station=Pc:    0 sec:  120 sec:     984.613 GB:   : &n    : 1;
-endscan;
-scan 107-0945;
-* intent = "SMA:AUTOPHASE_DETERMINE"
-     start=2026y107d09h45m00s; mode=band6; source=3C279;
-     station=Lm:    0 sec:  120 sec:    8615.364 GB:   : &n    : 1;
-     station=Kt:    0 sec:  120 sec:    8369.211 GB:   : &n    : 1;
-     station=Mg:    0 sec:  120 sec:    6769.215 GB:   : &ccw  : 1;
-     station=Mm:    0 sec:  120 sec:    4923.065 GB:   : &n    : 1;
-     station=Sw:    0 sec:  120 sec:    4553.835 GB:   : &cw   : 1;
-     station=Ky:    0 sec:  120 sec:    1107.689 GB:   : &n    : 1;
-     station=Pc:    0 sec:  120 sec:    1107.689 GB:   : &n    : 1;
-endscan;
-scan 107-0958;
-* intent = "SMA:AUTOPHASE_DETERMINE"
-     start=2026y107d09h58m00s; mode=band6; source=3C273;
-     station=Lm:    0 sec:  120 sec:    8738.440 GB:   : &n    : 1;
-     station=Kt:    0 sec:  120 sec:    8492.287 GB:   : &n    : 1;
-     station=Mg:    0 sec:  120 sec:    6892.292 GB:   : &ccw  : 1;
-     station=Mm:    0 sec:  120 sec:    5046.142 GB:   : &n    : 1;
-     station=Sw:    0 sec:  120 sec:    4676.912 GB:   : &cw   : 1;
-     station=Ky:    0 sec:  120 sec:    1230.766 GB:   : &n    : 1;
-     station=Pc:    0 sec:  120 sec:    1230.766 GB:   : &n    : 1;
-endscan;
-scan 107-1002;
-* intent = "SMA:AUTOPHASE_DETERMINE"
-     start=2026y107d10h02m00s; mode=band6; source=3C279;
-*              :data_good:data_stop:goto_foot: pass:  wrap :driv:tape at
-     station=Lm:    0 sec:  120 sec:    8861.517 GB:   : &n    : 1;
-     station=Kt:    0 sec:  120 sec:    8615.363 GB:   : &n    : 1;
-     station=Mg:    0 sec:  120 sec:    7015.369 GB:   : &ccw  : 1;
-     station=Mm:    0 sec:  120 sec:    5169.219 GB:   : &n    : 1;
-     station=Sw:    0 sec:  120 sec:    4799.989 GB:   : &cw   : 1;
-     station=Ky:    0 sec:  120 sec:    1353.843 GB:   : &n    : 1;
-     station=Pc:    0 sec:  120 sec:    1353.843 GB:   : &n    : 1;
-endscan;
-scan 107-1007;
-* intent = "SMA:AUTOPHASE_DETERMINE"
-     start=2026y107d10h07m00s; mode=band6; source=M87;
-     station=Gl:    0 sec:  240 sec:    7261.522 GB:   : &n    : 1;
-     station=Lm:    0 sec:  240 sec:    8984.593 GB:   : &cw   : 1;
-     station=Kt:    0 sec:  240 sec:    8738.439 GB:   : &n    : 1;
-     station=Mg:    0 sec:  240 sec:    7138.445 GB:   : &ccw  : 1;
-     station=Mm:    0 sec:  240 sec:    5292.295 GB:   : &n    : 1;
-     station=Sw:    0 sec:  240 sec:    4923.065 GB:   : &cw   : 1;
-     station=Ky:    0 sec:  240 sec:    1476.919 GB:   : &n    : 1;
-     station=Pc:    0 sec:  240 sec:    1476.919 GB:   : &n    : 1;
-endscan;
-scan 107-1020;
-* intent = "SMA:AUTOPHASE_DETERMINE"
-     start=2026y107d10h20m00s; mode=band6; source=3C273;
-     station=Lm:    0 sec:  120 sec:    9230.746 GB:   : &n    : 1;
-     station=Kt:    0 sec:  120 sec:    8984.593 GB:   : &n    : 1;
-     station=Mg:    0 sec:  120 sec:    7384.599 GB:   : &ccw  : 1;
-     station=Mm:    0 sec:  120 sec:    5538.449 GB:   : &n    : 1;
-     station=Sw:    0 sec:  120 sec:    5169.219 GB:   : &cw   : 1;
-     station=Ky:    0 sec:  120 sec:    1723.073 GB:   : &n    : 1;
-     station=Pc:    0 sec:  120 sec:    1723.073 GB:   : &n    : 1;
-endscan;
-scan 107-1024;
-* intent = "SMA:AUTOPHASE_DETERMINE"
-     start=2026y107d10h24m00s; mode=band6; source=3C279;
-     station=Lm:    0 sec:  120 sec:    9353.822 GB:   : &n    : 1;
-     station=Kt:    0 sec:  120 sec:    9107.669 GB:   : &n    : 1;
-     station=Mg:    0 sec:  120 sec:    7507.675 GB:   : &ccw  : 1;
-     station=Mm:    0 sec:  120 sec:    5661.525 GB:   : &n    : 1;
-     station=Sw:    0 sec:  120 sec:    5292.295 GB:   : &cw   : 1;
-     station=Ky:    0 sec:  120 sec:    1846.149 GB:   : &n    : 1;
-     station=Pc:    0 sec:  120 sec:    1846.149 GB:   : &n    : 1;
-endscan;
-scan 107-1029;
-* intent = "SMA:AUTOPHASE_DETERMINE"
-     start=2026y107d10h29m00s; mode=band6; source=M87;
-     station=Gl:    0 sec:  240 sec:    7507.675 GB:   : &n    : 1;
-     station=Lm:    0 sec:  240 sec:    9476.898 GB:   : &cw   : 1;
-     station=Kt:    0 sec:  240 sec:    9230.745 GB:   : &n    : 1;
-     station=Mg:    0 sec:  240 sec:    7630.752 GB:   : &ccw  : 1;
-     station=Mm:    0 sec:  240 sec:    5784.602 GB:   : &n    : 1;
-     station=Sw:    0 sec:  240 sec:    5415.372 GB:   : &cw   : 1;
-     station=Ky:    0 sec:  240 sec:    1969.226 GB:   : &n    : 1;
-     station=Pc:    0 sec:  240 sec:    1969.226 GB:   : &n    : 1;
-endscan;
-scan 107-1042;
-* intent = "SMA:AUTOPHASE_DETERMINE"
-     start=2026y107d10h42m00s; mode=band6; source=3C273;
-     station=Kt:    0 sec:  120 sec:    9476.898 GB:   : &n    : 1;
-     station=Mm:    0 sec:  120 sec:    6030.755 GB:   : &n    : 1;
-     station=Sw:    0 sec:  120 sec:    5661.525 GB:   : &cw   : 1;
-     station=Ky:    0 sec:  120 sec:    2215.379 GB:   : &n    : 1;
-     station=Pc:    0 sec:  120 sec:    2215.379 GB:   : &n    : 1;
-endscan;
-scan 107-1046;
-* intent = "SMA:AUTOPHASE_DETERMINE"
-     start=2026y107d10h46m00s; mode=band6; source=3C279;
-     station=Lm:    0 sec:  120 sec:    9723.052 GB:   : &n    : 1;
-     station=Kt:    0 sec:  120 sec:    9599.975 GB:   : &n    : 1;
-     station=Mm:    0 sec:  120 sec:    6153.832 GB:   : &n    : 1;
-     station=Sw:    0 sec:  120 sec:    5784.602 GB:   : &cw   : 1;
-     station=Ky:    0 sec:  120 sec:    2338.456 GB:   : &n    : 1;
-     station=Pc:    0 sec:  120 sec:    2338.456 GB:   : &n    : 1;
-endscan;
-scan 107-1051;
-* intent = "SMA:AUTOPHASE_DETERMINE"
-     start=2026y107d10h51m00s; mode=band6; source=M87;
-     station=Gl:    0 sec:  240 sec:    7753.829 GB:   : &n    : 1;
-     station=Kt:    0 sec:  240 sec:    9723.051 GB:   : &n    : 1;
-     station=Mm:    0 sec:  240 sec:    6276.909 GB:   : &n    : 1;
-     station=Sw:    0 sec:  240 sec:    5907.679 GB:   : &cw   : 1;
-     station=Ky:    0 sec:  240 sec:    2461.532 GB:   : &n    : 1;
-     station=Pc:    0 sec:  240 sec:    2461.532 GB:   : &n    : 1;
-endscan;
 *------------------------------------------------------------------------------
 $EOP;
   def EOP105;
@@ -1744,9 +1565,9 @@ $EOP;
     eop_ref_epoch=2026y105d;
     num_eop_points=1;
     eop_interval=24 hr;
-    ut1-utc  = 0.048352 sec;
-    x_wobble = 0.128701 asec;
-    y_wobble = 0.413765 asec;
+    ut1-utc  = 0.044089 sec;
+    x_wobble = 0.145188 asec;
+    y_wobble = 0.414921 asec;
   enddef;
   def EOP106;
     TAI-UTC= 37 sec;
@@ -1754,9 +1575,9 @@ $EOP;
     eop_ref_epoch=2026y106d;
     num_eop_points=1;
     eop_interval=24 hr;
-    ut1-utc  = 0.047148 sec;
-    x_wobble = 0.129580 asec;
-    y_wobble = 0.414074 asec;
+    ut1-utc  = 0.042844 sec;
+    x_wobble = 0.145847 asec;
+    y_wobble = 0.415193 asec;
   enddef;
   def EOP107;
     TAI-UTC= 37 sec;
@@ -1764,9 +1585,9 @@ $EOP;
     eop_ref_epoch=2026y107d;
     num_eop_points=1;
     eop_interval=24 hr;
-    ut1-utc  = 0.045965 sec;
-    x_wobble = 0.130470 asec;
-    y_wobble = 0.414370 asec;
+    ut1-utc  = 0.041599 sec;
+    x_wobble = 0.146669 asec;
+    y_wobble = 0.415283 asec;
   enddef;
   def EOP108;
     TAI-UTC= 37 sec;
@@ -1774,9 +1595,9 @@ $EOP;
     eop_ref_epoch=2026y108d;
     num_eop_points=1;
     eop_interval=24 hr;
-    ut1-utc  = 0.044958 sec;
-    x_wobble = 0.131370 asec;
-    y_wobble = 0.414653 asec;
+    ut1-utc  = 0.040543 sec;
+    x_wobble = 0.147587 asec;
+    y_wobble = 0.415372 asec;
   enddef;
   def EOP109;
     TAI-UTC= 37 sec;
@@ -1784,9 +1605,9 @@ $EOP;
     eop_ref_epoch=2026y109d;
     num_eop_points=1;
     eop_interval=24 hr;
-    ut1-utc  = 0.044232 sec;
-    x_wobble = 0.132281 asec;
-    y_wobble = 0.414923 asec;
+    ut1-utc  = 0.039773 sec;
+    x_wobble = 0.148377 asec;
+    y_wobble = 0.415662 asec;
   enddef;
 *------------------------------------------------------------------------------
 

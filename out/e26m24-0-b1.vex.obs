@@ -6,7 +6,7 @@ VEX_rev = 1.5;
 $GLOBAL;
      ref $EXPER = e26m24;
 *                                                      +------------+
-*                         PI revision number:          |   11.0000  |
+*                         PI revision number:          |   12.0000  |
 *                                                      +------------+
 *    mode:       R2DBE
 *------------------------------------------------------------------------------
@@ -1566,9 +1566,9 @@ $EOP;
     eop_ref_epoch=2026y81d;
     num_eop_points=1;
     eop_interval=24 hr;
-    ut1-utc  = 0.057847 sec;
-    x_wobble = 0.111556 asec;
-    y_wobble = 0.402861 asec;
+    ut1-utc  = 0.055669 sec;
+    x_wobble = 0.107127 asec;
+    y_wobble = 0.402234 asec;
   enddef;
   def EOP82;
     TAI-UTC= 37 sec;
@@ -1576,9 +1576,9 @@ $EOP;
     eop_ref_epoch=2026y82d;
     num_eop_points=1;
     eop_interval=24 hr;
-    ut1-utc  = 0.057421 sec;
-    x_wobble = 0.112089 asec;
-    y_wobble = 0.403432 asec;
+    ut1-utc  = 0.055187 sec;
+    x_wobble = 0.108160 asec;
+    y_wobble = 0.402921 asec;
   enddef;
   def EOP83;
     TAI-UTC= 37 sec;
@@ -1586,9 +1586,9 @@ $EOP;
     eop_ref_epoch=2026y83d;
     num_eop_points=1;
     eop_interval=24 hr;
-    ut1-utc  = 0.057266 sec;
-    x_wobble = 0.112641 asec;
-    y_wobble = 0.403994 asec;
+    ut1-utc  = 0.054935 sec;
+    x_wobble = 0.109422 asec;
+    y_wobble = 0.403452 asec;
   enddef;
   def EOP84;
     TAI-UTC= 37 sec;
@@ -1596,9 +1596,9 @@ $EOP;
     eop_ref_epoch=2026y84d;
     num_eop_points=1;
     eop_interval=24 hr;
-    ut1-utc  = 0.057300 sec;
-    x_wobble = 0.113213 asec;
-    y_wobble = 0.404547 asec;
+    ut1-utc  = 0.054904 sec;
+    x_wobble = 0.110782 asec;
+    y_wobble = 0.404018 asec;
   enddef;
   def EOP85;
     TAI-UTC= 37 sec;
@@ -1606,9 +1606,9 @@ $EOP;
     eop_ref_epoch=2026y85d;
     num_eop_points=1;
     eop_interval=24 hr;
-    ut1-utc  = 0.057385 sec;
-    x_wobble = 0.113803 asec;
-    y_wobble = 0.405090 asec;
+    ut1-utc  = 0.054840 sec;
+    x_wobble = 0.112273 asec;
+    y_wobble = 0.404992 asec;
   enddef;
 *------------------------------------------------------------------------------
 
