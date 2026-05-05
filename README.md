@@ -14,6 +14,11 @@ to enable rapid production correlation right at the end of the campaign, after s
 
 Fringe checks are kept track of under https://eventhorizontelescope.mywikis.wiki/wiki/Observing/2026_Movie_Campaign/Correlation#Completed_Fringe_Checks
 
+## NOEMA
+
+Reference pad: N020 until track e26m17 inklusive, N017 from e26m20 to e26a03, N011 from e26a07 bis e26y01, later tracks likely N009 
+
+
 ## e26m10
 
 LMT is band-swapped in e26m10 e26m13, b1<->2 for sure, and possibly but not verified b3<->b4.
