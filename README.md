@@ -78,3 +78,9 @@ NOEMA other issues (5 MHz distributor), larger part of track failed, only got so
 
 ## e26a28
 
+APEX 1pps distributor box affected by pre-obs power glitch, shifted sync, try DiFX offset +0.893421040 sec (or -0.106578960 sec) as starting point
+
+## e26y08
+
+APEX 1pps distributor box affected by pre-obs power glitch, shifted sync, try DiFX offset +0.169776588 sec (or -0.830223412 sec) as starting point
+
