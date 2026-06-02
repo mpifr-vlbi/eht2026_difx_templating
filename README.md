@@ -16,20 +16,20 @@ Fringe checks are kept track of under https://eventhorizontelescope.mywikis.wiki
 
 ## NOEMA
 
-Reference pad: N020 in e26m13--e26m17, N017 in e26m20--e26a03, N011 in e26a07--e26y05, possibly N009 in e26y08.
+Reference pad: **N020** in e26m13-e26m17, **N017** in e26m20-e26a03, **N011** in e26a07-e26y05, possibly **N009** in e26y08.
 
-From the start until e26a14 inclusive one of the VLBI FPGA output cards was a spare card, accidentally still with old not bugfixed firmware.
+One of the VLBA FPGA output boards was a spare card until and including track e26a14. This spare card had outdated firmware which was missing important fixes.
 
-Affected are:
+The outdated firmware partially affected these tracks:
  - e26m13--e26m24: half of b1 RCP; ~1 GHz bw out of 2 pol x 4 band x 2 GHz, possible loss ~6%
- - e26a03--e26a14: part of b1 LCP and entire b2 LCP, ~3 GHz bw out of 16 GHz, possible loss ~19%
+ - e26a03--e26a14: part of b1 LCP and entire b2 LCP; ~3 GHz bw out of 16 GHz, possible loss ~19%
 
-The issues with VDIF produced by the outdated firmware are as [documented for track tdec02](https://drive.google.com/drive/folders/1Kog1eLFoCxwty-WXNjihIxywKxVn1yGp):
- - payload has incorrect 32-bit endianness in the sense of 4 byte groups being internally swapped (BSD be32toh()),
-   a fix for plain VDIF files is [swapendianVDIF.c](https://bitbucket.org/jwagner313/kvnvdiftools/src/master/swapendianVDIF.c),
-   a fix for Mark6 scatter-gather VDIF is ToDo
+The issues are indentical to those [documented for the first GMVA 86 GHz NOEMA fringe test tdec02](https://drive.google.com/drive/folders/1Kog1eLFoCxwty-WXNjihIxywKxVn1yGp):
  - clock offset jumps up to several tens microseconds relative to other cards after a PolyFiX unit is reset
  - small delay offsets in every 4th channel, most visible in HOPS3 fourfit which doesn't fringe fit every channel invidually
+ - payload has incorrect 32-bit endianness in the sense of 4 byte groups being internally swapped (BSD be32toh()),
+   a fix for proper VDIF files is [swapendianVDIF.c](https://bitbucket.org/jwagner313/kvnvdiftools/src/master/swapendianVDIF.c),
+   a fix for Mark6 scatter-gather encapsulated VDIF is ToDo
 
 ## APEX
 
