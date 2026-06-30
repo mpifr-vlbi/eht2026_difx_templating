@@ -1,5 +1,5 @@
 
-## Get global settings; TRACKS_230G TRACKS_345G (e25...,) REV (FRINGE, v0), REL (0), SITE (mpifr), EXPROOT (/Exps)
+## Get global settings; TRACKS_230G (e26...,) REV (FRINGE, v0), REL (0), SITE (mpifr), EXPROOT (/Exps)
 include Makefile.inc
 
 ## Derived set of v2d,vex for DiFX outputbands correlation
@@ -55,32 +55,6 @@ prerequisites:
 	./scripts/alma-vex-defs.py --lo1 221.100 -r 2 > templates/230G/band2/freqs_ALMA.vex
 	./scripts/alma-vex-defs.py --lo1 221.100 -r 3 > templates/230G/band3/freqs_ALMA.vex
 	./scripts/alma-vex-defs.py --lo1 221.100 -r 4 > templates/230G/band4/freqs_ALMA.vex
-	#
-	## 345G
-	# NOEMA
-	./scripts/noema-vex-defs.py -c "4-8" --lo1 342.600 --lo2 7.744 -r 1   > templates/345G/band1/freqs_NOEMA.vex
-	./scripts/noema-vex-defs.py -c "4-8" --lo1 342.600 --lo2 7.744 -r 2   > templates/345G/band2/freqs_NOEMA.vex
-	./scripts/noema-vex-defs.py -c "4-8" --lo1 342.600 --lo2 7.744 -r 4   > templates/345G/band3/freqs_NOEMA.vex
-	./scripts/noema-vex-defs.py -c "4-8" --lo1 342.600 --lo2 7.744 -r 3   > templates/345G/band4/freqs_NOEMA.vex
-	# ALMA : same as EHT 2021 except now exact tuning (0 LO offset), vs EHT 2023 where tunings were coarsely shifted to avoid LO offset
-	./scripts/alma-vex-defs.py --lo1 343.600      -r 1 > templates/345G/band1/freqs_ALMA.vex
-	./scripts/alma-vex-defs.py --lo1 343.54140625 -r 2 > templates/345G/band2/freqs_ALMA.vex
-	./scripts/alma-vex-defs.py --lo1 341.600      -r 3 > templates/345G/band3/freqs_ALMA.vex
-	./scripts/alma-vex-defs.py --lo1 341.600      -r 4 > templates/345G/band4/freqs_ALMA.vex
-	# equivalent to the not so copy-pasteable output of
-	# $ehtc/alma-vex-defs.py -f335600.00000 -w58.0 -sL -ralma # b1 alt
-	# $ehtc/alma-vex-defs.py -f337541.40625 -w58.0 -sL -ralma # b2, shifted 58.59375 MHz
-	# $ehtc/alma-vex-defs.py -f347600.00000 -w58.0 -sU -ralma # b3
-	# $ehtc/alma-vex-defs.py -f349600.00000 -w58.0 -sU -ralma # b4
-	#
-	## Note: DiFX $ehtc/alma-vex-defs.py would be more direct, but its chan_defs are not useable as-is,
-	##       vs own ./scripts/alma-vex-defs.py usable for that but is not 4-8/5-9 aware plus b2 offset trickyness
-	## SMA a priori clock CSV files
-	# -- TODO 2025 --
-	#./scripts/vexdelay.py -f ./priors/sma-delays.rx230.sbLSB.quad1.b1.csv -c 0.5126 --rate=-0.090e-12 -s Sw -g 0.0 2023y105d01h40m00s 2023y112d07h55m00s > templates/230G/band1/clocks_SMA.vex
-	#./scripts/vexdelay.py -f ./priors/sma-delays.rx230.sbLSB.quad0.b2.csv -c 0.5126 --rate=-0.090e-12 -s Sw -g 0.0 2023y105d01h40m00s 2023y112d07h55m00s > templates/230G/band2/clocks_SMA.vex
-	#./scripts/vexdelay.py -f ./priors/sma-delays.rx230.sbUSB.quad1.b3.csv -c 0.5126 --rate=-0.090e-12 -s Sw -g 0.0 2023y105d01h40m00s 2023y112d07h55m00s > templates/230G/band3/clocks_SMA.vex
-	#./scripts/vexdelay.py -f ./priors/sma-delays.rx230.sbUSB.quad2.b4.csv -c 0.5126 --rate=-0.090e-12 -s Sw -g 0.0 2023y105d01h40m00s 2023y112d07h55m00s > templates/230G/band4/clocks_SMA.vex
 
 etransferDirs:
 	for exptname in $(TRACKS_ALL); do \
