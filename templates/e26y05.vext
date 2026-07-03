@@ -23,7 +23,7 @@ def e26y05;
 *    distribute_to  : Sub-bands 1 and 4 to MPIfR, 2 and 3 to Haystack
 enddef;
 *------------------------------------------------------------------------------
-** include <clocks_initial.vex>
+** include <clocks_initial_e26y05.vex>
 ** include <clocks_SMA.vex>
 ** include <mode_proc_das.vex>
 ** include <stations.vex>
