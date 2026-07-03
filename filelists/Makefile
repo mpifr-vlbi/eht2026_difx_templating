@@ -225,28 +225,28 @@ lm_b4:
 ## NOEMA - https://eventhorizontelescope.mywikis.wiki/wiki/NOEMA_setup_2026
 	
 nn_b1:
-	$(call mk6dir2filelist,mark6-09,1,MPI%6411,NOEMA_b1.1.filelist)
-	$(call mk6dir2filelist,mark6-09,2,MPI%6412,NOEMA_b1.2.filelist)
-	$(call mk6dir2filelist,mark6-09,3,MPI%6413,NOEMA_b1.3.filelist)
-	$(call mk6dir2filelist,mark6-09,4,MPI%6414,NOEMA_b1.4.filelist)
+	$(call mk6dir2filelist,mark6-08,1,MPI%6411,NOEMA_b1.1.filelist)
+	$(call mk6dir2filelist,mark6-08,2,MPI%6412,NOEMA_b1.2.filelist)
+	$(call mk6dir2filelist,mark6-08,3,MPI%6413,NOEMA_b1.3.filelist)
+	$(call mk6dir2filelist,mark6-08,4,MPI%6414,NOEMA_b1.4.filelist)
 
 nn_b2:
-	$(call mk6dir2filelist,mark6-09,1,MPI%6415,NOEMA_b2.1.filelist)
-	$(call mk6dir2filelist,mark6-09,2,MPI%6416,NOEMA_b2.2.filelist)
-	$(call mk6dir2filelist,mark6-09,3,MPI%6417,NOEMA_b2.3.filelist)
-	$(call mk6dir2filelist,mark6-09,4,MPI%6426,NOEMA_b2.4.filelist)
+	$(call mk6dir2filelist,mark6-08,1,MPI%6415,NOEMA_b2.1.filelist)
+	$(call mk6dir2filelist,mark6-08,2,MPI%6416,NOEMA_b2.2.filelist)
+	$(call mk6dir2filelist,mark6-08,3,MPI%6417,NOEMA_b2.3.filelist)
+	$(call mk6dir2filelist,mark6-08,4,MPI%6426,NOEMA_b2.4.filelist)
 
 nn_b3:
-	$(call mk6dir2filelist,mark6-09,1,MPI%6427,NOEMA_b3.1.filelist)
-	$(call mk6dir2filelist,mark6-09,2,MPI%6428,NOEMA_b3.2.filelist)
-	$(call mk6dir2filelist,mark6-09,3,MPI%6432,NOEMA_b3.3.filelist)
-	$(call mk6dir2filelist,mark6-09,4,MPI%6433,NOEMA_b3.4.filelist)
+	$(call mk6dir2filelist,mark6-08,1,MPI%6442,NOEMA_b4.1.filelist)
+	$(call mk6dir2filelist,mark6-08,2,MPI%6444,NOEMA_b4.2.filelist)
+	$(call mk6dir2filelist,mark6-08,3,MPI%6445,NOEMA_b4.3.filelist)
+	$(call mk6dir2filelist,mark6-08,4,BHC%0097,NOEMA_b4.4.filelist)
 
 nn_b4:
-	$(call mk6dir2filelist,mark6-09,1,MPI%6442,NOEMA_b4.1.filelist)
-	$(call mk6dir2filelist,mark6-09,2,MPI%6444,NOEMA_b4.2.filelist)
-	$(call mk6dir2filelist,mark6-09,3,MPI%6445,NOEMA_b4.3.filelist)
-	$(call mk6dir2filelist,mark6-09,4,BHC%0097,NOEMA_b4.4.filelist)
+	$(call mk6dir2filelist,mark6-08,1,MPI%6427,NOEMA_b3.1.filelist)
+	$(call mk6dir2filelist,mark6-08,2,MPI%6428,NOEMA_b3.2.filelist)
+	$(call mk6dir2filelist,mark6-08,3,MPI%6432,NOEMA_b3.3.filelist)
+	$(call mk6dir2filelist,mark6-08,4,MPI%6433,NOEMA_b3.4.filelist)
 
 ## Pico - https://eventhorizontelescope.mywikis.wiki/wiki/IRAM30m_setup_2026
 # todo
