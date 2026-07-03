@@ -16,6 +16,10 @@ Fringe checks are kept track of under https://eventhorizontelescope.mywikis.wiki
 
 ## Station Specifics
 
+Frequency standards at some stations were not stable enough to cover the entire campaign with a single VEX clock rate.
+The VEX clock model (rates) has been split into per-track models (./templates/common_sections/clocks_initial_e26xxx.vex),
+with band-specific clock offsets collected from clock .dat files as before (./templates/230G/bandX/clocks_e26xxx.dat).
+
 ### NOEMA
 
 Reference pad: **N020** in e26m13-e26m17, **N017** in e26m20-e26a03, **N011** in e26a07-e26y05, possibly **N009** in e26y08.
