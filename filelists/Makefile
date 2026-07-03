@@ -193,23 +193,22 @@ mm_b4:
 	$(call mk6dir2filelist,mark6-04,34,BHC%0105,JCMT_b4.34.filelist)
 
 ## Kitt Peak - https://eventhorizontelescope.mywikis.wiki/wiki/KP_setup_2026
-# todo
 
 kt_b1:
-	$(call mk6dir2filelist,mark6-02,12,EHT%1235,KT_b1.12.filelist)
-	$(call mk6dir2filelist,mark6-02,34,EHT%1237,KT_b1.34.filelist)
+	$(call mk6dir2filelist,mark6-02,12,PERI%007,KT_b1.12.filelist)
+	$(call mk6dir2filelist,mark6-02,34,PERI%009,KT_b1.34.filelist)
 
 kt_b2:
-	$(call mk6dir2filelist,mark6-02,12,EHT%1241,KT_b2.12.filelist)
-	$(call mk6dir2filelist,mark6-02,34,EHT%1243,KT_b2.34.filelist)
+	$(call mk6dir2filelist,mark6-02,12,PERI%011,KT_b2.12.filelist)
+	$(call mk6dir2filelist,mark6-02,34,PERI%013,KT_b2.34.filelist)
 
 kt_b3:
-	$(call mk6dir2filelist,mark6-02,12,EHT%1252,KT_b3.12.filelist)
-	$(call mk6dir2filelist,mark6-02,34,EHT%1254,KT_b3.34.filelist)
+	$(call mk6dir2filelist,mark6-02,12,PERI%015,KT_b3.12.filelist)
+	$(call mk6dir2filelist,mark6-02,34,PERI%017,KT_b3.34.filelist)
 
 kt_b4:
-	$(call mk6dir2filelist,mark6-02,12,EHT%1256,KT_b4.12.filelist)
-	$(call mk6dir2filelist,mark6-02,34,EHT%1258,KT_b4.34.filelist)
+	$(call mk6dir2filelist,mark6-02,12,MPI%1202,KT_b4.12.filelist)
+	$(call mk6dir2filelist,mark6-02,34,SHAO%031,KT_b4.34.filelist)
 
 ## LMT - https://eventhorizontelescope.mywikis.wiki/wiki/LMT_2026_Apr_setup
 # todo
