@@ -330,7 +330,7 @@ sz_b4: # todo
 
 buglist:
 	# All scans that have unexpected time stamps
-	grep -v " 607\| 608" *.filelist || true
+	grep -v " 610| 611" *.filelist || true
 	grep " 51544." *.filelist || true
 
 
