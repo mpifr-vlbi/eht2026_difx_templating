@@ -174,24 +174,23 @@ gl_b4:
 	$(call mk6dir2filelist,mark6-06,12,EHT%1223,GLT_b4.12.filelist)
 	$(call mk6dir2filelist,mark6-06,34,EHT%1225,GLT_b4.34.filelist)
 
-## JCMT - https://eventhorizontelescope.mywikis.wiki/wiki/JCMT_setup_2026
-# todo
+## JCMT - https://eventhorizontelescope.mywikis.wiki/wiki/JCMT_setup_2026 has no info
 
 mm_b1:
-	$(call mk6dir2filelist,mark6-11,12,EHT%0084,JCMT_b1.12.filelist)
-	$(call mk6dir2filelist,mark6-11,34,EHT%0086,JCMT_b1.34.filelist)
+	$(call mk6dir2filelist,mark6-04,12,MPI%6423,JCMT_b1.12.filelist)
+	$(call mk6dir2filelist,mark6-04,34,MPI%6430,JCMT_b1.34.filelist)
 
-mm_b2:
-	$(call mk6dir2filelist,mark6-11,12,BHC%0041,JCMT_b2.12.filelist)
-	$(call mk6dir2filelist,mark6-11,34,BHC%0071,JCMT_b2.34.filelist)
+mm_b2: # todo
+	$(call mk6dir2filelist,mark6-04,12,BHC%0041,JCMT_b2.12.filelist)
+	$(call mk6dir2filelist,mark6-04,34,BHC%0071,JCMT_b2.34.filelist)
 
-mm_b3:
-	$(call mk6dir2filelist,mark6-11,12,EHT%0088,JCMT_b3.12.filelist)
-	$(call mk6dir2filelist,mark6-11,34,EHT%0090,JCMT_b3.34.filelist)
+mm_b3: # todo
+	$(call mk6dir2filelist,mark6-04,12,EHT%0088,JCMT_b3.12.filelist)
+	$(call mk6dir2filelist,mark6-04,34,EHT%0090,JCMT_b3.34.filelist)
 
 mm_b4:
-	$(call mk6dir2filelist,mark6-08,12,BHC%0077,JCMT_b4.12.filelist)
-	$(call mk6dir2filelist,mark6-08,34,SHAO%008,JCMT_b4.34.filelist)
+	$(call mk6dir2filelist,mark6-04,12,BHC%0087,JCMT_b4.12.filelist)
+	$(call mk6dir2filelist,mark6-04,34,BHC%0105,JCMT_b4.34.filelist)
 
 ## Kitt Peak - https://eventhorizontelescope.mywikis.wiki/wiki/KP_setup_2026
 # todo
