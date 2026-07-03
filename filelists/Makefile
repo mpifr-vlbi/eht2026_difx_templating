@@ -223,7 +223,7 @@ lm_b4:
 	$(call mk6dir2filelist,mark6-07,34,BHC%0159,LMT_b1.34.filelist)
 
 ## NOEMA - https://eventhorizontelescope.mywikis.wiki/wiki/NOEMA_setup_2026
-	
+
 nn_b1:
 	$(call mk6dir2filelist,mark6-08,1,MPI%6411,NOEMA_b1.1.filelist)
 	$(call mk6dir2filelist,mark6-08,2,MPI%6412,NOEMA_b1.2.filelist)
@@ -249,23 +249,22 @@ nn_b4:
 	$(call mk6dir2filelist,mark6-08,4,MPI%6433,NOEMA_b3.4.filelist)
 
 ## Pico - https://eventhorizontelescope.mywikis.wiki/wiki/IRAM30m_setup_2026
-# todo
 
 pv_b1:
-	$(call mk6dir2filelist,mark6-05,12,BHC%0078,Pico_b1.12.filelist)
-	$(call mk6dir2filelist,mark6-05,34,BHC%0082,Pico_b1.34.filelist)
+	$(call mk6dir2filelist,mark6-11,12,BHC%0125,Pico_b1.12.filelist)
+	$(call mk6dir2filelist,mark6-11,34,MPI%6429,Pico_b1.34.filelist)
 
 pv_b2:
-	$(call mk6dir2filelist,mark6-05,12,EHT%0077,Pico_b2.12.filelist)
-	$(call mk6dir2filelist,mark6-05,34,EHT%0092,Pico_b2.34.filelist)
+	$(call mk6dir2filelist,mark6-11,12,MPI%6410,Pico_b2.12.filelist)
+	$(call mk6dir2filelist,mark6-11,34,BHC%0059,Pico_b2.34.filelist)
 
 pv_b3:
-	$(call mk6dir2filelist,mark6-05,12,EHT%0076,Pico_b3.12.filelist)
-	$(call mk6dir2filelist,mark6-05,34,EHT%0098,Pico_b3.34.filelist)
+	$(call mk6dir2filelist,mark6-11,12,BHC%0124,Pico_b3.12.filelist)
+	$(call mk6dir2filelist,mark6-11,34,BHC%0079,Pico_b3.34.filelist)
 
 pv_b4:
-	$(call mk6dir2filelist,mark6-05,12,MPI%6400,Pico_b4.12.filelist)
-	$(call mk6dir2filelist,mark6-05,34,MPI%6422,Pico_b4.34.filelist)
+	$(call mk6dir2filelist,mark6-11,12,EHT%0075,Pico_b4.12.filelist)
+	$(call mk6dir2filelist,mark6-11,34,EHT%0050,Pico_b4.34.filelist)
 
 ## SMA APHIDS - https://eventhorizontelescope.mywikis.wiki/wiki/SMA_setup_2026
 # todo
