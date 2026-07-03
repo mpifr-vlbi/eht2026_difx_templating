@@ -285,23 +285,22 @@ sw_b4: # todo post-APHIDS MSNs
 	#$(call mk6dir2filelist,mark6-05,34,...,SMA_b4.34.filelist)
 
 ## SMT - https://eventhorizontelescope.mywikis.wiki/wiki/SMT_setup_2026
-# todo
 
 mg_b1:
-	$(call mk6dir2filelist,mark6-04,12,EHT%1205,SMT_b1.12.filelist)
-	$(call mk6dir2filelist,mark6-04,34,EHT%1207,SMT_b1.34.filelist)
+	$(call mk6dir2filelist,mark6-09,12,MPI%8031,SMT_b1.12.filelist)
+	$(call mk6dir2filelist,mark6-09,34,PERI%029,SMT_b1.34.filelist)
 
 mg_b2:
-	$(call mk6dir2filelist,mark6-04,12,EHT%1209,SMT_b2.12.filelist)
-	$(call mk6dir2filelist,mark6-04,34,EHT%1211,SMT_b2.34.filelist)
+	$(call mk6dir2filelist,mark6-09,12,PERI%024,SMT_b2.12.filelist)
+	$(call mk6dir2filelist,mark6-09,34,PERI%027,SMT_b2.34.filelist)
 
 mg_b3:
-	$(call mk6dir2filelist,mark6-04,12,EHT%1227,SMT_b3.12.filelist)
-	$(call mk6dir2filelist,mark6-04,34,EHT%1229,SMT_b3.34.filelist)
+	$(call mk6dir2filelist,mark6-09,12,PERI%046,SMT_b3.12.filelist)
+	$(call mk6dir2filelist,mark6-09,34,PERI%048,SMT_b3.34.filelist)
 
 mg_b4:
-	$(call mk6dir2filelist,mark6-04,12,EHT%1215,SMT_b4.12.filelist)
-	$(call mk6dir2filelist,mark6-04,34,EHT%1217,SMT_b4.34.filelist)
+	$(call mk6dir2filelist,mark6-09,12,PERI%034,SMT_b4.12.filelist)
+	$(call mk6dir2filelist,mark6-09,34,PERI%036,SMT_b4.34.filelist)
 
 ## SPT
 # todo
