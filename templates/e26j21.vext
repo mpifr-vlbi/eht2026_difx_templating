@@ -14,6 +14,7 @@ $EXPER;
 *
 def e26j21;
      exper_name = e26j21;
+     exper_num = 3879;
      exper_description = "M87 2026 test";
      PI_name = "EHTC";
      PI_email = not@an.address;
