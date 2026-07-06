@@ -14,6 +14,32 @@ to enable rapid production correlation right at the end of the campaign, after s
 
 Fringe checks are kept track of under https://eventhorizontelescope.mywikis.wiki/wiki/Observing/2026_Movie_Campaign/Correlation#Completed_Fringe_Checks
 
+# Tracks
+
+All tracks were observed with 230 GHz EHT tunings. Prioritized bands to record were b1, b2, b3.
+
+```
+HOPS Track  UT Date DOY
+3879 e26j21 21JAN26 021
+3880 e26m10 10MAR26 069
+3881 e26m13 16MAR26 072
+3882 e26m17 17MAR26 076
+3883 e26m20 20MAR26 079
+3884 e26m24 24MAR26 083
+3885 e26m27 26MAR26 086
+3886 e26a03 03APR26 093
+3887 e26a07 07APR26 097
+3888 e26a10 10APR26 100
+3889 e26a14 14APR26 104
+3890 e26a17 17APR27 107
+3891 e26a21 21APR26 111
+3892 e26a24 24APR26 114
+3893 e26a28 28APR26 118
+3894 e26y01 01MAY26 121
+3895 e26y05 05MAY26 125
+3896 e26y08 08MAY26 128
+```
+
 ## Station Specifics
 
 Frequency standards at some stations were not stable enough to cover the entire campaign with a single VEX clock rate.
