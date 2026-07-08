@@ -118,23 +118,23 @@ mm_b4_beegfs:
 
 
 ## ALMA - infos by email
-# todo
+# todo b1 b2 b3
 
 aa_b1:
-	$(call mk6dir2filelist,mark6-10,12,EHT%1231,ALMA_b1.12.filelist)
-	$(call mk6dir2filelist,mark6-10,34,EHT%1233,ALMA_b1.34.filelist)
+	$(call mk6dir2filelist,mark6-07,12,EHT%1231,ALMA_b1.12.filelist)
+	$(call mk6dir2filelist,mark6-07,34,EHT%1233,ALMA_b1.34.filelist)
 
 aa_b2:
 	$(call mk6dir2filelist,mark6-10,12,EHT%1246,ALMA_b2.12.filelist)
-	$(call mk6dir2filelist,mark6-10,34,EHT%1248,ALMA_b2.34.filelist)
+	$(call mk6dir2filelist,mark6-07,34,EHT%1248,ALMA_b2.34.filelist)
 
 aa_b3:
-	$(call mk6dir2filelist,mark6-10,12,EHT%1259,ALMA_b3.12.filelist)
-	$(call mk6dir2filelist,mark6-10,34,EHT%1261,ALMA_b3.34.filelist)
+	$(call mk6dir2filelist,mark6-07,12,EHT%1259,ALMA_b3.12.filelist)
+	$(call mk6dir2filelist,mark6-07,34,EHT%1261,ALMA_b3.34.filelist)
 
 aa_b4:
-	$(call mk6dir2filelist,mark6-10,12,EHT%1250,ALMA_b4.12.filelist)
-	$(call mk6dir2filelist,mark6-10,34,MPI%1205,ALMA_b4.34.filelist)
+	$(call mk6dir2filelist,mark6-07,12,EHT%0053,ALMA_b4.12.filelist)
+	$(call mk6dir2filelist,mark6-07,34,EHT%0055,ALMA_b4.34.filelist)
 
 ## APEX - https://eventhorizontelescope.mywikis.wiki/wiki/APEX_setup_2026
 # todo
@@ -330,7 +330,7 @@ sz_b4: # todo
 
 buglist:
 	# All scans that have unexpected time stamps
-	grep -v " 610| 611" *.filelist || true
+	grep -v " 610\| 611" *.filelist || true
 	grep " 51544." *.filelist || true
 
 
