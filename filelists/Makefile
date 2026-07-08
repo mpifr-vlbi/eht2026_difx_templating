@@ -155,24 +155,23 @@ ax_b4:
 	$(call mk6dir2filelist,mark6-10,12,BHC%0106,APEX_b4.12.filelist)
 	$(call mk6dir2filelist,mark6-10,34,BHC%0109,APEX_b4.34.filelist)
 
-## GLT - https://eventhorizontelescope.mywikis.wiki/wiki/GLT_(Gl)_setup_2026
-# todo
+## GLT - https://eventhorizontelescope.mywikis.wiki/wiki/GLT_setup_2026
 
 gl_b1:
-	$(call mk6dir2filelist,mark6-06,12,EHT%1101,GLT_b1.12.filelist)
-	$(call mk6dir2filelist,mark6-06,34,EHT%1201,GLT_b1.34.filelist)
+	$(call mk6dir2filelist,mark6-10,12,SAO%0036,GLT_b1.12.filelist)
+	$(call mk6dir2filelist,mark6-10,34,SAO%0038,GLT_b1.34.filelist)
 
 gl_b2:
-	$(call mk6dir2filelist,mark6-06,12,EHT%1203,GLT_b2.12.filelist)
-	$(call mk6dir2filelist,mark6-06,34,EHT%1212,GLT_b2.34.filelist)
+	$(call mk6dir2filelist,mark6-10,12,PERI%021,GLT_b2.12.filelist)
+	$(call mk6dir2filelist,mark6-10,34,PERI%023,GLT_b2.34.filelist)
 
 gl_b3:
-	$(call mk6dir2filelist,mark6-06,12,EHT%1218,GLT_b3.12.filelist)
-	$(call mk6dir2filelist,mark6-06,34,EHT%1220,GLT_b3.34.filelist)
+	$(call mk6dir2filelist,mark6-10,12,MPI%8005,GLT_b3.12.filelist)
+	$(call mk6dir2filelist,mark6-10,34,MPI%8033,GLT_b3.34.filelist)
 
 gl_b4:
-	$(call mk6dir2filelist,mark6-06,12,EHT%1223,GLT_b4.12.filelist)
-	$(call mk6dir2filelist,mark6-06,34,EHT%1225,GLT_b4.34.filelist)
+	$(call mk6dir2filelist,mark6-10,12,PERI%003,GLT_b4.12.filelist)
+	$(call mk6dir2filelist,mark6-10,34,PERI%005,GLT_b4.34.filelist)
 
 ## JCMT - https://eventhorizontelescope.mywikis.wiki/wiki/JCMT_setup_2026 has no info
 
