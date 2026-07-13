@@ -137,21 +137,23 @@ aa_b4:
 	$(call mk6dir2filelist,mark6-07,34,EHT%0055,ALMA_b4.34.filelist)
 
 ## APEX - https://eventhorizontelescope.mywikis.wiki/wiki/APEX_setup_2026
-# todo
 
 ax_b1:
-	$(call mk6dir2filelist,mark6-09,12,EHT%0078,APEX_b1.12.filelist)
-	$(call mk6dir2filelist,mark6-09,34,EHT%0080,APEX_b1.34.filelist)
+	# two module sets
+	$(call mk6dir2filelist,mark6-09,12,SAO%0025,APEX_b1.12.filelist)
+	$(call mk6dir2filelist,mark6-09,34,SAO%0027,APEX_b1.34.filelist)
+	$(call mk6dir2filelist,mark6-09,12,BHC%0154,APEX_b1.12.set2-filelist)
+	$(call mk6dir2filelist,mark6-09,34,MPI%8055,APEX_b1.34.set2-filelist)
 
 ax_b2:
-	$(call mk6dir2filelist,mark6-09,12,BHC%0114,APEX_b2.12.filelist)
-	$(call mk6dir2filelist,mark6-09,34,BHC%0116,APEX_b2.34.filelist)
+	$(call mk6dir2filelist,mark6-09,12,ALMA%025,APEX_b2.12.filelist)
+	$(call mk6dir2filelist,mark6-09,34,ALMA%027,APEX_b2.34.filelist)
 
 ax_b3:
-	$(call mk6dir2filelist,mark6-09,12,BHC%0122,APEX_b3.12.filelist)
-	$(call mk6dir2filelist,mark6-09,34,BHC%0130,APEX_b3.34.filelist)
+	$(call mk6dir2filelist,mark6-09,12,SAO%0031,APEX_b3.12.filelist)
+	$(call mk6dir2filelist,mark6-09,34,SAO%0041,APEX_b3.34.filelist)
 
-ax_b4:
+ax_b4: # in 2026 no b4 mark6 unit available, dummy entries:
 	$(call mk6dir2filelist,mark6-10,12,BHC%0106,APEX_b4.12.filelist)
 	$(call mk6dir2filelist,mark6-10,34,BHC%0109,APEX_b4.34.filelist)
 
