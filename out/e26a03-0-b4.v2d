@@ -2,7 +2,9 @@
 # DiFX version 2.9.0 as default
 #
 # Track e26a03 band 4
-# Notes: ...
+# Notes:
+# - Ax had no band4 recorder
+# - Pv no fringes in this track, unknown reason
 #==================================================================
 
 vex = e26a03-0-b4.vex.obs

@@ -4,6 +4,7 @@
 # Track e26m13 band 4
 # Notes:
 # - JCMT, SMA did not observe
+# - Ax had no band4 recorder
 #==================================================================
 
 vex = e26m13-0-b4.vex.obs
