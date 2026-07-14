@@ -2,7 +2,8 @@
 # DiFX version 2.9.0 as default
 #
 # Track e26a03 band 2
-# Notes: ...
+# Notes:
+# - SMT had no quarter wave plate, or at least looks linear polarized
 #==================================================================
 
 vex = e26a03-0-b2.vex.obs
