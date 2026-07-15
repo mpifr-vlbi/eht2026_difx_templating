@@ -1,4 +1,10 @@
 CLOCK
 # Station ID    Delay (usec)    Rate (sec/sec)
+Aa              +2107.1470
 Nn              +12.0
+# No ALMA fringes, using NOEMA as reference
+Gl              -0.2090
+Kt              +0.2645
+Mg              +1.0694
+Pv              +0.9771
 
