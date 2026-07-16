@@ -3,7 +3,8 @@
 #
 # Track e26a24 band 2
 # Notes:
-# - Mm did not observe
+# - wiki: "LMT, SMA, and JCMT did not observe"
+# - Aa no fringes in b4, todo check b1 b2 b3
 #==================================================================
 
 vex = e26a24-0-b2.vex.obs
