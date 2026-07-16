@@ -1,4 +1,9 @@
 CLOCK
 # Station ID    Delay (usec)    Rate (sec/sec)
-Nn              +12.0
-
+Aa              +2107.1470
+Gl              -0.8691
+Pv              +0.4417
+# "NOEMA, Kitt Peak, and SMT did not observe due to weather" (yet Kt and Mg have Mark6 recordings)
+# Ax : no band4 recorder
+# Mm : did not observe
+# Sw, Lm : data not yet shipped

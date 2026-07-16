@@ -4,6 +4,9 @@
 # Track e26y05 band 4
 # Notes:
 # - Ax had no band4 recorder
+# - wiki: "NOEMA, Kitt Peak, and SMT did not observe due to weather",
+#   but Kt and Mg have Mark6 recordings (without b4 fringes)
+# - Mm did not observe
 #==================================================================
 
 vex = e26y05-0-b4.vex.obs
