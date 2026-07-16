@@ -2,7 +2,13 @@
 # DiFX version 2.9.0 as default
 #
 # Track e26y01 band 1
-# Notes: ...
+# Notes:
+# Infos from https://eventhorizontelescope.mywikis.wiki/wiki/Observing/2026_Monitoring_Campaign/Schedules
+#  - AA and MM did not observe, KT was closed for rain
+#  - GL stopped after 121-0018 due to snow
+#  - MG closed after ca 121-0147
+#  - PV improved after ca 121-0108
+#  - LMT joined on 121-0307
 #==================================================================
 
 vex = e26y01-0-b1.vex.obs
