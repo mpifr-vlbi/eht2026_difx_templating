@@ -1,5 +1,11 @@
 CLOCK
 # Station ID    Delay (usec)    Rate (sec/sec)
-Nn              +12.0
-Ax              -169776.60
-
+Aa              +2107.1470
+Mm              +0.3134
+Kt              -0.4390
+Mg              +0.6700
+Gl              -0.8970
+Nn              +11.4743
+Pv              +0.4384
+# Ax : no band4 recorder
+# Sw, Lm : data not yet shipped
