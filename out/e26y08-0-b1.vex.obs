@@ -493,9 +493,7 @@ def NOEMA;
      site_velocity =  0.0 m/yr : 0.0 m/yr : 0.0 m/yr;
      site_position_epoch = 0;
      * https://eventhorizontelescope.mywikis.wiki/wiki/NOEMA_setup_2026
-     * pad not documented yet, could be N011 or N009
-     site_position = 4523937.1860 m : 468033.6604 m : 4460376.3250 m; * position of pad N011
-     * site_position = 4523948.2896 m : 468035.5071 m : 4460364.9448 m; * position of pad N009
+     site_position = 4523948.2896 m : 468035.5071 m : 4460364.9448 m; * position of pad N009
 enddef;
 *------------------------------------------------------------------------------
 $TRACKS;
