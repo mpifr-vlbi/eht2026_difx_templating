@@ -121,8 +121,8 @@ mm_b4_beegfs:
 # todo b1 b2 b3
 
 aa_b1:
-	$(call mk6dir2filelist,mark6-07,12,EHT%1231,ALMA_b1.12.filelist)
-	$(call mk6dir2filelist,mark6-07,34,EHT%1233,ALMA_b1.34.filelist)
+	$(call mk6dir2filelist,mark6-07,12,MPIAP%03,ALMA_b1.12.filelist)
+	$(call mk6dir2filelist,mark6-07,34,MPIAP%05,ALMA_b1.34.filelist)
 
 aa_b2:
 	$(call mk6dir2filelist,mark6-10,12,EHT%1246,ALMA_b2.12.filelist)
