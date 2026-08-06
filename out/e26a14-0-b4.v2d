@@ -6,6 +6,7 @@
 # - Ax had no band4 recorder
 # - Mg did not observe
 # - Mm did not observe
+# - Sw fringes but low SNR
 #==================================================================
 
 vex = e26a14-0-b4.vex.obs
