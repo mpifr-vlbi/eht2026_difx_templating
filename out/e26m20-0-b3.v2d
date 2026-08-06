@@ -2,7 +2,8 @@
 # DiFX version 2.9.0 as default
 #
 # Track e26m20 band 3
-# Notes: ...
+# Notes:
+# - Lm did not observe
 #==================================================================
 
 vex = e26m20-0-b3.vex.obs
