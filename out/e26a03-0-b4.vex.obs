@@ -47,11 +47,11 @@ def Ky;
 enddef;
 *
 def Lm;
-  clock_early = 2026y093d01h59m00s: 0.0 usec: 2026y093d01h59m00s : -0.523321e-12;
+  clock_early = 2026y093d01h59m00s : -1.5056 usec : 2026y093d01h59m00s : -0.523321e-12;
 enddef;
 *
 def Mm; * JCMT
-  clock_early = 2026y093d01h59m00s : +0.1956 usec : 2026y093d01h59m00s : -7e-15;
+  clock_early = 2026y093d01h59m00s : +0.2657 usec : 2026y093d01h59m00s : -7e-15;
 enddef;
 *
 def Mg; * SMT
@@ -79,7 +79,7 @@ def Pc;
 enddef;
 *
 def Sw;
-  clock_early = 2026y093d01h59m00s: 0.0 usec: 2026y093d01h59m00s : -7e-15;
+  clock_early = 2026y093d01h59m00s : +0.5543 usec : 2026y093d01h59m00s : -7e-15;
 enddef;
 *------------------------------------------------------------------------------
 $MODE;
