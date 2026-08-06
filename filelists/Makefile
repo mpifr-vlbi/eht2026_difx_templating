@@ -116,9 +116,7 @@ mm_b4_beegfs:
 	vsum -s /data/e26[ma]??/Mm/b4/*12/*.vdif > JCMT_b4.12.filelist-beegfs
 	vsum -s /data/e26[ma]??/Mm/b4/*34/*.vdif > JCMT_b4.34.filelist-beegfs
 
-
 ## ALMA - infos by email
-# todo b1 b2 b3
 
 aa_b1:
 	$(call mk6dir2filelist,mark6-07,12,MPIAP%03,ALMA_b1.12.filelist)
@@ -212,15 +210,17 @@ kt_b4:
 	$(call mk6dir2filelist,mark6-05,34,SHAO%031,KT_b4.34.filelist)
 
 ## LMT - https://eventhorizontelescope.mywikis.wiki/wiki/LMT_2026_Apr_setup
-# todo
+## Wiki does not match sticker labels, according to stickers,
+## b1 is on ALMA%001/2/3/4
+## b4 is on MPI%8034/35,SAO%0024,SHAO%051
 
 lm_b1:
-	$(call mk6dir2filelist,mark6-07,12,BHC%0001,LMT_b4.12.filelist)
-	$(call mk6dir2filelist,mark6-07,34,BHC%0003,LMT_b4.34.filelist)
+	$(call mk6dir2filelist,mark6-02,12,ALMA%001,LMT_b1.12.filelist)
+	$(call mk6dir2filelist,mark6-02,34,ALMA%003,LMT_b1.34.filelist)
 
 lm_b4:
-	$(call mk6dir2filelist,mark6-07,12,BHC%0157,LMT_b1.12.filelist)
-	$(call mk6dir2filelist,mark6-07,34,BHC%0159,LMT_b1.34.filelist)
+	$(call mk6dir2filelist,mark6-02,12,MPI%8034,LMT_b4.12.filelist)
+	$(call mk6dir2filelist,mark6-02,34,SAO%0024,LMT_b4.34.filelist)
 
 ## NOEMA - https://eventhorizontelescope.mywikis.wiki/wiki/NOEMA_setup_2026
 
