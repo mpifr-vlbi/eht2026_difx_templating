@@ -64,6 +64,9 @@ The issues are indentical to those [documented for the first GMVA 86 GHz NOEMA f
    a fix for proper VDIF files is [swapendianVDIF.c](https://bitbucket.org/jwagner313/kvnvdiftools/src/master/swapendianVDIF.c),
    a fix for Mark6 scatter-gather encapsulated VDIF is ToDo
 
+Unfortunately, tests in band1 with swapendianVDIF.c applied to a copy of affected VDIF files did not result in fringes in those sub-bands over various large clock offsets tried.
+
+
 ### APEX
 
 Bands 1 2 and 3 only. The Mark6 for band4 broke in late 2025 and sits in protracted repair at Haystack.
