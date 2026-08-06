@@ -25,7 +25,6 @@ def e26m10;
 enddef;
 *------------------------------------------------------------------------------
 ** include <clocks_initial_e26m10.vex>
-** include <clocks_SMA.vex>
 ** include <mode_proc_das.vex>
 ** include <stations.vex>
 ** include <antennas.vex>

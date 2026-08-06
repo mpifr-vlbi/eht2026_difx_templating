@@ -52,3 +52,6 @@ def Pc;
   clock_early = 2026y107d01h04m00s: 0.0 usec: 2026y107d01h04m00s : 0.0e-12;
 enddef;
 *
+def Sw;
+  clock_early = 2026y107d01h04m00s: 0.0 usec: 2026y107d01h04m00s : -7e-15;
+enddef;
