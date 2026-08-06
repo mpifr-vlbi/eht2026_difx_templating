@@ -4,6 +4,7 @@ TRACKS_230G := e26m10 e26m13 e26m17 e26m20 e26m24 e26m27 e26a03 e26a07 e26a10 e2
 TRACKS_345G :=
 
 # Revision of correlation run, e.g., v1a, gold253, gold261, gold262
+#REV  := v0
 #REV  := v1
 REV := FRINGE
 
