@@ -47,7 +47,7 @@ def Ky;
 enddef;
 *
 def Lm;
-  clock_early = 2026y111d00h48m00s: 0.0 usec: 2026y111d00h48m00s : -0.523321e-12;
+  clock_early = 2026y111d00h48m00s : -1.9887 usec : 2026y111d00h48m00s : -0.523321e-12;
 enddef;
 *
 def Mm; * JCMT

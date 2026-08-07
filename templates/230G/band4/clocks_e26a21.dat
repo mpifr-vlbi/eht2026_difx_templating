@@ -5,8 +5,8 @@ Kt              -0.2792
 Mg              +0.4667
 Nn              +11.4321
 Pv              +0.3747
+Lm              -1.9887
 # GLT: no b4 fringes, taking e21a17 clk as a guess
 Gl              -0.8000
 # Ax : no band4 recorder
-# Mm : did not observe
-# Sw, Lm : data not yet shipped
+# Sw, Mm : did not observe
