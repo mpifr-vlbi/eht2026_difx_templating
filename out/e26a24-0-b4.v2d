@@ -5,7 +5,12 @@
 # Notes:
 # - Ax had no band4 recorder
 # - wiki: "LMT, SMA, and JCMT did not observe"
-# - Aa no fringes, using Nn as the reference
+# - Aa no fringes at first
+#    - tried offsets +- 48000us (48ms TE)
+#    - TE vs 1pps period is LCM(48ms,1000ms) = 6000 ms = 6 sec
+#    - potential offsets are in 48ms/6 = 8 ms steps
+#    - fringes found with a v2d +8 ms offset
+# - using Nn as the reference
 #==================================================================
 
 vex = e26a24-0-b4.vex.obs

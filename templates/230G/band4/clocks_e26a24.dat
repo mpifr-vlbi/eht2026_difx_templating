@@ -1,12 +1,11 @@
 CLOCK
 # Station ID    Delay (usec)    Rate (sec/sec)
-Aa              +2107.1470
+Aa              -5892.8530
 Nn              +12.0
-# No ALMA fringes, using NOEMA as reference
 Gl              -0.2090
 Kt              +0.2645
 Mg              +1.0694
 Pv              +0.9771
 # Ax : no band4 recorder
-# Mm : did not observe
-# Sw, Lm : data not yet shipped
+# Sw, Mm : did not observe
+# Lm : data but no fringes, wiki says Lm did not observe
