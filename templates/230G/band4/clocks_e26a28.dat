@@ -3,10 +3,11 @@ CLOCK
 Aa              +2107.147
 Gl              -0.8269
 Kt              -0.3538
+Lm              -0.5008
 Nn              +11.4124
 Pv              +0.4062
 Mg              +0.5351
+Sw              +0.5031
 # Ax b1 b2 b3 somewhere near -106678.90 us most likely
 # Ax : no band4 recorder
 # Mm : did not observe
-# Sw, Lm : data not yet shipped
