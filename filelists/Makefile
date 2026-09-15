@@ -269,8 +269,8 @@ pv_b4:
 ## SMA APHIDS - https://eventhorizontelescope.mywikis.wiki/wiki/SMA_setup_2026
 
 sw_b1: # todo post-APHIDS MSNs
-	#$(call mk6dir2filelist,mark6-05,12,...,SMA_b1.12.filelist)
-	#$(call mk6dir2filelist,mark6-05,34,...,SMA_b1.34.filelist)
+	$(call mk6dir2filelist,mark6-06,12,BHC%0009,SMA_b1.12.filelist)
+	$(call mk6dir2filelist,mark6-06,34,BHC%0012,SMA_b1.34.filelist)
 
 sw_b2: # todo post-APHIDS MSNs
 	#$(call mk6dir2filelist,mark6-05,12,...,SMA_b1.12.filelist)
