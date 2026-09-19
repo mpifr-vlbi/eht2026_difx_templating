@@ -137,11 +137,14 @@ aa_b4:
 ## APEX - https://eventhorizontelescope.mywikis.wiki/wiki/APEX_setup_2026
 
 ax_b1:
-	# two module sets
-	$(call mk6dir2filelist,mark6-03,12,SAO%0025,APEX_b1.12.filelist)
-	$(call mk6dir2filelist,mark6-03,34,SAO%0027,APEX_b1.34.filelist)
-	$(call mk6dir2filelist,mark6-01,12,BHC%0154,APEX_b1.12.set2-filelist)
-	$(call mk6dir2filelist,mark6-01,34,MPI%8055,APEX_b1.34.set2-filelist)
+	# two module sets at first
+	# $(call mk6dir2filelist,mark6-03,12,SAO%0025,APEX_b1.12.filelist)
+	# $(call mk6dir2filelist,mark6-03,34,SAO%0027,APEX_b1.34.filelist)
+	# $(call mk6dir2filelist,mark6-01,12,BHC%0154,APEX_b1.12.set2-filelist)
+	# $(call mk6dir2filelist,mark6-01,34,MPI%8055,APEX_b1.34.set2-filelist)
+	# merged all EHT data onto the 2nd, larger 8x112T module set
+	$(call mk6dir2filelist,mark6-01,12,BHC%0154,APEX_b1.12.filelist)
+	$(call mk6dir2filelist,mark6-01,34,MPI%8055,APEX_b1.34.filelist)
 
 ax_b2:
 	$(call mk6dir2filelist,mark6-09,12,ALMA%025,APEX_b2.12.filelist)
