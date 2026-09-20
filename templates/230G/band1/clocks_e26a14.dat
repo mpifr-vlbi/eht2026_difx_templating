@@ -1,4 +1,13 @@
 CLOCK
 # Station ID    Delay (usec)    Rate (sec/sec)
+Aa              +2107.1470
 Nn              +12.0
-
+#
+Ax              +3.4662
+Gl              -0.3211
+Kt              +0.3346
+Lm              -1.2648
+Pv              +1.0240
+Sw              +1.0978
+# Mm, Mg : did not observe
+# Aa : no band 1 data
