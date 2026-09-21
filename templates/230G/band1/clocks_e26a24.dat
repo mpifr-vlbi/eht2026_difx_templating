@@ -1,4 +1,12 @@
 CLOCK
 # Station ID    Delay (usec)    Rate (sec/sec)
-Nn              +12.0
+Aa              -5892.8530
+Ax              +3.8608
+Gl              -0.7536
+Kt              -0.2878
+Mg              +0.5308
+Nn              +11.4494
+Pv              +0.4482
+# Sw, Mm : did not observe
+# Lm : data but no fringes, wiki says Lm did not observe
 

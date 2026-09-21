@@ -28,19 +28,19 @@ $CLOCK;
 *
 * Note: ALMA off by -8 ms in this track, equal to a sixth of the ALMA 48 ms TE
 def Aa;
-  clock_early = 2026y114d00h36m00s: -5892.8530 usec : 2026y114d00h36m00s : 0.2e-12;
+  clock_early = 2026y114d00h36m00s : -5892.8530 usec : 2026y114d00h36m00s : 0.2e-12;
 enddef;
 *
 def Ax;
-  clock_early = 2026y114d00h36m00s: 0.0 usec: 2026y114d00h36m00s : +0.7115e-12;
+  clock_early = 2026y114d00h36m00s : +3.8608 usec : 2026y114d00h36m00s : +0.7115e-12;
 enddef;
 *
 def Gl;
-  clock_early = 2026y114d00h36m00s: 0.0 usec: 2026y114d00h36m00s : -0.109e-12;
+  clock_early = 2026y114d00h36m00s : -0.7536 usec : 2026y114d00h36m00s : -0.109e-12;
 enddef;
 *
 def Kt;
-  clock_early = 2026y114d00h36m00s: 0.0 usec: 2026y114d00h36m00s : -0.052e-12;
+  clock_early = 2026y114d00h36m00s : -0.2878 usec : 2026y114d00h36m00s : -0.052e-12;
 enddef;
 *
 def Ky;
@@ -56,15 +56,15 @@ def Mm; * JCMT
 enddef;
 *
 def Mg; * SMT
-  clock_early = 2026y114d00h36m00s: 0.0 usec: 2026y114d00h36m00s : -0.100e-12;
+  clock_early = 2026y114d00h36m00s : +0.5308 usec : 2026y114d00h36m00s : -0.100e-12;
 enddef;
 *
 def Nn; * NOEMA
-  clock_early = 2026y114d00h36m00s : +12.0 usec : 2026y114d00h36m00s : 0.0e-12;
+  clock_early = 2026y114d00h36m00s : +11.4494 usec : 2026y114d00h36m00s : 0.0e-12;
 enddef;
 *
 def Pv;
-  clock_early = 2026y114d00h36m00s: 0.0 usec: 2026y114d00h36m00s : -0.0784e-12;
+  clock_early = 2026y114d00h36m00s : +0.4482 usec : 2026y114d00h36m00s : -0.0784e-12;
 enddef;
 *
 def Sz;
