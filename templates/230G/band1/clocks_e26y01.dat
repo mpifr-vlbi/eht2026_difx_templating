@@ -7,3 +7,8 @@ Ax              +5.0833
 Lm              -0.0320
 Pv              +1.0185
 Sw              +1.0695
+# Kt? Mg? Gl?
+# from Hays band3 although no fringes in their A-list files:
+Kt              +0.235
+Mg              +1.109
+Gl              -0.238
