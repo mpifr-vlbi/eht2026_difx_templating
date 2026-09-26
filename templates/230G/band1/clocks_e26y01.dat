@@ -7,8 +7,9 @@ Ax              +5.0833
 Lm              -0.0320
 Pv              +1.0185
 Sw              +1.0695
-# Kt? Mg? Gl?
-# from Hays band3 although no fringes in their A-list files:
+Mg              +1.2417
+# Mg: Mg-Nn fringe SNR 7.1 in 121-0312, no other fringe
+# Kt, Gl: no fringes in b1
+#         using Hays band3 values although no fringes in their A-list files
 Kt              +0.235
-Mg              +1.109
 Gl              -0.238
