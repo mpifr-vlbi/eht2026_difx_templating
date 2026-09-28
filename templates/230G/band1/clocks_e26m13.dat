@@ -1,9 +1,11 @@
 CLOCK
 # Station ID    Delay (usec)    Rate (sec/sec)
 Aa              +2107.147
-# Clocks tied to NN for now until ALMA modules arrive in Bonn
-Nn              +14.6076
+Gl              -0.8155
+Kt              -0.1343
+Lm              -1.1128
+Mg              +0.1868
+Nn              +15.5461
+Pv              +0.4849
+# b1 not recorded at Ax:
 Ax              -3.8446
-Kt              +0.9231
-Mg              -0.7556
-Pv              -0.4592
