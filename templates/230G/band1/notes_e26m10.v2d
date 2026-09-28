@@ -2,5 +2,6 @@
 # Notes:
 # - observed at Aa Gl Lm Pv Mm Ax
 # - Ax backend inadvertently configured with 1024 MHz instead of 2048 MHz bandwidth
+# - Ax no band1 data during 10 March to 24 March 2026 due to delayed module shipment
 # - Pv joined from 069-0611 onwards but bad weather
 # - SMA probably also joined
