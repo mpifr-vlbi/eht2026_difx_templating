@@ -1,5 +1,11 @@
 CLOCK
 # Station ID    Delay (usec)    Rate (sec/sec)
 Aa              +2107.147
-Nn              +12.0
-Kt              +0.6874
+Nn              +11.4326
+Gl              -0.8334
+Kt              -0.1540
+Mg              +0.2324
+Pv              +0.4254
+# Mm : just one scan, no fringe
+# Ax : no band1 recordings until e26m27
+# Lm, Sw did not observe
