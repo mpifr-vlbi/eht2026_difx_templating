@@ -3,8 +3,8 @@
 #
 # Track e26m17 band 4
 # Notes:
+# - Lm, Mm, Sw, Sz did not observe
 # - Ax had no band4 recorder
-# - Lm, Mm, Sw did not observe
 #==================================================================
 
 vex = e26m17-0-b4.vex.obs
