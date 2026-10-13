@@ -1,6 +1,9 @@
 CLOCK
 # Station ID    Delay (usec)    Rate (sec/sec)
-Nn				+12.0
-# Guesses:
-Pv				+0.8576
-# Pv: band2 clk solution
+Aa              +2107.147
+Gl              -0.8076
+Lm              -0.5695
+Mm              +5.1127
+Mg              +0.0984
+Nn              +11.5382
+Pv              +0.3943
