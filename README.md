@@ -75,6 +75,10 @@ Bands 1 2 and 3 only. The Mark6 for band4 broke in late 2025 and sits in protrac
 
 The HOPS experiment numbers are still tbd
 
+### e26j21
+
+ALMA b4 X-pol recordings are empty (20B header only), Y-pol is fine.
+
 ### e26m10
 
 LMT is band-swapped in e26m10 e26m13, b1<->2 for sure, and possibly but not verified b3<->b4.
